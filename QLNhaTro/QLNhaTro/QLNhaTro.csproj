@@ -185,5 +185,11 @@
   <ItemGroup>
     <None Include="Resources\nhatrolg.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{9a8b2eb4-4f22-4eda-8247-462beb38776e}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,7 +30,7 @@ namespace QLNhaTro
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPhi = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.tbMa = new System.Windows.Forms.TextBox();
             this.tbTen = new System.Windows.Forms.TextBox();
@@ -40,7 +40,7 @@ namespace QLNhaTro
             this.btThem = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhi)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,16 +54,17 @@ namespace QLNhaTro
             this.label1.TabIndex = 0;
             this.label1.Text = "QUẢN LÝ CÁC LOẠI PHÍ";
             // 
-            // dataGridView1
+            // dgvPhi
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 190);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(892, 238);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvPhi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPhi.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvPhi.Location = new System.Drawing.Point(0, 190);
+            this.dgvPhi.Name = "dgvPhi";
+            this.dgvPhi.RowHeadersWidth = 51;
+            this.dgvPhi.RowTemplate.Height = 24;
+            this.dgvPhi.Size = new System.Drawing.Size(892, 238);
+            this.dgvPhi.TabIndex = 1;
+            this.dgvPhi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhi_CellClick);
             // 
             // label2
             // 
@@ -123,6 +124,7 @@ namespace QLNhaTro
             this.btThem.TabIndex = 8;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // btSua
             // 
@@ -132,6 +134,7 @@ namespace QLNhaTro
             this.btSua.TabIndex = 9;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = true;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btXoa
             // 
@@ -141,6 +144,7 @@ namespace QLNhaTro
             this.btXoa.TabIndex = 10;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // frmPhi
             // 
@@ -157,14 +161,15 @@ namespace QLNhaTro
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbMa);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPhi);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPhi";
             this.Text = "frmPhi";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmPhi_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,7 +178,7 @@ namespace QLNhaTro
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPhi;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbMa;
         private System.Windows.Forms.TextBox tbTen;

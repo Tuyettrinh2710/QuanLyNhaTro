@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14, 9.375" name="dbNhaTro">
+  <DataContextMoniker Name="/dbNhaTroDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3b32c988-4f2b-4431-bd18-8b1fc850145b" absoluteBounds="11.75, 2.625, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/dbNhaTroDataContext/HoaDon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="679cc26b-ef6f-4721-ada3-e99baa4b61c7" absoluteBounds="11.765, 3.085, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="33c9b31c-6dcb-4ac8-9ab7-2692228e1dd4" absoluteBounds="11.5, 7.375, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/dbNhaTroDataContext/TraPhong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="52780bf2-4e1e-4c2a-8834-6a7f8f66d4d2" absoluteBounds="11.515, 7.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad35d9d4-81f3-492c-8b99-c23ca0ae479d" absoluteBounds="6, 3, 2, 2.3478011067708331">
+      <DataClassMoniker Name="/dbNhaTroDataContext/KhachHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c60ded13-6e3f-4fbf-8c60-74b11dd3be7a" absoluteBounds="6.015, 3.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="80364f9e-9ce4-4c3b-8f7e-b99ed52d360f" absoluteBounds="0.5, 3.5, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/dbNhaTroDataContext/LoaiPhong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="39300dbe-29f9-4c0a-97c2-ce64afc687ef" absoluteBounds="0.51500000000000012, 3.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3cf78a59-db18-4a79-8fea-56e60d5bf6f6" absoluteBounds="0.5, 0.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dbNhaTroDataContext/Phi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20010bbf-4d33-4c18-864f-33b7626dad92" absoluteBounds="0.51500000000000012, 1.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1d7e92cb-173a-4b44-a141-d1bfac75f3cc" absoluteBounds="3.25, 3.25, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/dbNhaTroDataContext/Phong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e88c9e8-01a4-4c56-8211-154d27ebd37c" absoluteBounds="3.265, 3.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8adebca8-ce78-41aa-99e5-766eef1c65a0" absoluteBounds="8.75, 3.375, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/dbNhaTroDataContext/ThuePhong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="451bbc7b-6601-47e4-949b-8c93dbd03dfb" absoluteBounds="8.765, 3.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8 : 3.15625); (11.75 : 3.15625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbNhaTroDataContext/KhachHang/KhachHang_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="ad35d9d4-81f3-492c-8b99-c23ca0ae479d" />
+        <classShapeMoniker Id="3b32c988-4f2b-4431-bd18-8b1fc850145b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.25 : 5.2131982421875); (4.25 : 5.6723046875); (9.66666666666667 : 5.6723046875 : JumpStart); (9.83333333333333 : 5.6723046875 : JumpEnd); (11.75 : 5.6723046875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbNhaTroDataContext/Phong/Phong_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="1d7e92cb-173a-4b44-a141-d1bfac75f3cc" />
+        <classShapeMoniker Id="3b32c988-4f2b-4431-bd18-8b1fc850145b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.25 : 4.23159912109375); (5.66666666666667 : 4.23159912109375 : JumpStart); (5.83333333333333 : 4.23159912109375 : JumpEnd); (6 : 4.23159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbNhaTroDataContext/Phong/Phong_KhachHang" />
+      <nodes>
+        <classShapeMoniker Id="1d7e92cb-173a-4b44-a141-d1bfac75f3cc" />
+        <classShapeMoniker Id="ad35d9d4-81f3-492c-8b99-c23ca0ae479d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 4.19314697265625); (3.25 : 4.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbNhaTroDataContext/LoaiPhong/LoaiPhong_Phong" />
+      <nodes>
+        <classShapeMoniker Id="80364f9e-9ce4-4c3b-8f7e-b99ed52d360f" />
+        <classShapeMoniker Id="1d7e92cb-173a-4b44-a141-d1bfac75f3cc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.75 : 5.14589680989583); (9.75 : 8.26044840494792); (11.5 : 8.26044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbNhaTroDataContext/ThuePhong/ThuePhong_TraPhong" />
+      <nodes>
+        <classShapeMoniker Id="8adebca8-ce78-41aa-99e5-766eef1c65a0" />
+        <classShapeMoniker Id="33c9b31c-6dcb-4ac8-9ab7-2692228e1dd4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8 : 4.26044840494792); (8.29166666666667 : 4.26044840494792 : JumpStart); (8.45833333333333 : 4.26044840494792 : JumpEnd); (8.75 : 4.26044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbNhaTroDataContext/KhachHang/KhachHang_ThuePhong" />
+      <nodes>
+        <classShapeMoniker Id="ad35d9d4-81f3-492c-8b99-c23ca0ae479d" />
+        <classShapeMoniker Id="8adebca8-ce78-41aa-99e5-766eef1c65a0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.25 : 3.25); (4.25 : 3); (5.75 : 3); (5.75 : 5.47280110677083); (8.375 : 5.47280110677083); (8.375 : 3.78647220247396); (8.75 : 3.78647220247396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbNhaTroDataContext/Phong/Phong_ThuePhong" />
+      <nodes>
+        <classShapeMoniker Id="1d7e92cb-173a-4b44-a141-d1bfac75f3cc" />
+        <classShapeMoniker Id="8adebca8-ce78-41aa-99e5-766eef1c65a0" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
