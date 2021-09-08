@@ -74,5 +74,12 @@ namespace BUS
                 throw new Exception("Không thể lấy được dữ liệu");
             }
         }
+
+        public void LayGia(ComboBox cb, int id)
+        {
+            cb.DataSource = da.LayGia(id);
+            cb.DisplayMember = "GiaTien";
+            cb.ValueMember = "ID";
+        }
     }
 }

@@ -30,21 +30,21 @@ namespace QLNhaTro
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbLon = new System.Windows.Forms.ComboBox();
+            this.cbVua = new System.Windows.Forms.ComboBox();
+            this.cbNho = new System.Windows.Forms.ComboBox();
+            this.cbDV = new System.Windows.Forms.ComboBox();
+            this.cbNuoc = new System.Windows.Forms.ComboBox();
+            this.cbDien = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtLon = new System.Windows.Forms.TextBox();
-            this.txtVua = new System.Windows.Forms.TextBox();
-            this.txtNho = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@ namespace QLNhaTro
             this.label1 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbLoai = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -64,21 +64,21 @@ namespace QLNhaTro
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.PowderBlue;
+            this.panel1.Controls.Add(this.cbLon);
+            this.panel1.Controls.Add(this.cbVua);
+            this.panel1.Controls.Add(this.cbNho);
+            this.panel1.Controls.Add(this.cbDV);
+            this.panel1.Controls.Add(this.cbNuoc);
+            this.panel1.Controls.Add(this.cbDien);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.txtLon);
-            this.panel1.Controls.Add(this.txtVua);
-            this.panel1.Controls.Add(this.txtNho);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -91,10 +91,94 @@ namespace QLNhaTro
             this.panel1.Size = new System.Drawing.Size(322, 428);
             this.panel1.TabIndex = 0;
             // 
+            // cbLon
+            // 
+            this.cbLon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbLon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbLon.FormattingEnabled = true;
+            this.cbLon.Items.AddRange(new object[] {
+            "Nhỏ ",
+            "Vừa",
+            "Lớn"});
+            this.cbLon.Location = new System.Drawing.Point(158, 180);
+            this.cbLon.Name = "cbLon";
+            this.cbLon.Size = new System.Drawing.Size(100, 26);
+            this.cbLon.TabIndex = 26;
+            // 
+            // cbVua
+            // 
+            this.cbVua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbVua.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbVua.FormattingEnabled = true;
+            this.cbVua.Items.AddRange(new object[] {
+            "Nhỏ ",
+            "Vừa",
+            "Lớn"});
+            this.cbVua.Location = new System.Drawing.Point(158, 144);
+            this.cbVua.Name = "cbVua";
+            this.cbVua.Size = new System.Drawing.Size(100, 26);
+            this.cbVua.TabIndex = 25;
+            // 
+            // cbNho
+            // 
+            this.cbNho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbNho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbNho.FormattingEnabled = true;
+            this.cbNho.Items.AddRange(new object[] {
+            "Nhỏ ",
+            "Vừa",
+            "Lớn"});
+            this.cbNho.Location = new System.Drawing.Point(158, 109);
+            this.cbNho.Name = "cbNho";
+            this.cbNho.Size = new System.Drawing.Size(100, 26);
+            this.cbNho.TabIndex = 24;
+            // 
+            // cbDV
+            // 
+            this.cbDV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbDV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbDV.FormattingEnabled = true;
+            this.cbDV.Items.AddRange(new object[] {
+            "Nhỏ ",
+            "Vừa",
+            "Lớn"});
+            this.cbDV.Location = new System.Drawing.Point(158, 336);
+            this.cbDV.Name = "cbDV";
+            this.cbDV.Size = new System.Drawing.Size(100, 26);
+            this.cbDV.TabIndex = 23;
+            // 
+            // cbNuoc
+            // 
+            this.cbNuoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbNuoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbNuoc.FormattingEnabled = true;
+            this.cbNuoc.Items.AddRange(new object[] {
+            "Nhỏ ",
+            "Vừa",
+            "Lớn"});
+            this.cbNuoc.Location = new System.Drawing.Point(158, 300);
+            this.cbNuoc.Name = "cbNuoc";
+            this.cbNuoc.Size = new System.Drawing.Size(100, 26);
+            this.cbNuoc.TabIndex = 22;
+            // 
+            // cbDien
+            // 
+            this.cbDien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbDien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbDien.FormattingEnabled = true;
+            this.cbDien.Items.AddRange(new object[] {
+            "Nhỏ ",
+            "Vừa",
+            "Lớn"});
+            this.cbDien.Location = new System.Drawing.Point(158, 265);
+            this.cbDien.Name = "cbDien";
+            this.cbDien.Size = new System.Drawing.Size(100, 26);
+            this.cbDien.TabIndex = 21;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(274, 301);
+            this.label10.Location = new System.Drawing.Point(274, 303);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 20);
             this.label10.TabIndex = 20;
@@ -103,7 +187,7 @@ namespace QLNhaTro
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(274, 337);
+            this.label11.Location = new System.Drawing.Point(274, 339);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 20);
             this.label11.TabIndex = 19;
@@ -118,34 +202,10 @@ namespace QLNhaTro
             this.label12.TabIndex = 18;
             this.label12.Text = "đ/kWh";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(158, 334);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 17;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(158, 298);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
-            this.textBox2.TabIndex = 16;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(158, 265);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(100, 26);
-            this.textBox3.TabIndex = 15;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(28, 301);
+            this.label13.Location = new System.Drawing.Point(28, 303);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(81, 20);
             this.label13.TabIndex = 14;
@@ -154,7 +214,7 @@ namespace QLNhaTro
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(28, 337);
+            this.label14.Location = new System.Drawing.Point(28, 339);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(96, 20);
             this.label14.TabIndex = 13;
@@ -195,30 +255,6 @@ namespace QLNhaTro
             this.label7.Size = new System.Drawing.Size(45, 20);
             this.label7.TabIndex = 9;
             this.label7.Text = "VND";
-            // 
-            // txtLon
-            // 
-            this.txtLon.Location = new System.Drawing.Point(158, 178);
-            this.txtLon.Name = "txtLon";
-            this.txtLon.ReadOnly = true;
-            this.txtLon.Size = new System.Drawing.Size(100, 26);
-            this.txtLon.TabIndex = 8;
-            // 
-            // txtVua
-            // 
-            this.txtVua.Location = new System.Drawing.Point(158, 142);
-            this.txtVua.Name = "txtVua";
-            this.txtVua.ReadOnly = true;
-            this.txtVua.Size = new System.Drawing.Size(100, 26);
-            this.txtVua.TabIndex = 7;
-            // 
-            // txtNho
-            // 
-            this.txtNho.Location = new System.Drawing.Point(158, 109);
-            this.txtNho.Name = "txtNho";
-            this.txtNho.ReadOnly = true;
-            this.txtNho.Size = new System.Drawing.Size(100, 26);
-            this.txtNho.TabIndex = 6;
             // 
             // label6
             // 
@@ -302,18 +338,14 @@ namespace QLNhaTro
             this.label17.TabIndex = 2;
             this.label17.Text = "Loại phòng: ";
             // 
-            // comboBox1
+            // cbLoai
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Nhỏ ",
-            "Vừa",
-            "Lớn"});
-            this.comboBox1.Location = new System.Drawing.Point(117, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 3;
+            this.cbLoai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbLoai.FormattingEnabled = true;
+            this.cbLoai.Location = new System.Drawing.Point(117, 4);
+            this.cbLoai.Name = "cbLoai";
+            this.cbLoai.Size = new System.Drawing.Size(121, 28);
+            this.cbLoai.TabIndex = 3;
             // 
             // dataGridView1
             // 
@@ -330,7 +362,7 @@ namespace QLNhaTro
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.label17);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cbLoai);
             this.panel2.Location = new System.Drawing.Point(647, 65);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(242, 37);
@@ -350,6 +382,7 @@ namespace QLNhaTro
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmTrangChu";
             this.Text = "frmTrangChu";
+            this.Load += new System.EventHandler(this.frmTrangChu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -369,25 +402,25 @@ namespace QLNhaTro
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtLon;
-        private System.Windows.Forms.TextBox txtVua;
-        private System.Windows.Forms.TextBox txtNho;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbLoai;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox cbDien;
+        private System.Windows.Forms.ComboBox cbDV;
+        private System.Windows.Forms.ComboBox cbNuoc;
+        private System.Windows.Forms.ComboBox cbLon;
+        private System.Windows.Forms.ComboBox cbVua;
+        private System.Windows.Forms.ComboBox cbNho;
     }
 }

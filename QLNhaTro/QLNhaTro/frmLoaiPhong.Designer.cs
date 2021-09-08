@@ -64,6 +64,7 @@ namespace QLNhaTro
             this.dgvLoai.RowTemplate.Height = 24;
             this.dgvLoai.Size = new System.Drawing.Size(892, 237);
             this.dgvLoai.TabIndex = 1;
+            this.dgvLoai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoai_CellClick);
             // 
             // label2
             // 
@@ -105,6 +106,7 @@ namespace QLNhaTro
             this.btThem.TabIndex = 6;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // btSua
             // 
@@ -114,6 +116,7 @@ namespace QLNhaTro
             this.btSua.TabIndex = 7;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = true;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btXoa
             // 
@@ -123,6 +126,7 @@ namespace QLNhaTro
             this.btXoa.TabIndex = 8;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // tbMa
             // 
@@ -164,6 +168,7 @@ namespace QLNhaTro
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLoaiPhong";
             this.Text = "frmLoaiPhong";
+            this.Load += new System.EventHandler(this.frmLoaiPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoai)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

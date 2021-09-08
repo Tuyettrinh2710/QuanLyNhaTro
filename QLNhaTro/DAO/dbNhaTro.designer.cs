@@ -166,6 +166,34 @@ namespace DAO
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, ten, giaTien);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayDSLoaiPhong")]
+		public ISingleResult<LayDSLoaiPhongResult> LayDSLoaiPhong()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<LayDSLoaiPhongResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ThemLP")]
+		public int ThemLP([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ten", DbType="NVarChar(10)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DienTich", DbType="Int")] System.Nullable<int> dienTich)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ten, dienTich);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SuaLP")]
+		public int SuaLP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ten", DbType="NVarChar(10)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DienTich", DbType="Int")] System.Nullable<int> dienTich)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, ten, dienTich);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XoaLP")]
+		public int XoaLP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HoaDon")]
@@ -2016,6 +2044,68 @@ namespace DAO
 				if ((this._GiaTien != value))
 				{
 					this._GiaTien = value;
+				}
+			}
+		}
+	}
+	
+	public partial class LayDSLoaiPhongResult
+	{
+		
+		private int _ID;
+		
+		private string _TenLP;
+		
+		private System.Nullable<int> _DienTich;
+		
+		public LayDSLoaiPhongResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenLP", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string TenLP
+		{
+			get
+			{
+				return this._TenLP;
+			}
+			set
+			{
+				if ((this._TenLP != value))
+				{
+					this._TenLP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DienTich", DbType="Int")]
+		public System.Nullable<int> DienTich
+		{
+			get
+			{
+				return this._DienTich;
+			}
+			set
+			{
+				if ((this._DienTich != value))
+				{
+					this._DienTich = value;
 				}
 			}
 		}

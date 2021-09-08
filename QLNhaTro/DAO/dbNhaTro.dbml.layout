@@ -44,49 +44,49 @@
         <elementListCompartment Id="451bbc7b-6601-47e4-949b-8c93dbd03dfb" absoluteBounds="8.765, 3.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8 : 3.15625); (11.75 : 3.15625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8 : 3.15625); (11.75 : 3.15625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbNhaTroDataContext/KhachHang/KhachHang_HoaDon" />
       <nodes>
         <classShapeMoniker Id="ad35d9d4-81f3-492c-8b99-c23ca0ae479d" />
         <classShapeMoniker Id="3b32c988-4f2b-4431-bd18-8b1fc850145b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.25 : 5.2131982421875); (4.25 : 5.6723046875); (9.66666666666667 : 5.6723046875 : JumpStart); (9.83333333333333 : 5.6723046875 : JumpEnd); (11.75 : 5.6723046875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.25 : 5.2131982421875); (4.25 : 5.6723046875); (11.75 : 5.6723046875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbNhaTroDataContext/Phong/Phong_HoaDon" />
       <nodes>
         <classShapeMoniker Id="1d7e92cb-173a-4b44-a141-d1bfac75f3cc" />
         <classShapeMoniker Id="3b32c988-4f2b-4431-bd18-8b1fc850145b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.25 : 4.23159912109375); (5.66666666666667 : 4.23159912109375 : JumpStart); (5.83333333333333 : 4.23159912109375 : JumpEnd); (6 : 4.23159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.25 : 4.23159912109375); (5.66666666666667 : 4.23159912109375 : JumpStart); (5.83333333333333 : 4.23159912109375 : JumpEnd); (6 : 4.23159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbNhaTroDataContext/Phong/Phong_KhachHang" />
       <nodes>
         <classShapeMoniker Id="1d7e92cb-173a-4b44-a141-d1bfac75f3cc" />
         <classShapeMoniker Id="ad35d9d4-81f3-492c-8b99-c23ca0ae479d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.5 : 4.19314697265625); (3.25 : 4.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.5 : 4.19314697265625); (3.25 : 4.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbNhaTroDataContext/LoaiPhong/LoaiPhong_Phong" />
       <nodes>
         <classShapeMoniker Id="80364f9e-9ce4-4c3b-8f7e-b99ed52d360f" />
         <classShapeMoniker Id="1d7e92cb-173a-4b44-a141-d1bfac75f3cc" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(9.75 : 5.14589680989583); (9.75 : 8.26044840494792); (11.5 : 8.26044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.75 : 5.14589680989583); (9.75 : 8.26044840494792); (11.5 : 8.26044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbNhaTroDataContext/ThuePhong/ThuePhong_TraPhong" />
       <nodes>
         <classShapeMoniker Id="8adebca8-ce78-41aa-99e5-766eef1c65a0" />
         <classShapeMoniker Id="33c9b31c-6dcb-4ac8-9ab7-2692228e1dd4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8 : 4.26044840494792); (8.29166666666667 : 4.26044840494792 : JumpStart); (8.45833333333333 : 4.26044840494792 : JumpEnd); (8.75 : 4.26044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8 : 4.26044840494792); (8.75 : 4.26044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbNhaTroDataContext/KhachHang/KhachHang_ThuePhong" />
       <nodes>
         <classShapeMoniker Id="ad35d9d4-81f3-492c-8b99-c23ca0ae479d" />
         <classShapeMoniker Id="8adebca8-ce78-41aa-99e5-766eef1c65a0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.25 : 3.25); (4.25 : 3); (5.75 : 3); (5.75 : 5.47280110677083); (8.375 : 5.47280110677083); (8.375 : 3.78647220247396); (8.75 : 3.78647220247396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.25 : 3.25); (4.25 : 3); (5.75 : 3); (5.75 : 5.47280110677083); (8.375 : 5.47280110677083); (8.375 : 3.78647220247396); (8.75 : 3.78647220247396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbNhaTroDataContext/Phong/Phong_ThuePhong" />
       <nodes>
         <classShapeMoniker Id="1d7e92cb-173a-4b44-a141-d1bfac75f3cc" />

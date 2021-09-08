@@ -31,12 +31,28 @@ namespace DAO
 
         public void Them(Phi p)
         {
-            var phi = db.ThemPhi(p.TenPhi, p.GiaTien);
+            try
+            {
+                var phi = db.ThemPhi(p.TenPhi, p.GiaTien);
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procedure");
+            }
         }
 
         public void Xoa(int id)
         {
-            var phi = db.XoaPhi(id);
+            try
+            {
+                var phi = db.XoaPhi(id);
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procedure");
+            }
         }
 
         public bool Sua(Phi p)
@@ -52,5 +68,18 @@ namespace DAO
             }
         }
 
+        public dynamic LayGia(int id)
+        {
+            try
+            {
+                dynamic gia = db.Phis.Where(s => s.ID == id);
+                return gia;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được dữ liệu");
+            }
+        }
     }
 }
