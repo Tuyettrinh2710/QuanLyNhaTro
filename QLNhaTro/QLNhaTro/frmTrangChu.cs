@@ -41,8 +41,7 @@ namespace QLNhaTro
             string idLoai = cbLoai.SelectedValue.ToString();
             int id;
             bool kq = int.TryParse(idLoai, out id);
-            if (kq)
-                busPhong.LayPhongTrong(lvPhong, id);
+            busPhong.LayPhongTrong(lvPhong, id);
         }
     }
 }
