@@ -29,7 +29,7 @@ namespace QLNhaTro
         {
             tbMa.Text = "";
             tbTen.Text = "";
-            tbDienTich.Text = "";
+            tbGia.Text = "";
         }
 
         void frmLoad()
@@ -42,14 +42,14 @@ namespace QLNhaTro
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            busLoai.ThemLoaiPhong(tbTen.Text, int.Parse(tbDienTich.Text));
+            busLoai.ThemLoaiPhong(tbTen.Text, double.Parse(tbGia.Text));
             frmLoad();
             loadText();
         }
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            busLoai.SuaLoaiPhong(int.Parse(tbMa.Text), tbTen.Text, int.Parse(tbDienTich.Text));
+            busLoai.SuaLoaiPhong(int.Parse(tbMa.Text), tbTen.Text, double.Parse(tbGia.Text));
             frmLoad();
             loadText();
         }
@@ -57,7 +57,7 @@ namespace QLNhaTro
         private void btXoa_Click(object sender, EventArgs e)
         {
             busLoai.XoaLoaiPhong(int.Parse(tbMa.Text));
-           frmLoad();
+            frmLoad();
             loadText();
         }
 
@@ -67,7 +67,7 @@ namespace QLNhaTro
             {
                 tbMa.Text = dgvLoai.Rows[e.RowIndex].Cells[0].Value.ToString();
                 tbTen.Text = dgvLoai.Rows[e.RowIndex].Cells[1].Value.ToString();
-                tbDienTich.Text = dgvLoai.Rows[e.RowIndex].Cells[2].Value.ToString();
+                tbGia.Text = dgvLoai.Rows[e.RowIndex].Cells[2].Value.ToString();
             }
         }
     }

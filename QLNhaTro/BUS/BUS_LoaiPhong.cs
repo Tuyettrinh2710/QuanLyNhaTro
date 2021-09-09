@@ -21,29 +21,29 @@ namespace BUS
             dgv.DataSource = da.LayDSLoaiPhong();
         }
 
-        public void ThemLoaiPhong(string ten, int dienTich)
+        public void ThemLoaiPhong(string ten, double gia)
         {
             LoaiPhong lp = new LoaiPhong();
             lp.TenLP = ten;
-            lp.DienTich = dienTich;
+            lp.GiaTien = (decimal?)gia;
             if (da.ThemLoaiPhong(lp) == true)
             {
-                string s = string.Format("Thêm loại phòng có tên {0} diện tich {1} thành công", ten, dienTich);
+                string s = string.Format("Thêm loại phòng có tên {0} thành công", ten);
                 MessageBox.Show(s);
             }  
             else
             {
-                string s = string.Format("Thêm loại phòng có tên {0} diện tich {1} thất bại", ten, dienTich);
+                string s = string.Format("Thêm loại phòng có tên {0} thất bại", ten);
                 MessageBox.Show(s);
             }    
         }
 
-        public void SuaLoaiPhong(int id, string ten, int dienTich)
+        public void SuaLoaiPhong(int id, string ten, double gia)
         {
             LoaiPhong lp = new LoaiPhong();
             lp.ID = id;
             lp.TenLP = ten;
-            lp.DienTich = dienTich;
+            lp.GiaTien = (decimal?)gia;
             if (da.SuaLoaiPhong(lp) == true)
             {
                 string s = string.Format("Sửa loại phòng có id {0} thành công", id);
@@ -74,6 +74,13 @@ namespace BUS
         {
             cb.DataSource = da.LayDSLoaiPhong();
             cb.DisplayMember = "TenLP";
+            cb.ValueMember = "ID";
+        }
+
+        public void LayGiaPhong(ComboBox cb, int id)
+        {
+            cb.DataSource = da.LayGiaPhong(id);
+            cb.DisplayMember = "GiaTien";
             cb.ValueMember = "ID";
         }
     }

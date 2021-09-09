@@ -29,6 +29,8 @@ namespace QLNhaTro
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrangChu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbLon = new System.Windows.Forms.ComboBox();
             this.cbVua = new System.Windows.Forms.ComboBox();
@@ -54,10 +56,10 @@ namespace QLNhaTro
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.cbLoai = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lvPhong = new System.Windows.Forms.ListView();
+            this.imgIcon = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,6 +97,7 @@ namespace QLNhaTro
             // 
             this.cbLon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbLon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbLon.Enabled = false;
             this.cbLon.FormattingEnabled = true;
             this.cbLon.Items.AddRange(new object[] {
             "Nhỏ ",
@@ -109,6 +112,7 @@ namespace QLNhaTro
             // 
             this.cbVua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbVua.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbVua.Enabled = false;
             this.cbVua.FormattingEnabled = true;
             this.cbVua.Items.AddRange(new object[] {
             "Nhỏ ",
@@ -123,6 +127,7 @@ namespace QLNhaTro
             // 
             this.cbNho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbNho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbNho.Enabled = false;
             this.cbNho.FormattingEnabled = true;
             this.cbNho.Items.AddRange(new object[] {
             "Nhỏ ",
@@ -137,6 +142,7 @@ namespace QLNhaTro
             // 
             this.cbDV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbDV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbDV.Enabled = false;
             this.cbDV.FormattingEnabled = true;
             this.cbDV.Items.AddRange(new object[] {
             "Nhỏ ",
@@ -151,6 +157,7 @@ namespace QLNhaTro
             // 
             this.cbNuoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbNuoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbNuoc.Enabled = false;
             this.cbNuoc.FormattingEnabled = true;
             this.cbNuoc.Items.AddRange(new object[] {
             "Nhỏ ",
@@ -165,6 +172,7 @@ namespace QLNhaTro
             // 
             this.cbDien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbDien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbDien.Enabled = false;
             this.cbDien.FormattingEnabled = true;
             this.cbDien.Items.AddRange(new object[] {
             "Nhỏ ",
@@ -341,22 +349,13 @@ namespace QLNhaTro
             // cbLoai
             // 
             this.cbLoai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLoai.FormattingEnabled = true;
             this.cbLoai.Location = new System.Drawing.Point(117, 4);
             this.cbLoai.Name = "cbLoai";
             this.cbLoai.Size = new System.Drawing.Size(121, 28);
             this.cbLoai.TabIndex = 3;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(322, 130);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(570, 298);
-            this.dataGridView1.TabIndex = 4;
+            this.cbLoai.SelectedValueChanged += new System.EventHandler(this.cbLoai_SelectedValueChanged);
             // 
             // panel2
             // 
@@ -368,14 +367,31 @@ namespace QLNhaTro
             this.panel2.Size = new System.Drawing.Size(242, 37);
             this.panel2.TabIndex = 5;
             // 
+            // lvPhong
+            // 
+            this.lvPhong.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lvPhong.HideSelection = false;
+            this.lvPhong.LargeImageList = this.imgIcon;
+            this.lvPhong.Location = new System.Drawing.Point(322, 128);
+            this.lvPhong.Name = "lvPhong";
+            this.lvPhong.Size = new System.Drawing.Size(570, 300);
+            this.lvPhong.TabIndex = 6;
+            this.lvPhong.UseCompatibleStateImageBehavior = false;
+            // 
+            // imgIcon
+            // 
+            this.imgIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgIcon.ImageStream")));
+            this.imgIcon.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgIcon.Images.SetKeyName(0, "house.png");
+            // 
             // frmTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(892, 428);
+            this.Controls.Add(this.lvPhong);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -385,7 +401,6 @@ namespace QLNhaTro
             this.Load += new System.EventHandler(this.frmTrangChu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -414,7 +429,6 @@ namespace QLNhaTro
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cbLoai;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cbDien;
         private System.Windows.Forms.ComboBox cbDV;
@@ -422,5 +436,7 @@ namespace QLNhaTro
         private System.Windows.Forms.ComboBox cbLon;
         private System.Windows.Forms.ComboBox cbVua;
         private System.Windows.Forms.ComboBox cbNho;
+        private System.Windows.Forms.ListView lvPhong;
+        private System.Windows.Forms.ImageList imgIcon;
     }
 }

@@ -45,6 +45,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DAO_LoaiPhong.cs" />
     <Compile Include="DAO_Phi.cs" />
+    <Compile Include="DAO_Phong.cs" />
     <Compile Include="dbNhaTro.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

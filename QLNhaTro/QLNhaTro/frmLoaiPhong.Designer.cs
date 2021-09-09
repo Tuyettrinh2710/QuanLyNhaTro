@@ -33,7 +33,7 @@ namespace QLNhaTro
             this.dgvLoai = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.tbTen = new System.Windows.Forms.TextBox();
-            this.tbDienTich = new System.Windows.Forms.TextBox();
+            this.tbGia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btThem = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
@@ -82,21 +82,21 @@ namespace QLNhaTro
             this.tbTen.Size = new System.Drawing.Size(233, 26);
             this.tbTen.TabIndex = 3;
             // 
-            // tbDienTich
+            // tbGia
             // 
-            this.tbDienTich.Location = new System.Drawing.Point(761, 79);
-            this.tbDienTich.Name = "tbDienTich";
-            this.tbDienTich.Size = new System.Drawing.Size(101, 26);
-            this.tbDienTich.TabIndex = 5;
+            this.tbGia.Location = new System.Drawing.Point(761, 79);
+            this.tbGia.Name = "tbGia";
+            this.tbGia.Size = new System.Drawing.Size(101, 26);
+            this.tbGia.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(674, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 20);
+            this.label3.Size = new System.Drawing.Size(72, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Diện tích:";
+            this.label3.Text = "Giá tiền:";
             // 
             // btThem
             // 
@@ -130,7 +130,8 @@ namespace QLNhaTro
             // 
             // tbMa
             // 
-            this.tbMa.BackColor = System.Drawing.Color.LightGray;
+            this.tbMa.BackColor = System.Drawing.Color.White;
+            this.tbMa.Enabled = false;
             this.tbMa.Location = new System.Drawing.Point(122, 79);
             this.tbMa.Name = "tbMa";
             this.tbMa.ReadOnly = true;
@@ -157,7 +158,7 @@ namespace QLNhaTro
             this.Controls.Add(this.btXoa);
             this.Controls.Add(this.btSua);
             this.Controls.Add(this.btThem);
-            this.Controls.Add(this.tbDienTich);
+            this.Controls.Add(this.tbGia);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbTen);
             this.Controls.Add(this.label2);
@@ -181,7 +182,7 @@ namespace QLNhaTro
         private System.Windows.Forms.DataGridView dgvLoai;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbTen;
-        private System.Windows.Forms.TextBox tbDienTich;
+        private System.Windows.Forms.TextBox tbGia;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.Button btSua;

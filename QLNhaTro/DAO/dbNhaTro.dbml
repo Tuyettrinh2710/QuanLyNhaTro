@@ -44,33 +44,11 @@
       <Association Name="Phong_KhachHang" Member="Phong" ThisKey="MaPhong" OtherKey="ID" Type="Phong" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.LoaiPhong" Member="LoaiPhongs">
-    <Type Name="LoaiPhong">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenLP" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="DienTich" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="LoaiPhong_Phong" Member="Phongs" ThisKey="ID" OtherKey="IDLoaiPhong" Type="Phong" />
-    </Type>
-  </Table>
   <Table Name="dbo.Phi" Member="Phis">
     <Type Name="Phi">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenPhi" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="GiaTien" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Phong" Member="Phongs">
-    <Type Name="Phong">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="IDLoaiPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SoNguoiToiDa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SoNguoiHienTai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="GiaTien" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Association Name="Phong_HoaDon" Member="HoaDons" ThisKey="ID" OtherKey="ID_Phong" Type="HoaDon" />
-      <Association Name="Phong_KhachHang" Member="KhachHangs" ThisKey="ID" OtherKey="MaPhong" Type="KhachHang" />
-      <Association Name="Phong_ThuePhong" Member="ThuePhongs" ThisKey="ID" OtherKey="ID_Phong" Type="ThuePhong" />
-      <Association Name="LoaiPhong_Phong" Member="LoaiPhong" ThisKey="IDLoaiPhong" OtherKey="ID" Type="LoaiPhong" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ThuePhong" Member="ThuePhongs">
@@ -83,6 +61,27 @@
       <Association Name="ThuePhong_TraPhong" Member="TraPhong" ThisKey="ID,ID_KH" OtherKey="ID_Thue,ID_KH" Type="TraPhong" Cardinality="One" />
       <Association Name="KhachHang_ThuePhong" Member="KhachHang" ThisKey="ID_KH" OtherKey="ID" Type="KhachHang" IsForeignKey="true" />
       <Association Name="Phong_ThuePhong" Member="Phong" ThisKey="ID_Phong" OtherKey="ID" Type="Phong" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiPhong" Member="LoaiPhongs">
+    <Type Name="LoaiPhong">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenLP" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="GiaTien" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="LoaiPhong_Phong" Member="Phongs" ThisKey="ID" OtherKey="IDLoaiPhong" Type="Phong" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Phong" Member="Phongs">
+    <Type Name="Phong">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IDLoaiPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoNguoiToiDa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoNguoiHienTai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Phong_HoaDon" Member="HoaDons" ThisKey="ID" OtherKey="ID_Phong" Type="HoaDon" />
+      <Association Name="Phong_KhachHang" Member="KhachHangs" ThisKey="ID" OtherKey="MaPhong" Type="KhachHang" />
+      <Association Name="Phong_ThuePhong" Member="ThuePhongs" ThisKey="ID" OtherKey="ID_Phong" Type="ThuePhong" />
+      <Association Name="LoaiPhong_Phong" Member="LoaiPhong" ThisKey="IDLoaiPhong" OtherKey="ID" Type="LoaiPhong" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.ThemPhi" Method="ThemPhi">
@@ -107,26 +106,64 @@
     <Parameter Name="GiaTien" Parameter="giaTien" Type="System.Decimal" DbType="Decimal(18,0)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.LayDSLoaiPhong" Method="LayDSLoaiPhong">
-    <ElementType Name="LayDSLoaiPhongResult">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenLP" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="DienTich" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.ThemLP" Method="ThemLP">
     <Parameter Name="Ten" Parameter="ten" Type="System.String" DbType="NVarChar(10)" />
-    <Parameter Name="DienTich" Parameter="dienTich" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Gia" Parameter="gia" Type="System.Decimal" DbType="Decimal(18,0)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.SuaLP" Method="SuaLP">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <Parameter Name="Ten" Parameter="ten" Type="System.String" DbType="NVarChar(10)" />
-    <Parameter Name="DienTich" Parameter="dienTich" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Gia" Parameter="gia" Type="System.Decimal" DbType="Decimal(18,0)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.XoaLP" Method="XoaLP">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.LayDSLoaiPhong" Method="LayDSLoaiPhong">
+    <ElementType Name="LayDSLoaiPhongResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenLP" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="GiaTien" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ThemPhong" Method="ThemPhong">
+    <Parameter Name="Ten" Parameter="ten" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Loai" Parameter="loai" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ToiDa" Parameter="toiDa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HienTai" Parameter="hienTai" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SuaPhong" Method="SuaPhong">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Ten" Parameter="ten" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Loai" Parameter="loai" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ToiDa" Parameter="toiDa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HienTai" Parameter="hienTai" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.XemDSPhong" Method="XemDSPhong">
+    <ElementType Name="XemDSPhongResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TenLP" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SoNguoiToiDa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoNguoiHienTai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.XoaPhong" Method="XoaPhong">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.LayPhongTrongTheoLoai" Method="LayPhongTrongTheoLoai">
+    <Parameter Name="idLoai" Type="System.Int32" DbType="Int" />
+    <ElementType Name="LayPhongTrongTheoLoaiResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IDLoaiPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoNguoiToiDa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoNguoiHienTai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
 </Database>

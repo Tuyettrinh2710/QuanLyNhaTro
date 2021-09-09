@@ -35,17 +35,15 @@ namespace QLNhaTro
             this.tbMa = new System.Windows.Forms.TextBox();
             this.tbPhong = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tbLoai = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbHienTai = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tbToiDa = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.tbGia = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.btThem = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
+            this.cbLoai = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +68,7 @@ namespace QLNhaTro
             this.dgvPhong.RowTemplate.Height = 24;
             this.dgvPhong.Size = new System.Drawing.Size(892, 183);
             this.dgvPhong.TabIndex = 1;
+            this.dgvPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_CellClick);
             // 
             // label2
             // 
@@ -82,7 +81,8 @@ namespace QLNhaTro
             // 
             // tbMa
             // 
-            this.tbMa.BackColor = System.Drawing.Color.LightGray;
+            this.tbMa.BackColor = System.Drawing.Color.White;
+            this.tbMa.Enabled = false;
             this.tbMa.Location = new System.Drawing.Point(183, 69);
             this.tbMa.Name = "tbMa";
             this.tbMa.Size = new System.Drawing.Size(215, 26);
@@ -104,13 +104,6 @@ namespace QLNhaTro
             this.label3.TabIndex = 4;
             this.label3.Text = "Tên phòng:";
             // 
-            // tbLoai
-            // 
-            this.tbLoai.Location = new System.Drawing.Point(183, 139);
-            this.tbLoai.Name = "tbLoai";
-            this.tbLoai.Size = new System.Drawing.Size(215, 26);
-            this.tbLoai.TabIndex = 7;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -122,8 +115,9 @@ namespace QLNhaTro
             // 
             // tbHienTai
             // 
-            this.tbHienTai.BackColor = System.Drawing.Color.LightGray;
-            this.tbHienTai.Location = new System.Drawing.Point(624, 139);
+            this.tbHienTai.BackColor = System.Drawing.Color.White;
+            this.tbHienTai.Enabled = false;
+            this.tbHienTai.Location = new System.Drawing.Point(624, 104);
             this.tbHienTai.Name = "tbHienTai";
             this.tbHienTai.ReadOnly = true;
             this.tbHienTai.Size = new System.Drawing.Size(215, 26);
@@ -133,7 +127,7 @@ namespace QLNhaTro
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(489, 142);
+            this.label7.Location = new System.Drawing.Point(489, 107);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 20);
             this.label7.TabIndex = 14;
@@ -141,7 +135,7 @@ namespace QLNhaTro
             // 
             // tbToiDa
             // 
-            this.tbToiDa.Location = new System.Drawing.Point(624, 104);
+            this.tbToiDa.Location = new System.Drawing.Point(624, 69);
             this.tbToiDa.Name = "tbToiDa";
             this.tbToiDa.Size = new System.Drawing.Size(215, 26);
             this.tbToiDa.TabIndex = 13;
@@ -149,27 +143,11 @@ namespace QLNhaTro
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(489, 107);
+            this.label8.Location = new System.Drawing.Point(489, 72);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(125, 20);
             this.label8.TabIndex = 12;
             this.label8.Text = "Số người tối đa:";
-            // 
-            // tbGia
-            // 
-            this.tbGia.Location = new System.Drawing.Point(624, 69);
-            this.tbGia.Name = "tbGia";
-            this.tbGia.Size = new System.Drawing.Size(215, 26);
-            this.tbGia.TabIndex = 11;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(489, 72);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 20);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Giá phòng:";
             // 
             // btThem
             // 
@@ -179,6 +157,7 @@ namespace QLNhaTro
             this.btThem.TabIndex = 16;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // btSua
             // 
@@ -188,6 +167,7 @@ namespace QLNhaTro
             this.btSua.TabIndex = 17;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = true;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btXoa
             // 
@@ -197,6 +177,16 @@ namespace QLNhaTro
             this.btXoa.TabIndex = 18;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
+            // 
+            // cbLoai
+            // 
+            this.cbLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLoai.FormattingEnabled = true;
+            this.cbLoai.Location = new System.Drawing.Point(183, 139);
+            this.cbLoai.Name = "cbLoai";
+            this.cbLoai.Size = new System.Drawing.Size(215, 28);
+            this.cbLoai.TabIndex = 19;
             // 
             // frmPhong
             // 
@@ -204,6 +194,7 @@ namespace QLNhaTro
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(892, 428);
+            this.Controls.Add(this.cbLoai);
             this.Controls.Add(this.btXoa);
             this.Controls.Add(this.btSua);
             this.Controls.Add(this.btThem);
@@ -211,9 +202,6 @@ namespace QLNhaTro
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tbToiDa);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.tbGia);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.tbLoai);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbPhong);
             this.Controls.Add(this.label3);
@@ -224,9 +212,10 @@ namespace QLNhaTro
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPhong";
             this.Text = "frmPhong";
+            this.Load += new System.EventHandler(this.frmPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -241,16 +230,14 @@ namespace QLNhaTro
         private System.Windows.Forms.TextBox tbMa;
         private System.Windows.Forms.TextBox tbPhong;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbLoai;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbHienTai;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbToiDa;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tbGia;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btXoa;
+        private System.Windows.Forms.ComboBox cbLoai;
     }
 }

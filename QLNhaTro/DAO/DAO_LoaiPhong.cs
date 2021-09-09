@@ -24,7 +24,7 @@ namespace DAO
         {
             try
             {
-                var loaiPhong = db.ThemLP(lp.TenLP, lp.DienTich);
+                var loaiPhong = db.ThemLP(lp.TenLP, lp.GiaTien);
                 return true;
             }
             catch (Exception)
@@ -37,7 +37,7 @@ namespace DAO
         {
             try
             {
-                var loaiPhong = db.SuaLP(lp.ID, lp.TenLP, lp.DienTich);
+                var loaiPhong = db.SuaLP(lp.ID, lp.TenLP, lp.GiaTien);
                 return true;
             }
             catch (Exception)
@@ -56,6 +56,20 @@ namespace DAO
             catch (Exception)
             {
                 throw new Exception("Không lấy được stored procedure");
+            }
+        }
+
+        public dynamic LayGiaPhong(int id)
+        {
+            try
+            {
+                dynamic gia = db.LoaiPhongs.Where(s => s.ID == id);
+                return gia;
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }
