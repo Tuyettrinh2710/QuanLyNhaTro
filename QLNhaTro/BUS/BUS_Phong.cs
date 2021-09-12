@@ -74,12 +74,52 @@ namespace BUS
             }
         }
 
+        //lấy phòng trống theo id loại phòng
         public void LayPhongTrong(ListView lv, int id)
         {
             foreach (Phong p in da.LayPhongTrongTheoLoai(id))
             {
                 lv.Items.Add(new ListViewItem { ImageIndex = 0, Text = p.TenPhong });
             }    
+        }
+
+        //Kiểm tra phòng có nằm trong bảng dữ liệu khách hàng 
+        public bool KiemTraPhong(int id)
+        {
+            if (da.KiemTraPhong(id) == true)
+                return true;
+            else
+                return false;
+        }
+
+        //lấy tên phòng hiển thị ra combobox
+        public void LayTenPhong(ComboBox cb)
+        {
+            cb.DataSource = da.LayDSPhong();
+            cb.DisplayMember = "TenPhong";
+            cb.ValueMember = "ID";
+        }
+
+        //Lấy số người còn thiếu trong phòng
+        public int LaySoNguoiConTrong(int id)
+        {
+            int soNguoi = da.LaySoNguoiTrongPhong(id);
+            return soNguoi;
+        }
+
+        // Update số người hiện tại trong phòng
+        public void UpdateSoNguoi(int id, int soNguoi)
+        {
+            if(da.UpdateSoNguoiHienTai(id, soNguoi))
+            {
+                string s = string.Format("Phòng có id {0} có số người hiện tại của phòng là {1}", id, soNguoi);
+                MessageBox.Show(s);
+            }
+            else
+            {
+                string s = string.Format("Update phòng có id {0} thất bại", id);
+                MessageBox.Show(s);
+            }
         }
     }
 }

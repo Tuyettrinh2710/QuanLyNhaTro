@@ -36,7 +36,6 @@ namespace QLNhaTro
             tbMa.Text = "";
             tbPhong.Text = "";
             tbToiDa.Text = "";
-            tbHienTai.Text = "";
             tbPhong.Focus();
         }
 
@@ -90,7 +89,19 @@ namespace QLNhaTro
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            busPhong.XoaPhong(int.Parse(tbMa.Text));
+            if (tbMa.Text == "")
+                MessageBox.Show("Nhập mã phòng!!!");
+            else
+            {
+                int id = int.Parse(tbMa.Text);
+                if (busPhong.KiemTraPhong(id))
+                {
+                    string s = string.Format("Phòng {0} nằm trong dữ liệu khách hàng không thể xóa", tbPhong.Text);
+                    MessageBox.Show(s);
+                }    
+                else
+                    busPhong.XoaPhong(id);
+            } 
             frmLoad();
             loadText();
         }

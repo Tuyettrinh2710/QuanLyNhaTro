@@ -82,7 +82,6 @@ namespace QLNhaTro
             // tbMa
             // 
             this.tbMa.BackColor = System.Drawing.Color.White;
-            this.tbMa.Enabled = false;
             this.tbMa.Location = new System.Drawing.Point(183, 69);
             this.tbMa.Name = "tbMa";
             this.tbMa.Size = new System.Drawing.Size(215, 26);

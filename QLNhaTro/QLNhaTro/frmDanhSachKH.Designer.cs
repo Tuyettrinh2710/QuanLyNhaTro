@@ -69,6 +69,7 @@ namespace QLNhaTro
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDanhSachKH";
             this.Text = "DanhSachKH";
+            this.Load += new System.EventHandler(this.frmDanhSachKH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhach)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

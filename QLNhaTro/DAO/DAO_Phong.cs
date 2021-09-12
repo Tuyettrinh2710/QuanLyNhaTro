@@ -69,19 +69,74 @@ namespace DAO
 
         public List<Phong> LayPhongTrongTheoLoai(int idLoai)
         {
-            var phong = db.LayPhongTrongTheoLoai(idLoai);
-            List<Phong> ds = new List<Phong>();
-            foreach (var p in phong)
+            try
             {
-                Phong ph = new Phong();
-                ph.ID = p.ID;
-                ph.TenPhong = p.TenPhong;
-                ph.IDLoaiPhong = p.IDLoaiPhong;
-                ph.SoNguoiToiDa = p.SoNguoiToiDa;
-                ph.SoNguoiHienTai = p.SoNguoiHienTai;
-                ds.Add(ph);
+                var phong = db.LayPhongTrongTheoLoai(idLoai);
+                List<Phong> ds = new List<Phong>();
+                foreach (var p in phong)
+                {
+                    Phong ph = new Phong();
+                    ph.ID = p.ID;
+                    ph.TenPhong = p.TenPhong;
+                    ph.IDLoaiPhong = p.IDLoaiPhong;
+                    ph.SoNguoiToiDa = p.SoNguoiToiDa;
+                    ph.SoNguoiHienTai = p.SoNguoiHienTai;
+                    ds.Add(ph);
+                }
+                return ds;
             }
-            return ds;
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
+
+        public bool KiemTraPhong(int id)
+        {
+            try
+            {
+                bool? kq = false;
+                var kt = db.KTPhongTonTai(id, ref kq);
+                return (bool)kq;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
+
+        public int LaySoNguoiTrongPhong(int id)
+        {
+            try
+            {
+                int? toiDa = 0, hienTai = 0;
+                var soNguoi = db.LaySoNguoiHTVaTD(id, ref toiDa, ref hienTai);
+                int soNguoiToiDa = (int)toiDa;
+                int soNguoiHienTai = (int)hienTai;
+                if ((soNguoiToiDa - soNguoiHienTai) > 0)
+                    return soNguoiHienTai;
+                else
+                    return -1;
+            }
+            catch
+            {
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
+
+        public bool UpdateSoNguoiHienTai(int id, int hienTai)
+        {
+            try
+            {
+                var phong = db.SuaSoNguoiHienTai(id, hienTai);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Không lấy được stored procedure");
+            }
         }
     }
 }
