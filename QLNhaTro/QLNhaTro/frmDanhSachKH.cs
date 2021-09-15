@@ -22,7 +22,7 @@ namespace QLNhaTro
 
         private void frmDanhSachKH_Load(object sender, EventArgs e)
         {
-            busKH.LayDSKhachHang(dgvKhach);
+            busKH.LayDSKhachHang(dgvKhach, "");
             dgvKhach.Columns[1].Width = (int)(0.2 * dgvKhach.Width);
             dgvKhach.Columns[5].Width = (int)(0.12 * dgvKhach.Width);
         }

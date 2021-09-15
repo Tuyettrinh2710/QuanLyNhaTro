@@ -16,9 +16,9 @@ namespace BUS
             da = new DAO_KhachHang();
         }
 
-        public void LayDSKhachHang(DataGridView dgv)
+        public void LayDSKhachHang(DataGridView dgv, string ten)
         {
-            dgv.DataSource = da.LayDSKhachHang();
+            dgv.DataSource = da.LayDSKhachHang(ten);
         }
 
         public void ThemKh(string id, string hoTen, string gioiTinh, DateTime ngaySinh, string sdt, string cmnd, string queQuan, int maPhong)
@@ -50,6 +50,28 @@ namespace BUS
             if (da.KiemTraIdKH(id))
                 return true;
             return false;
+        }
+
+        public void SuaKh(string id, string hoTen, string gioiTinh, DateTime ngaySinh, string sdt, string cmnd, string queQuan)
+        {
+            KhachHang k = new KhachHang();
+            k.ID = id;
+            k.HoTen = hoTen;
+            k.GioiTinh = gioiTinh;
+            k.NgaySinh = ngaySinh;
+            k.Sdt = sdt;
+            k.CMND = cmnd;
+            k.QueQuan = queQuan;
+            if (da.SuaKH(k) == true)
+            {
+                string s = string.Format("Sửa khách hàng có id {0} thành công", id);
+                MessageBox.Show(s);
+            }
+            else
+            {
+                string s = string.Format("Sửa khách hàng có id {0} thất bại", id);
+                MessageBox.Show(s);
+            }
         }
     }
 }

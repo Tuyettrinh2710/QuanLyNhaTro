@@ -14,11 +14,11 @@ namespace DAO
             db = new dbNhaTroDataContext();
         }
 
-        public dynamic LayDSKhachHang()
+        public dynamic LayDSKhachHang(string ten)
         {
             try
             {
-                dynamic ds = db.XemKH();
+                dynamic ds = db.TimKH(ten);
                 return ds;
             }
             catch (Exception)
@@ -49,6 +49,19 @@ namespace DAO
                 bool? kt = false;
                 var kq = db.KTIdKhachHangToiTai(id, ref kt);
                 return (bool)kt;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
+
+        public bool SuaKH(KhachHang k)
+        {
+            try
+            {
+                var khach = db.SuaKH(k.ID, k.HoTen, k.GioiTinh, k.NgaySinh, k.Sdt, k.CMND, k.QueQuan);
+                return true;
             }
             catch (Exception)
             {

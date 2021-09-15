@@ -67,7 +67,7 @@ namespace QLNhaTro
             {
                 tbMa.Text = dgvPhong.Rows[e.RowIndex].Cells[0].Value.ToString();
                 tbPhong.Text = dgvPhong.Rows[e.RowIndex].Cells[1].Value.ToString();
-                cbLoai.SelectedItem = dgvPhong.Rows[e.RowIndex].Cells[2].Value.ToString();
+                cbLoai.Text = dgvPhong.Rows[e.RowIndex].Cells[2].Value.ToString();
                 tbToiDa.Text = dgvPhong.Rows[e.RowIndex].Cells[3].Value.ToString();
                 tbHienTai.Text = dgvPhong.Rows[e.RowIndex].Cells[4].Value.ToString();
                 tbHienTai.Enabled = true;
@@ -77,14 +77,19 @@ namespace QLNhaTro
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(tbMa.Text);
-            string ten = tbPhong.Text;
-            string idLoai = cbLoai.SelectedValue.ToString();
-            int toiDa = int.Parse(tbToiDa.Text);
-            int hienTai = int.Parse(tbHienTai.Text);
-            busPhong.SuaPhong(id, ten, int.Parse(idLoai), toiDa, hienTai);
-            frmLoad();
-            loadText();
+            if (tbMa.Text != "")
+            {
+                int id = int.Parse(tbMa.Text);
+                string ten = tbPhong.Text;
+                string idLoai = cbLoai.SelectedValue.ToString();
+                int toiDa = int.Parse(tbToiDa.Text);
+                int hienTai = int.Parse(tbHienTai.Text);
+                busPhong.SuaPhong(id, ten, int.Parse(idLoai), toiDa, hienTai);
+                frmLoad();
+                loadText();
+            }
+            else
+                MessageBox.Show("Mã phòng rỗng. Sửa thất bại");
         }
 
         private void btXoa_Click(object sender, EventArgs e)

@@ -65,14 +65,14 @@
         <elementListCompartment Id="cc7ca758-0e78-4ca5-ae4b-7d49629c38b7" absoluteBounds="3.1399999999999997, 3.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.125 : 5.14589680989583); (4.125 : 5.6723046875); (11.75 : 5.6723046875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(4.125 : 5.14589680989583); (4.125 : 5.6723046875); (9.66666666666667 : 5.6723046875 : JumpStart); (9.83333333333333 : 5.6723046875 : JumpEnd); (11.75 : 5.6723046875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbNhaTroDataContext/Phong/Phong_HoaDon" />
       <nodes>
         <classShapeMoniker Id="0c273e35-fbf4-4d40-b910-34dc51a07e8f" />
         <classShapeMoniker Id="3b32c988-4f2b-4431-bd18-8b1fc850145b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.125 : 4.26044840494792); (5.66666666666667 : 4.26044840494792 : JumpStart); (5.83333333333333 : 4.26044840494792 : JumpEnd); (6 : 4.26044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.125 : 4.26044840494792); (6 : 4.26044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbNhaTroDataContext/Phong/Phong_KhachHang" />
       <nodes>
         <classShapeMoniker Id="0c273e35-fbf4-4d40-b910-34dc51a07e8f" />
