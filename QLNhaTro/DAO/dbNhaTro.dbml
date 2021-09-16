@@ -84,6 +84,13 @@
       <Association Name="LoaiPhong_Phong" Member="LoaiPhong" ThisKey="IDLoaiPhong" OtherKey="ID" Type="LoaiPhong" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.ThamSo" Member="ThamSos">
+    <Type Name="ThamSo">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GiaTri" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.ThemPhi" Method="ThemPhi">
     <Parameter Name="Ten" Parameter="ten" Type="System.String" DbType="NVarChar(10)" />
     <Parameter Name="GiaTien" Parameter="giaTien" Type="System.Decimal" DbType="Decimal(18,0)" />
@@ -231,6 +238,25 @@
     <Parameter Name="Sdt" Parameter="sdt" Type="System.String" DbType="NVarChar(10)" />
     <Parameter Name="CMND" Parameter="cMND" Type="System.String" DbType="NVarChar(12)" />
     <Parameter Name="QueQuan" Parameter="queQuan" Type="System.String" DbType="NVarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.LayMa" Method="LayMa">
+    <Parameter Name="id" Type="System.String" DbType="NVarChar(2)" />
+    <Parameter Name="giaTri" Type="System.String" DbType="NVarChar(8)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.KTLoaiTonTai" Method="KTLoaiTonTai">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="kq" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.KTKHTonTai" Method="KTKHTonTai">
+    <Parameter Name="id" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="kq" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.XoaKH" Method="XoaKH">
+    <Parameter Name="id" Type="System.String" DbType="NVarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

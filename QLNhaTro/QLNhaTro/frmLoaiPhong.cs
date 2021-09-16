@@ -56,9 +56,17 @@ namespace QLNhaTro
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            busLoai.XoaLoaiPhong(int.Parse(tbMa.Text));
-            frmLoad();
-            loadText();
+            if (busLoai.KiemTraLoaiPhong(int.Parse(tbMa.Text)))
+            {
+                string s = string.Format("Loại phòng có id {0} nằm trong bảng Phòng. Xóa thất bại", tbMa.Text);
+                MessageBox.Show(s);
+            }
+            else
+            {
+                busLoai.XoaLoaiPhong(int.Parse(tbMa.Text));
+                frmLoad();
+                loadText();
+            }    
         }
 
         private void dgvLoai_CellClick(object sender, DataGridViewCellEventArgs e)

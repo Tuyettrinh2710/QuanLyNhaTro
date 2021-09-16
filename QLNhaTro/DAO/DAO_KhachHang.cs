@@ -68,5 +68,33 @@ namespace DAO
                 throw new Exception("Không lấy được stored procedure");
             }
         }
+
+        public bool XoaKH(string id)
+        {
+            try
+            {
+                var khach = db.XoaKH(id);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
+
+        //kiểm tra khách hàng có trong bảng thuê phòng
+        public bool KiemTraKH(string id)
+        {
+            try
+            {
+                bool? kq = false;
+                var khach = db.KTKHTonTai(id, ref kq);
+                return (bool)kq;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
     }
 }

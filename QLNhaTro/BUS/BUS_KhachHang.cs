@@ -73,5 +73,27 @@ namespace BUS
                 MessageBox.Show(s);
             }
         }
+
+        public void XoaKH(string id)
+        {
+            if (da.XoaKH(id) == true)
+            {
+                string s = string.Format("Xóa khách hàng có id {0} thành công", id);
+                MessageBox.Show(s);
+            }
+            else
+            {
+                string s = string.Format("Xóa khách hàng có id {0} thất bại", id);
+                MessageBox.Show(s);
+            }
+        }
+
+        //Kiểm tra khách hàng có nằm trong bảng thuê phòng
+        public bool KiemTraKH(string id)
+        {
+            if (da.KiemTraKH(id))
+                return true;
+            return false;
+        }
     }
 }

@@ -83,5 +83,13 @@ namespace BUS
             cb.DisplayMember = "GiaTien";
             cb.ValueMember = "ID";
         }
+
+        //kiểm tra loại có nằm trong bảng phòng
+        public bool KiemTraLoaiPhong(int id)
+        {
+            if (da.KiemTraLP(id))
+                return true;
+            return false;
+        }
     }
 }

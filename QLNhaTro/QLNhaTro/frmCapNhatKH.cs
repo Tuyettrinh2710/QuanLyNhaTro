@@ -147,7 +147,7 @@ namespace QLNhaTro
             {
                 e.Cancel = true;
                 tbTen.Focus();
-                errorProvider1.SetError(tbTen, "Vui lòng không để tróng họ tên");
+                errorProvider1.SetError(tbTen, "Vui lòng không để trống họ tên");
             }
             else
             {
@@ -177,7 +177,7 @@ namespace QLNhaTro
             {
                 e.Cancel = true;
                 tbQueQuan.Focus();
-                errorProvider1.SetError(tbQueQuan, "Vui lòng không để tróng họ tên");
+                errorProvider1.SetError(tbQueQuan, "Vui lòng không để trống quê quán");
             }
             else
             {
@@ -193,7 +193,7 @@ namespace QLNhaTro
             {
                 e.Cancel = true;
                 dtpNgay.Focus();
-                errorProvider1.SetError(dtpNgay, "Vui lòng không để tróng họ tên");
+                errorProvider1.SetError(dtpNgay, "Khách thuê không đủ tuổi");
             }
             else
             {
@@ -208,13 +208,33 @@ namespace QLNhaTro
             {
                 e.Cancel = true;
                 tbSdt.Focus();
-                errorProvider1.SetError(tbSdt, "Vui lòng nhập đúng số CMND");
+                errorProvider1.SetError(tbSdt, "Vui lòng nhập đúng số số điện thoại");
             }
             else
             {
                 e.Cancel = false;
                 errorProvider1.SetError(tbSdt, null);
             }
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            if (tbMa.TextLength != 0)
+            {
+                if (busKH.KiemTraKH(tbMa.Text))
+                {
+                    string s = string.Format("Khách hàng có id {0} nằm trong bảng Thuê phòng. Xóa thất bại", tbMa.Text);
+                    MessageBox.Show(s);
+                }
+                else
+                {
+                    busKH.XoaKH(tbMa.Text);
+                    frmLoad();
+                    loadText();
+                }
+            }
+            else
+                MessageBox.Show("Mã khách thuê rỗng. Sửa thất bại");
         }
     }
 }

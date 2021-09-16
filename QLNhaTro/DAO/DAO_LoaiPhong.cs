@@ -69,7 +69,23 @@ namespace DAO
             catch (Exception)
             {
 
-                throw;
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
+
+        //kiểm tra loại phòng có trong phòng
+        public bool KiemTraLP(int id)
+        {
+            try
+            {
+                bool? kq = false;
+                var loai = db.KTLoaiTonTai(id, ref kq);
+                return (bool)kq;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procedure");
             }
         }
     }
