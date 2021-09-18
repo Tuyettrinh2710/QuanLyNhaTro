@@ -21,7 +21,7 @@ namespace BUS
             dgv.DataSource = da.LayDSKhachHang(ten);
         }
 
-        public void ThemKh(string id, string hoTen, string gioiTinh, DateTime ngaySinh, string sdt, string cmnd, string queQuan, int maPhong)
+        public bool ThemKh(string id, string hoTen, string gioiTinh, DateTime ngaySinh, string sdt, string cmnd, string queQuan)
         {
             KhachHang k = new KhachHang();
             k.ID = id;
@@ -31,17 +31,9 @@ namespace BUS
             k.Sdt = sdt;
             k.CMND = cmnd;
             k.QueQuan = queQuan;
-            k.MaPhong = maPhong;
-            if (da.ThemKH(k) == true)
-            {
-                string s = string.Format("Thêm khách hàng có tên {0} thành công", hoTen);
-                MessageBox.Show(s);
-            }   
-            else
-            {
-                string s = string.Format("Thêm khách hàng có tên {0} thất bại", hoTen);
-                MessageBox.Show(s);
-            }
+            if (da.ThemKH(k))
+                return true;
+            return false;
         }
 
         // kiểm tra id khách hàng có tồn tại
@@ -94,6 +86,30 @@ namespace BUS
             if (da.KiemTraKH(id))
                 return true;
             return false;
+        }
+
+        //Kiểm tra khách hàng có trong bảng trả phòng
+
+        public bool KiemTraKHTraPhong(string id)
+        {
+            if (da.KiemTraKHCoTraPhong(id))
+                return true;
+            return false;
+        }
+
+        //Cập nhập mã phòng cho khách hàng
+        public void CapNhatMaPhong(string id, int maPhong)
+        {
+            if (da.CapNhatMaPhong(id, maPhong) == true)
+            {
+                string s = string.Format("Cập nhật mã phòng {0} cho khách hàng có id {1} thành công", maPhong, id);
+                MessageBox.Show(s);
+            }
+            else
+            {
+                string s = string.Format("Cập nhật mã phòng {0} cho khách hàng có id {1} thất bại", maPhong, id);
+                MessageBox.Show(s);
+            }
         }
     }
 }

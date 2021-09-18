@@ -32,7 +32,7 @@ namespace DAO
         {
             try
             {
-                var khach = db.ThemKH(k.ID, k.HoTen, k.GioiTinh, k.NgaySinh, k.Sdt, k.CMND, k.QueQuan, k.MaPhong);
+                var khach = db.ThemKH(k.ID, k.HoTen, k.GioiTinh, k.NgaySinh, k.Sdt, k.CMND, k.QueQuan);
                 return true;
             }
             catch (Exception)
@@ -89,6 +89,35 @@ namespace DAO
             {
                 bool? kq = false;
                 var khach = db.KTKHTonTai(id, ref kq);
+                return (bool)kq;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
+
+        //update mã phòng trong bảng khách hàng
+        public bool CapNhatMaPhong(string id, int maPhong)
+        {
+            try
+            {
+                var khach = db.CapNhatMaPhongKH(id, maPhong);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
+
+        //Kiểm tra khách hàng có trong bảng trả phòng
+        public bool KiemTraKHCoTraPhong(string id)
+        {
+            try
+            {
+                bool? kq = false;
+                var khach = db.KTKHCoTraPhong(id, ref kq);
                 return (bool)kq;
             }
             catch (Exception)

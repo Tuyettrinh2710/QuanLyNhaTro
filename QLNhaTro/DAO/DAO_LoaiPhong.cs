@@ -59,17 +59,32 @@ namespace DAO
             }
         }
 
-        public dynamic LayGiaPhong(int id)
+        //public dynamic LayGiaPhong(int id)
+        //{
+        //    try
+        //    {
+        //        dynamic gia = db.LoaiPhongs.Where(s => s.ID == id);
+        //        return gia;
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw new Exception("Không lấy được stored procedure");
+        //    }
+        //}
+
+        //lấy giá phòng kiểu dữ liệu List<>
+        public List<LoaiPhong> LayGia(int id)
         {
             try
             {
-                dynamic gia = db.LoaiPhongs.Where(s => s.ID == id);
+                List<LoaiPhong> gia = db.LoaiPhongs.Where(s => s.ID == id).ToList<LoaiPhong>();
                 return gia;
             }
             catch (Exception)
             {
 
-                throw new Exception("Không lấy được stored procedure");
+                throw new Exception("Không lấy được dữ liệu");
             }
         }
 

@@ -46,41 +46,41 @@ namespace QLNhaTro
             tbCMND.Text = "";
         }    
 
-        private void btThem_Click(object sender, EventArgs e)
-        {
-            int maPhong = int.Parse(cbMaPhong.SelectedValue.ToString());
-            int soNguoi = busPhong.LaySoNguoiConTrong(maPhong);
-            if (tbTen.TextLength == 0 || tbSdt.TextLength == 0 || tbCMND.TextLength == 0)
-            {
-                MessageBox.Show("Nhập thiếu thông tin khách thuê. Thêm thất bại");
-            }    
-            else
-                if (soNguoi >= 0)
-                {
-                    if (busKH.KiemTraIdKH(tbSdt.Text))
-                    {
-                        string s = string.Format("Không thể thêm khách hàng vì id {0} đã tồn tại", tbSdt.Text);
-                        MessageBox.Show(s);
-                    }
-                    else
-                    {
-                        string hoTen = tbTen.Text;
-                        string gioiTinh = cbGioiTinh.Text;
-                        DateTime ngaySinh = dtpNgay.Value;
-                        string sdt = tbSdt.Text;
-                        string cmnd = tbCMND.Text;
-                        string queQua = tbQueQuan.Text;
-                        busKH.ThemKh(sdt, hoTen, gioiTinh, ngaySinh, sdt, cmnd, queQua, maPhong);
-                        int tong = soNguoi + 1;
-                        busPhong.UpdateSoNguoi(maPhong, tong);
+        //private void btThem_Click(object sender, EventArgs e)
+        //{
+        //    int maPhong = int.Parse(cbMaPhong.SelectedValue.ToString());
+        //    int soNguoi = busPhong.LaySoNguoiConTrong(maPhong);
+        //    if (tbTen.TextLength == 0 || tbSdt.TextLength == 0 || tbCMND.TextLength == 0)
+        //    {
+        //        MessageBox.Show("Nhập thiếu thông tin khách thuê. Thêm thất bại");
+        //    }    
+        //    else
+        //        if (soNguoi >= 0)
+        //        {
+        //            if (busKH.KiemTraIdKH(tbSdt.Text))
+        //            {
+        //                string s = string.Format("Không thể thêm khách hàng vì id {0} đã tồn tại", tbSdt.Text);
+        //                MessageBox.Show(s);
+        //            }
+        //            else
+        //            {
+        //                string hoTen = tbTen.Text;
+        //                string gioiTinh = cbGioiTinh.Text;
+        //                DateTime ngaySinh = dtpNgay.Value;
+        //                string sdt = tbSdt.Text;
+        //                string cmnd = tbCMND.Text;
+        //                string queQua = tbQueQuan.Text;
+        //                busKH.ThemKh(sdt, hoTen, gioiTinh, ngaySinh, sdt, cmnd, queQua, maPhong);
+        //                int tong = soNguoi + 1;
+        //                busPhong.UpdateSoNguoi(maPhong, tong);
 
-                    }
-                }
-                else
-                    MessageBox.Show("Phòng đã đủ người không thể thêm");
-            frmLoad();
-            loadText();
-        }
+        //            }
+        //        }
+        //        else
+        //            MessageBox.Show("Phòng đã đủ người không thể thêm");
+        //    frmLoad();
+        //    loadText();
+        //}
 
         private void dgvKH_CellClick(object sender, DataGridViewCellEventArgs e)
         {

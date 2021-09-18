@@ -30,9 +30,12 @@ namespace QLNhaTro
             busPhi.LayGia(cbNuoc, 2);
             busPhi.LayGia(cbDV, 3);
             busLoaiPhong.DSLoai(cbLoai);
-            busLoaiPhong.LayGiaPhong(cbNho, 1);
-            busLoaiPhong.LayGiaPhong(cbVua, 2);
-            busLoaiPhong.LayGiaPhong(cbLon, 3);
+            //busLoaiPhong.LayGiaPhong(cbNho, 1);
+            //busLoaiPhong.LayGiaPhong(cbVua, 2);
+            //busLoaiPhong.LayGiaPhong(cbLon, 3);
+            busLoaiPhong.LayGiaPhong(tbNho, 1);
+            busLoaiPhong.LayGiaPhong(tbVua, 2);
+            busLoaiPhong.LayGiaPhong(tbLon, 3);
         }
 
         private void cbLoai_SelectedValueChanged(object sender, EventArgs e)

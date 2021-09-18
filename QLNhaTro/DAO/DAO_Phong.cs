@@ -138,5 +138,32 @@ namespace DAO
                 throw new Exception("Không lấy được stored procedure");
             }
         }
+
+        // Lấy phòng theo tên
+        public List<Phong> LayPhongTheoTen(string ten)
+        {
+            try
+            {
+                
+                var ph = db.LayPhongTheoTen(ten);
+                List<Phong> ds = new List<Phong>();
+                foreach (var p in ph)
+                {
+                    Phong phong = new Phong();
+                    phong.ID = p.ID;
+                    phong.TenPhong = p.TenPhong;
+                    phong.IDLoaiPhong = p.IDLoaiPhong;
+                    phong.SoNguoiToiDa = p.SoNguoiToiDa;
+                    phong.SoNguoiHienTai = p.SoNguoiHienTai;
+                    ds.Add(phong);
+                }    
+                return ds;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
     }
 }

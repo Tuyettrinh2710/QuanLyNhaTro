@@ -77,11 +77,18 @@ namespace BUS
             cb.ValueMember = "ID";
         }
 
-        public void LayGiaPhong(ComboBox cb, int id)
+        //public void LayGiaPhong(ComboBox cb, int id)
+        //{
+        //    cb.DataSource = da.LayGiaPhong(id);
+        //    cb.DisplayMember = "GiaTien";
+        //    cb.ValueMember = "ID";
+        //}
+
+        public void LayGiaPhong(TextBox tb, int id)
         {
-            cb.DataSource = da.LayGiaPhong(id);
-            cb.DisplayMember = "GiaTien";
-            cb.ValueMember = "ID";
+            List<LoaiPhong> l = da.LayGia(id);
+            foreach (LoaiPhong lp in l)
+                tb.Text = lp.GiaTien.ToString();
         }
 
         //kiểm tra loại có nằm trong bảng phòng

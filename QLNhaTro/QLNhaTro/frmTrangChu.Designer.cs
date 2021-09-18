@@ -32,9 +32,6 @@ namespace QLNhaTro
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrangChu));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbLon = new System.Windows.Forms.ComboBox();
-            this.cbVua = new System.Windows.Forms.ComboBox();
-            this.cbNho = new System.Windows.Forms.ComboBox();
             this.cbDV = new System.Windows.Forms.ComboBox();
             this.cbNuoc = new System.Windows.Forms.ComboBox();
             this.cbDien = new System.Windows.Forms.ComboBox();
@@ -59,6 +56,9 @@ namespace QLNhaTro
             this.panel2 = new System.Windows.Forms.Panel();
             this.lvPhong = new System.Windows.Forms.ListView();
             this.imgIcon = new System.Windows.Forms.ImageList(this.components);
+            this.tbNho = new System.Windows.Forms.TextBox();
+            this.tbVua = new System.Windows.Forms.TextBox();
+            this.tbLon = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -66,9 +66,9 @@ namespace QLNhaTro
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.PowderBlue;
-            this.panel1.Controls.Add(this.cbLon);
-            this.panel1.Controls.Add(this.cbVua);
-            this.panel1.Controls.Add(this.cbNho);
+            this.panel1.Controls.Add(this.tbLon);
+            this.panel1.Controls.Add(this.tbVua);
+            this.panel1.Controls.Add(this.tbNho);
             this.panel1.Controls.Add(this.cbDV);
             this.panel1.Controls.Add(this.cbNuoc);
             this.panel1.Controls.Add(this.cbDien);
@@ -92,51 +92,6 @@ namespace QLNhaTro
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(322, 428);
             this.panel1.TabIndex = 0;
-            // 
-            // cbLon
-            // 
-            this.cbLon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbLon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cbLon.Enabled = false;
-            this.cbLon.FormattingEnabled = true;
-            this.cbLon.Items.AddRange(new object[] {
-            "Nhỏ ",
-            "Vừa",
-            "Lớn"});
-            this.cbLon.Location = new System.Drawing.Point(158, 180);
-            this.cbLon.Name = "cbLon";
-            this.cbLon.Size = new System.Drawing.Size(100, 26);
-            this.cbLon.TabIndex = 26;
-            // 
-            // cbVua
-            // 
-            this.cbVua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbVua.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cbVua.Enabled = false;
-            this.cbVua.FormattingEnabled = true;
-            this.cbVua.Items.AddRange(new object[] {
-            "Nhỏ ",
-            "Vừa",
-            "Lớn"});
-            this.cbVua.Location = new System.Drawing.Point(158, 144);
-            this.cbVua.Name = "cbVua";
-            this.cbVua.Size = new System.Drawing.Size(100, 26);
-            this.cbVua.TabIndex = 25;
-            // 
-            // cbNho
-            // 
-            this.cbNho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbNho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cbNho.Enabled = false;
-            this.cbNho.FormattingEnabled = true;
-            this.cbNho.Items.AddRange(new object[] {
-            "Nhỏ ",
-            "Vừa",
-            "Lớn"});
-            this.cbNho.Location = new System.Drawing.Point(158, 109);
-            this.cbNho.Name = "cbNho";
-            this.cbNho.Size = new System.Drawing.Size(100, 26);
-            this.cbNho.TabIndex = 24;
             // 
             // cbDV
             // 
@@ -384,6 +339,33 @@ namespace QLNhaTro
             this.imgIcon.TransparentColor = System.Drawing.Color.Transparent;
             this.imgIcon.Images.SetKeyName(0, "house.png");
             // 
+            // tbNho
+            // 
+            this.tbNho.Enabled = false;
+            this.tbNho.Location = new System.Drawing.Point(158, 109);
+            this.tbNho.Name = "tbNho";
+            this.tbNho.ReadOnly = true;
+            this.tbNho.Size = new System.Drawing.Size(100, 26);
+            this.tbNho.TabIndex = 24;
+            // 
+            // tbVua
+            // 
+            this.tbVua.Enabled = false;
+            this.tbVua.Location = new System.Drawing.Point(158, 142);
+            this.tbVua.Name = "tbVua";
+            this.tbVua.ReadOnly = true;
+            this.tbVua.Size = new System.Drawing.Size(100, 26);
+            this.tbVua.TabIndex = 25;
+            // 
+            // tbLon
+            // 
+            this.tbLon.Enabled = false;
+            this.tbLon.Location = new System.Drawing.Point(158, 178);
+            this.tbLon.Name = "tbLon";
+            this.tbLon.ReadOnly = true;
+            this.tbLon.Size = new System.Drawing.Size(100, 26);
+            this.tbLon.TabIndex = 26;
+            // 
             // frmTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -433,10 +415,10 @@ namespace QLNhaTro
         private System.Windows.Forms.ComboBox cbDien;
         private System.Windows.Forms.ComboBox cbDV;
         private System.Windows.Forms.ComboBox cbNuoc;
-        private System.Windows.Forms.ComboBox cbLon;
-        private System.Windows.Forms.ComboBox cbVua;
-        private System.Windows.Forms.ComboBox cbNho;
         private System.Windows.Forms.ListView lvPhong;
         private System.Windows.Forms.ImageList imgIcon;
+        private System.Windows.Forms.TextBox tbLon;
+        private System.Windows.Forms.TextBox tbVua;
+        private System.Windows.Forms.TextBox tbNho;
     }
 }

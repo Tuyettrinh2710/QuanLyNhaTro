@@ -46,5 +46,34 @@ namespace DAO
             } 
             return ma;
         }
+
+
+        public bool ThemThuePhong(ThuePhong t)
+        {
+            try
+            {
+                var thue = db.ThemThuePhong(t.ID, t.ID_KH, t.ID_Phong, t.NgayThue, t.TienCoc);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
+
+        public void CapNhatGTThamSo(string id, string giaTri)
+        {
+            try
+            {
+                var gia = db.CapNhatThamSo(id, giaTri);
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procedure");
+            }
+            
+        }
     }
 }

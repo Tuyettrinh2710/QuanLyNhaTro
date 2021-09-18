@@ -36,17 +36,18 @@ namespace QLNhaTro
             this.cbLoai = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lvPhong = new System.Windows.Forms.ListView();
+            this.imgIcon = new System.Windows.Forms.ImageList(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbGioiTinh = new System.Windows.Forms.ComboBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.tbDiaChi = new System.Windows.Forms.TextBox();
+            this.tbQueQuan = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tbCMND = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tbSdt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbGioiTinh = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tbTen = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,14 +62,15 @@ namespace QLNhaTro
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.dtpNgayThue = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btThemNguoi = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tbTienCoc = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.imgIcon = new System.Windows.Forms.ImageList(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -127,19 +129,25 @@ namespace QLNhaTro
             this.lvPhong.UseCompatibleStateImageBehavior = false;
             this.lvPhong.Click += new System.EventHandler(this.lvPhong_Click);
             // 
+            // imgIcon
+            // 
+            this.imgIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgIcon.ImageStream")));
+            this.imgIcon.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgIcon.Images.SetKeyName(0, "house.png");
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.DarkCyan;
+            this.groupBox2.Controls.Add(this.cbGioiTinh);
             this.groupBox2.Controls.Add(this.dtpNgaySinh);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.tbDiaChi);
+            this.groupBox2.Controls.Add(this.tbQueQuan);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.tbCMND);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.tbSdt);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.tbGioiTinh);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.tbTen);
             this.groupBox2.Controls.Add(this.label2);
@@ -151,6 +159,18 @@ namespace QLNhaTro
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin khách thuê";
             // 
+            // cbGioiTinh
+            // 
+            this.cbGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGioiTinh.FormattingEnabled = true;
+            this.cbGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbGioiTinh.Location = new System.Drawing.Point(391, 24);
+            this.cbGioiTinh.Name = "cbGioiTinh";
+            this.cbGioiTinh.Size = new System.Drawing.Size(191, 28);
+            this.cbGioiTinh.TabIndex = 27;
+            // 
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -158,6 +178,7 @@ namespace QLNhaTro
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(191, 26);
             this.dtpNgaySinh.TabIndex = 26;
+            this.dtpNgaySinh.Validating += new System.ComponentModel.CancelEventHandler(this.dtpNgaySinh_Validating);
             // 
             // label9
             // 
@@ -168,12 +189,13 @@ namespace QLNhaTro
             this.label9.Size = new System.Drawing.Size(0, 20);
             this.label9.TabIndex = 12;
             // 
-            // tbDiaChi
+            // tbQueQuan
             // 
-            this.tbDiaChi.Location = new System.Drawing.Point(76, 92);
-            this.tbDiaChi.Name = "tbDiaChi";
-            this.tbDiaChi.Size = new System.Drawing.Size(191, 26);
-            this.tbDiaChi.TabIndex = 11;
+            this.tbQueQuan.Location = new System.Drawing.Point(91, 92);
+            this.tbQueQuan.Name = "tbQueQuan";
+            this.tbQueQuan.Size = new System.Drawing.Size(191, 26);
+            this.tbQueQuan.TabIndex = 11;
+            this.tbQueQuan.Validating += new System.ComponentModel.CancelEventHandler(this.tbQueQuan_Validating);
             // 
             // label7
             // 
@@ -181,16 +203,19 @@ namespace QLNhaTro
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(6, 95);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 20);
+            this.label7.Size = new System.Drawing.Size(86, 20);
             this.label7.TabIndex = 10;
-            this.label7.Text = "Địa chỉ:";
+            this.label7.Text = "Quê quán:";
             // 
             // tbCMND
             // 
-            this.tbCMND.Location = new System.Drawing.Point(76, 60);
+            this.tbCMND.Location = new System.Drawing.Point(91, 60);
+            this.tbCMND.MaxLength = 12;
             this.tbCMND.Name = "tbCMND";
             this.tbCMND.Size = new System.Drawing.Size(191, 26);
             this.tbCMND.TabIndex = 9;
+            this.tbCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCMND_KeyPress);
+            this.tbCMND.Validating += new System.ComponentModel.CancelEventHandler(this.tbCMND_Validating);
             // 
             // label6
             // 
@@ -204,16 +229,19 @@ namespace QLNhaTro
             // 
             // tbSdt
             // 
-            this.tbSdt.Location = new System.Drawing.Point(392, 92);
+            this.tbSdt.Location = new System.Drawing.Point(391, 92);
+            this.tbSdt.MaxLength = 10;
             this.tbSdt.Name = "tbSdt";
             this.tbSdt.Size = new System.Drawing.Size(191, 26);
             this.tbSdt.TabIndex = 7;
+            this.tbSdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSdt_KeyPress);
+            this.tbSdt.Validating += new System.ComponentModel.CancelEventHandler(this.tbSdt_Validating);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(292, 92);
+            this.label5.Location = new System.Drawing.Point(297, 92);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 20);
             this.label5.TabIndex = 6;
@@ -223,24 +251,17 @@ namespace QLNhaTro
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(292, 63);
+            this.label4.Location = new System.Drawing.Point(297, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Ngày sinh:";
             // 
-            // tbGioiTinh
-            // 
-            this.tbGioiTinh.Location = new System.Drawing.Point(392, 28);
-            this.tbGioiTinh.Name = "tbGioiTinh";
-            this.tbGioiTinh.Size = new System.Drawing.Size(191, 26);
-            this.tbGioiTinh.TabIndex = 3;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(292, 31);
+            this.label3.Location = new System.Drawing.Point(297, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 2;
@@ -248,10 +269,11 @@ namespace QLNhaTro
             // 
             // tbTen
             // 
-            this.tbTen.Location = new System.Drawing.Point(76, 28);
+            this.tbTen.Location = new System.Drawing.Point(91, 28);
             this.tbTen.Name = "tbTen";
             this.tbTen.Size = new System.Drawing.Size(191, 26);
             this.tbTen.TabIndex = 1;
+            this.tbTen.Validating += new System.ComponentModel.CancelEventHandler(this.tbTen_Validating);
             // 
             // label2
             // 
@@ -284,8 +306,10 @@ namespace QLNhaTro
             // 
             this.tbTienPhong.Location = new System.Drawing.Point(466, 29);
             this.tbTienPhong.Name = "tbTienPhong";
+            this.tbTienPhong.ReadOnly = true;
             this.tbTienPhong.Size = new System.Drawing.Size(121, 26);
             this.tbTienPhong.TabIndex = 21;
+            this.tbTienPhong.TextChanged += new System.EventHandler(this.tbTienPhong_TextChanged);
             // 
             // label12
             // 
@@ -301,6 +325,7 @@ namespace QLNhaTro
             // 
             this.tbPhong.Location = new System.Drawing.Point(267, 29);
             this.tbPhong.Name = "tbPhong";
+            this.tbPhong.ReadOnly = true;
             this.tbPhong.Size = new System.Drawing.Size(121, 26);
             this.tbPhong.TabIndex = 19;
             // 
@@ -318,6 +343,7 @@ namespace QLNhaTro
             // 
             this.tbMaPhong.Location = new System.Drawing.Point(49, 29);
             this.tbMaPhong.Name = "tbMaPhong";
+            this.tbMaPhong.ReadOnly = true;
             this.tbMaPhong.Size = new System.Drawing.Size(121, 26);
             this.tbMaPhong.TabIndex = 17;
             // 
@@ -335,6 +361,7 @@ namespace QLNhaTro
             // 
             this.tbMaThue.Location = new System.Drawing.Point(418, 309);
             this.tbMaThue.Name = "tbMaThue";
+            this.tbMaThue.ReadOnly = true;
             this.tbMaThue.Size = new System.Drawing.Size(163, 26);
             this.tbMaThue.TabIndex = 23;
             // 
@@ -360,20 +387,22 @@ namespace QLNhaTro
             // 
             // dtpNgayThue
             // 
+            this.dtpNgayThue.Enabled = false;
             this.dtpNgayThue.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayThue.Location = new System.Drawing.Point(418, 344);
             this.dtpNgayThue.Name = "dtpNgayThue";
             this.dtpNgayThue.Size = new System.Drawing.Size(163, 26);
             this.dtpNgayThue.TabIndex = 25;
             // 
-            // button1
+            // btThemNguoi
             // 
-            this.button1.Location = new System.Drawing.Point(757, 309);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 37);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Thêm người";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btThemNguoi.Location = new System.Drawing.Point(757, 309);
+            this.btThemNguoi.Name = "btThemNguoi";
+            this.btThemNguoi.Size = new System.Drawing.Size(117, 37);
+            this.btThemNguoi.TabIndex = 26;
+            this.btThemNguoi.Text = "Thêm người";
+            this.btThemNguoi.UseVisualStyleBackColor = true;
+            this.btThemNguoi.Click += new System.EventHandler(this.btThemNguoi_Click);
             // 
             // button2
             // 
@@ -383,6 +412,7 @@ namespace QLNhaTro
             this.button2.TabIndex = 27;
             this.button2.Text = "Xác nhận";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tbTienCoc
             // 
@@ -401,11 +431,9 @@ namespace QLNhaTro
             this.label15.TabIndex = 29;
             this.label15.Text = "Tiền coc:";
             // 
-            // imgIcon
+            // errorProvider1
             // 
-            this.imgIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgIcon.ImageStream")));
-            this.imgIcon.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgIcon.Images.SetKeyName(0, "house.png");
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmThuePhong
             // 
@@ -416,7 +444,7 @@ namespace QLNhaTro
             this.Controls.Add(this.tbTienCoc);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btThemNguoi);
             this.Controls.Add(this.dtpNgayThue);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.tbMaThue);
@@ -437,6 +465,7 @@ namespace QLNhaTro
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -448,14 +477,13 @@ namespace QLNhaTro
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListView lvPhong;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox tbDiaChi;
+        private System.Windows.Forms.TextBox tbQueQuan;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbCMND;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbSdt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbGioiTinh;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbTen;
         private System.Windows.Forms.Label label2;
@@ -474,10 +502,12 @@ namespace QLNhaTro
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker dtpNgayThue;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btThemNguoi;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox tbTienCoc;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ImageList imgIcon;
+        private System.Windows.Forms.ComboBox cbGioiTinh;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

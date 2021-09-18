@@ -206,17 +206,6 @@
     <Parameter Name="kq" Type="System.Boolean" DbType="Bit" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.ThemKH" Method="ThemKH">
-    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="NVarChar(10)" />
-    <Parameter Name="HoTen" Parameter="hoTen" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="GioiTinh" Parameter="gioiTinh" Type="System.String" DbType="NVarChar(5)" />
-    <Parameter Name="NgaySinh" Parameter="ngaySinh" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="Sdt" Parameter="sdt" Type="System.String" DbType="NVarChar(10)" />
-    <Parameter Name="CMND" Parameter="cMND" Type="System.String" DbType="NVarChar(12)" />
-    <Parameter Name="QueQuan" Parameter="queQuan" Type="System.String" DbType="NVarChar(150)" />
-    <Parameter Name="MaPhong" Parameter="maPhong" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.TimKH" Method="TimKH">
     <Parameter Name="ten" Type="System.String" DbType="NVarChar(100)" />
     <ElementType Name="TimKHResult">
@@ -257,6 +246,49 @@
   </Function>
   <Function Name="dbo.XoaKH" Method="XoaKH">
     <Parameter Name="id" Type="System.String" DbType="NVarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.LayPhongTheoTen" Method="LayPhongTheoTen">
+    <Parameter Name="ten" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="LayPhongTheoTenResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IDLoaiPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoNguoiToiDa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoNguoiHienTai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.KTKHCoTraPhong" Method="KTKHCoTraPhong">
+    <Parameter Name="id" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="kq" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CapNhatMaPhongKH" Method="CapNhatMaPhongKH">
+    <Parameter Name="idKH" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="maPhong" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ThemThuePhong" Method="ThemThuePhong">
+    <Parameter Name="id" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="idKH" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="idPhong" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ngayThue" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="tienCoc" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ThemKH" Method="ThemKH">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="HoTen" Parameter="hoTen" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="GioiTinh" Parameter="gioiTinh" Type="System.String" DbType="NVarChar(5)" />
+    <Parameter Name="NgaySinh" Parameter="ngaySinh" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Sdt" Parameter="sdt" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="CMND" Parameter="cMND" Type="System.String" DbType="NVarChar(12)" />
+    <Parameter Name="QueQuan" Parameter="queQuan" Type="System.String" DbType="NVarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CapNhatThamSo" Method="CapNhatThamSo">
+    <Parameter Name="id" Type="System.String" DbType="NVarChar(2)" />
+    <Parameter Name="giaTri" Type="System.String" DbType="NVarChar(8)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>
