@@ -54,13 +54,18 @@ namespace QLNhaTro
             tbMaThue.Text = busThue.LayMa();
         }
 
-        private void cbLoai_SelectedValueChanged(object sender, EventArgs e)
+        void loadLV()
         {
             lvPhong.Items.Clear();
             string idLoai = cbLoai.SelectedValue.ToString();
             int id;
             bool kq = int.TryParse(idLoai, out id);
             busPhong.LayPhongTrong(lvPhong, id);
+        }
+
+        private void cbLoai_SelectedValueChanged(object sender, EventArgs e)
+        {
+            loadLV();
         }
 
         private void lvPhong_Click(object sender, EventArgs e)
@@ -150,6 +155,7 @@ namespace QLNhaTro
                     MessageBox.Show("Thuê phòng thất bại");
                 }
             }
+            loadLV();
         }
 
         private void btThemNguoi_Click(object sender, EventArgs e)
@@ -165,12 +171,12 @@ namespace QLNhaTro
                 if (soNguoi >= 0)
                 {
                     ThemNguoiThuePhong();
-                    busThue.CapNhatMa(tbMaThue);
                     loadKH();
                 }
                 else
                 {
                     MessageBox.Show("Phòng đã đủ người không thể thêm");
+                    busThue.CapNhatMa(tbMaThue);
                     loadText();
                 }
             }
@@ -270,29 +276,10 @@ namespace QLNhaTro
             tbTienCoc.Text = tbTienPhong.Text;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btTaoMoi_Click(object sender, EventArgs e)
         {
-            if (KiemTraControl())
-            {
-                MessageBox.Show("Nhập thiếu thông tin thuê phòng. Thuê phòng thất bại");
-            }    
-            else
-            {
-                int maPhong = int.Parse(tbMaPhong.Text);
-                int soNguoi = busPhong.LaySoNguoiConTrong(maPhong);
-                if (soNguoi >= 0)
-                {
-                    ThemNguoiThuePhong();
-                    busThue.CapNhatMa(tbMaThue);
-                }
-                else
-                {
-                    string s = string.Format("Phòng {0} đã đủ người. Không thể thêm khách thuê {1}", tbMaPhong.Text, tbTen.Text);
-                    MessageBox.Show(s);
-                }
-
-                loadText();
-            }    
+            busThue.CapNhatMa(tbMaThue);
+            loadText();
         }
     }
 }

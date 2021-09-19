@@ -45,12 +45,10 @@ namespace QLNhaTro
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btThem = new System.Windows.Forms.Button();
             this.btCSua = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.dtpNgay = new System.Windows.Forms.DateTimePicker();
             this.cbGioiTinh = new System.Windows.Forms.ComboBox();
-            this.cbMaPhong = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -58,6 +56,7 @@ namespace QLNhaTro
             this.label10 = new System.Windows.Forms.Label();
             this.tbTim = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tbMaPhong = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -211,16 +210,6 @@ namespace QLNhaTro
             this.label9.TabIndex = 10;
             this.label9.Text = "Giới tính:";
             // 
-            // btThem
-            // 
-            this.btThem.ForeColor = System.Drawing.Color.Black;
-            this.btThem.Location = new System.Drawing.Point(87, 313);
-            this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(89, 37);
-            this.btThem.TabIndex = 18;
-            this.btThem.Text = "Thêm";
-            this.btThem.UseVisualStyleBackColor = true;
-            // 
             // btCSua
             // 
             this.btCSua.ForeColor = System.Drawing.Color.Black;
@@ -264,15 +253,6 @@ namespace QLNhaTro
             this.cbGioiTinh.Size = new System.Drawing.Size(250, 28);
             this.cbGioiTinh.TabIndex = 22;
             // 
-            // cbMaPhong
-            // 
-            this.cbMaPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMaPhong.FormattingEnabled = true;
-            this.cbMaPhong.Location = new System.Drawing.Point(168, 276);
-            this.cbMaPhong.Name = "cbMaPhong";
-            this.cbMaPhong.Size = new System.Drawing.Size(250, 28);
-            this.cbMaPhong.TabIndex = 24;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -295,9 +275,9 @@ namespace QLNhaTro
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DarkCyan;
+            this.groupBox1.Controls.Add(this.tbMaPhong);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.cbMaPhong);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.tbMa);
@@ -309,7 +289,6 @@ namespace QLNhaTro
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.btCSua);
             this.groupBox1.Controls.Add(this.tbQueQuan);
-            this.groupBox1.Controls.Add(this.btThem);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.tbSdt);
             this.groupBox1.Controls.Add(this.label8);
@@ -361,6 +340,16 @@ namespace QLNhaTro
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // tbMaPhong
+            // 
+            this.tbMaPhong.BackColor = System.Drawing.Color.White;
+            this.tbMaPhong.Enabled = false;
+            this.tbMaPhong.Location = new System.Drawing.Point(168, 276);
+            this.tbMaPhong.Name = "tbMaPhong";
+            this.tbMaPhong.ReadOnly = true;
+            this.tbMaPhong.Size = new System.Drawing.Size(250, 26);
+            this.tbMaPhong.TabIndex = 24;
+            // 
             // frmCapNhatKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -404,12 +393,10 @@ namespace QLNhaTro
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.Button btCSua;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.DateTimePicker dtpNgay;
         private System.Windows.Forms.ComboBox cbGioiTinh;
-        private System.Windows.Forms.ComboBox cbMaPhong;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -417,5 +404,6 @@ namespace QLNhaTro
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tbTim;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox tbMaPhong;
     }
 }

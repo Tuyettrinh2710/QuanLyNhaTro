@@ -25,7 +25,6 @@ namespace QLNhaTro
         private void frmCapNhatKH_Load(object sender, EventArgs e)
         {
             frmLoad();
-            busPhong.LayTenPhong(cbMaPhong);
         }
 
         void frmLoad()
@@ -93,7 +92,7 @@ namespace QLNhaTro
                 tbSdt.Text = dgvKH.Rows[e.RowIndex].Cells[4].Value.ToString();
                 tbCMND.Text = dgvKH.Rows[e.RowIndex].Cells[5].Value.ToString();
                 tbQueQuan.Text = dgvKH.Rows[e.RowIndex].Cells[6].Value.ToString();
-                cbMaPhong.Text = dgvKH.Rows[e.RowIndex].Cells[7].Value.ToString();
+                tbMaPhong.Text = dgvKH.Rows[e.RowIndex].Cells[7].Value.ToString();
             }
         }
 
