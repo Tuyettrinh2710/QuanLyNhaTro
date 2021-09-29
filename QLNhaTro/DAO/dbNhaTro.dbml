@@ -291,4 +291,15 @@
     <Parameter Name="giaTri" Type="System.String" DbType="NVarChar(8)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.LayDSPhongChuaLapHoaDon" Method="LayDSPhongChuaLapHoaDon">
+    <Parameter Name="nam" Type="System.String" DbType="NVarChar(4)" />
+    <Parameter Name="thang" Type="System.String" DbType="NVarChar(2)" />
+    <ElementType Name="LayDSPhongChuaLapHoaDonResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IDLoaiPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoNguoiToiDa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoNguoiHienTai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

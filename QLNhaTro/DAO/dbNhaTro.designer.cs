@@ -367,6 +367,13 @@ namespace DAO
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, giaTri);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayDSPhongChuaLapHoaDon")]
+		public ISingleResult<LayDSPhongChuaLapHoaDonResult> LayDSPhongChuaLapHoaDon([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(4)")] string nam, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(2)")] string thang)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nam, thang);
+			return ((ISingleResult<LayDSPhongChuaLapHoaDonResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HoaDon")]
@@ -2884,6 +2891,104 @@ namespace DAO
 		private int _SoNguoiHienTai;
 		
 		public LayPhongTheoTenResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenPhong", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string TenPhong
+		{
+			get
+			{
+				return this._TenPhong;
+			}
+			set
+			{
+				if ((this._TenPhong != value))
+				{
+					this._TenPhong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDLoaiPhong", DbType="Int NOT NULL")]
+		public int IDLoaiPhong
+		{
+			get
+			{
+				return this._IDLoaiPhong;
+			}
+			set
+			{
+				if ((this._IDLoaiPhong != value))
+				{
+					this._IDLoaiPhong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoNguoiToiDa", DbType="Int NOT NULL")]
+		public int SoNguoiToiDa
+		{
+			get
+			{
+				return this._SoNguoiToiDa;
+			}
+			set
+			{
+				if ((this._SoNguoiToiDa != value))
+				{
+					this._SoNguoiToiDa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoNguoiHienTai", DbType="Int NOT NULL")]
+		public int SoNguoiHienTai
+		{
+			get
+			{
+				return this._SoNguoiHienTai;
+			}
+			set
+			{
+				if ((this._SoNguoiHienTai != value))
+				{
+					this._SoNguoiHienTai = value;
+				}
+			}
+		}
+	}
+	
+	public partial class LayDSPhongChuaLapHoaDonResult
+	{
+		
+		private int _ID;
+		
+		private string _TenPhong;
+		
+		private int _IDLoaiPhong;
+		
+		private int _SoNguoiToiDa;
+		
+		private int _SoNguoiHienTai;
+		
+		public LayDSPhongChuaLapHoaDonResult()
 		{
 		}
 		

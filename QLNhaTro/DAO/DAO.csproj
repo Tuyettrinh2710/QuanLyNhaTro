@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,6 +49,7 @@
     <Compile Include="DAO_LoaiPhong.cs" />
     <Compile Include="DAO_Phi.cs" />
     <Compile Include="DAO_Phong.cs" />
+    <Compile Include="DAO_ThanhToan.cs" />
     <Compile Include="DAO_ThuePhong.cs" />
     <Compile Include="dbNhaTro.designer.cs">
       <AutoGen>True</AutoGen>

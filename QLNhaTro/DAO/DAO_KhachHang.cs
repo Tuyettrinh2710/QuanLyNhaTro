@@ -125,5 +125,19 @@ namespace DAO
                 throw new Exception("Không lấy được stored procedure");
             }
         }
+
+        //Lấy danh sách khách hàng trong phòng
+        public List<KhachHang> LayDSKhachHangTrongPhong(int idPhong)
+        {
+            List<KhachHang> khach = db.KhachHangs.Where(s => s.MaPhong == idPhong).ToList();
+            return khach;
+        }
+
+        //Lấy thông tin khách hàng theo id
+        public List<KhachHang> LayThongTinKH(string id)
+        {
+            List<KhachHang> khach = db.KhachHangs.Where(s => s.ID == id).ToList();
+            return khach;
+        }
     }
 }

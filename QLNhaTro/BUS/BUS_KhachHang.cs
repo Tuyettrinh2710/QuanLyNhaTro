@@ -111,5 +111,27 @@ namespace BUS
                 MessageBox.Show(s);
             }
         }
+
+        //Lấy danh sách khách hàng theo mã phòng
+        public void LayKhachHangTheoPhong(ComboBox cb, int idPhong)
+        {
+            cb.DataSource = da.LayDSKhachHangTrongPhong(idPhong);
+            cb.DisplayMember = "ID";
+            cb.ValueMember = "ID";
+        }
+
+        //Lấy thông tin khách hàng hiện lên textbox
+        public void LayThongTinKH(string id, TextBox tbTen, TextBox tbCmnd, TextBox gt, DateTimePicker ngay, TextBox que)
+        {
+            List<KhachHang> ds = da.LayThongTinKH(id);
+            foreach (KhachHang k in ds)
+            {
+                tbTen.Text = k.HoTen;
+                tbCmnd.Text = k.CMND;
+                gt.Text = k.GioiTinh;
+                ngay.Value = (DateTime)k.NgaySinh;
+                que.Text = k.QueQuan;
+            }
+        }
     }
 }
