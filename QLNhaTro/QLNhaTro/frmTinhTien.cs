@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace QLNhaTro
         BUS_ThuePhong busThue;
         BUS_KhachHang busKhach;
         BUS_Phi busPhi;
+        CultureInfo culture;
         public frmTinhTien()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace QLNhaTro
             busThue = new BUS_ThuePhong();
             busKhach = new BUS_KhachHang();
             busPhi = new BUS_Phi();
+            culture = new System.Globalization.CultureInfo("vi-VN");
         }
 
         private bool KiemTraThongTin()
@@ -96,12 +99,14 @@ namespace QLNhaTro
             tbTienPhong.Text = "0";
             tbTongTien.Text = "0";
             dtpNgaySinh.Value = DateTime.Now;
+            busThanhToan.LayDSPhongChuaLapHoadon(lvPhong);
+            errorProvider1.Clear();
         }
 
         private void frmTinhTien_Load(object sender, EventArgs e)
         {
             busThanhToan.LayDSPhongChuaLapHoadon(lvPhong);
-            tbDichVu.Text = busPhi.LayGia(3).ToString();
+            tbDichVu.Text = string.Format( culture, "{0:#,##0}", busPhi.LayGia(3));
         }
 
         private void lvPhong_Click(object sender, EventArgs e)
@@ -245,6 +250,29 @@ namespace QLNhaTro
             {
                 tongTienPhong();
             }
+        }
+
+        private void btLuu_Click(object sender, EventArgs e)
+        {
+            if (KiemTraThongTin())
+            {
+                MessageBox.Show("Nhập thiếu thông tin không thể lưu hóa đơn");
+            }    
+            else
+            {
+                string idKH = cbSDT.SelectedValue.ToString();
+                int maPhong = int.Parse(tbMaPhong.Text);
+                decimal tienDV = busPhi.LayGia(3);
+                int skDien = int.Parse(tbSKDien.Text);
+                int skNuoc = int.Parse(tbSKNuoc.Text);
+                decimal tienDien = decimal.Parse(tbTienDien.Text);
+                decimal tienNuoc = decimal.Parse(tbTienNuoc.Text);
+                decimal tienPhong = decimal.Parse(tbTienPhong.Text);
+                decimal tongTien = decimal.Parse(tbTongTien.Text);
+
+                busThanhToan.ThemHoaDon(idKH, maPhong, dtpNgayLap.Value, tienPhong, skDien, tienDien, skNuoc, tienNuoc, tienDV, tongTien);
+                loadText();
+            }    
         }
     }
 }

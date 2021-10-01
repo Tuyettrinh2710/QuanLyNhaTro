@@ -302,4 +302,17 @@
       <Column Name="SoNguoiHienTai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.ThemHoaDon" Method="ThemHoaDon">
+    <Parameter Name="ID_KH" Parameter="iD_KH" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="ID_Phong" Parameter="iD_Phong" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NgayLap" Parameter="ngayLap" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="GiaPhong" Parameter="giaPhong" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="SkDien" Parameter="skDien" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TienDien" Parameter="tienDien" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="SkNuoc" Parameter="skNuoc" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TienNuoc" Parameter="tienNuoc" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="TienDV" Parameter="tienDV" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="TongTien" Parameter="tongTien" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

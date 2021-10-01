@@ -374,6 +374,13 @@ namespace DAO
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nam, thang);
 			return ((ISingleResult<LayDSPhongChuaLapHoaDonResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ThemHoaDon")]
+		public int ThemHoaDon([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_KH", DbType="NVarChar(10)")] string iD_KH, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_Phong", DbType="Int")] System.Nullable<int> iD_Phong, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayLap", DbType="DateTime")] System.Nullable<System.DateTime> ngayLap, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GiaPhong", DbType="Decimal(18,0)")] System.Nullable<decimal> giaPhong, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SkDien", DbType="Int")] System.Nullable<int> skDien, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TienDien", DbType="Decimal(18,0)")] System.Nullable<decimal> tienDien, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SkNuoc", DbType="Int")] System.Nullable<int> skNuoc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TienNuoc", DbType="Decimal(18,0)")] System.Nullable<decimal> tienNuoc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TienDV", DbType="Decimal(18,0)")] System.Nullable<decimal> tienDV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TongTien", DbType="Decimal(18,0)")] System.Nullable<decimal> tongTien)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_KH, iD_Phong, ngayLap, giaPhong, skDien, tienDien, skNuoc, tienNuoc, tienDV, tongTien);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HoaDon")]

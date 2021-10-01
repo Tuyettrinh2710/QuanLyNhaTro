@@ -16,20 +16,41 @@ namespace DAO
 
         public List<Phong> LayDSPhongChuaLapHoaDon()
         {
-            DateTime thangNam = DateTime.Now;
-            var phong = db.LayDSPhongChuaLapHoaDon(thangNam.Year.ToString(), thangNam.Month.ToString());
-            List<Phong> ds = new List<Phong>();
-            foreach(var p in phong)
+            try
             {
-                Phong ph = new Phong();
-                ph.ID = p.ID;
-                ph.TenPhong = p.TenPhong;
-                ph.IDLoaiPhong = p.IDLoaiPhong;
-                ph.SoNguoiToiDa = p.SoNguoiToiDa;
-                ph.SoNguoiHienTai = p.SoNguoiHienTai;
-                ds.Add(ph);
+                DateTime thangNam = DateTime.Now;
+                var phong = db.LayDSPhongChuaLapHoaDon(thangNam.Year.ToString(), thangNam.Month.ToString());
+                List<Phong> ds = new List<Phong>();
+                foreach (var p in phong)
+                {
+                    Phong ph = new Phong();
+                    ph.ID = p.ID;
+                    ph.TenPhong = p.TenPhong;
+                    ph.IDLoaiPhong = p.IDLoaiPhong;
+                    ph.SoNguoiToiDa = p.SoNguoiToiDa;
+                    ph.SoNguoiHienTai = p.SoNguoiHienTai;
+                    ds.Add(ph);
+                }
+                return ds;
             }
-            return ds;
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
+
+        public bool ThemHoaDon(HoaDon h)
+        {
+            try
+            {
+                db.ThemHoaDon(h.ID_KH, h.ID_Phong, h.NgayLap, h.GiaPhong, h.SkDien, h.TienDien, h.SkNuoc, h.TienNuoc, h.TienDV, h.TongTien);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Không lấy được stored procedure");
+            }
         }
     }
 }
