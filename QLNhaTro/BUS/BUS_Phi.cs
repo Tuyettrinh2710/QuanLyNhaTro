@@ -75,11 +75,12 @@ namespace BUS
             }
         }
 
-        public void LayGia(ComboBox cb, int id)
+        public decimal LayGia(int id)
         {
-            cb.DataSource = da.LayGia(id);
-            cb.DisplayMember = "GiaTien";
-            cb.ValueMember = "ID";
+            decimal gia = 0;
+            foreach (Phi p in da.LayGia(id))
+                gia = (decimal)p.GiaTien;
+            return gia;
         }
     }
 }

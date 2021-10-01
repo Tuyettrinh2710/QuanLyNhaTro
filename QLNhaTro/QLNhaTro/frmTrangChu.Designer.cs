@@ -32,9 +32,9 @@ namespace QLNhaTro
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrangChu));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbDV = new System.Windows.Forms.ComboBox();
-            this.cbNuoc = new System.Windows.Forms.ComboBox();
-            this.cbDien = new System.Windows.Forms.ComboBox();
+            this.tbLon = new System.Windows.Forms.TextBox();
+            this.tbVua = new System.Windows.Forms.TextBox();
+            this.tbNho = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -56,9 +56,9 @@ namespace QLNhaTro
             this.panel2 = new System.Windows.Forms.Panel();
             this.lvPhong = new System.Windows.Forms.ListView();
             this.imgIcon = new System.Windows.Forms.ImageList(this.components);
-            this.tbNho = new System.Windows.Forms.TextBox();
-            this.tbVua = new System.Windows.Forms.TextBox();
-            this.tbLon = new System.Windows.Forms.TextBox();
+            this.tbDV = new System.Windows.Forms.TextBox();
+            this.tbNuoc = new System.Windows.Forms.TextBox();
+            this.tbDien = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -66,12 +66,12 @@ namespace QLNhaTro
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.PowderBlue;
+            this.panel1.Controls.Add(this.tbDV);
+            this.panel1.Controls.Add(this.tbNuoc);
+            this.panel1.Controls.Add(this.tbDien);
             this.panel1.Controls.Add(this.tbLon);
             this.panel1.Controls.Add(this.tbVua);
             this.panel1.Controls.Add(this.tbNho);
-            this.panel1.Controls.Add(this.cbDV);
-            this.panel1.Controls.Add(this.cbNuoc);
-            this.panel1.Controls.Add(this.cbDien);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label12);
@@ -93,50 +93,32 @@ namespace QLNhaTro
             this.panel1.Size = new System.Drawing.Size(322, 428);
             this.panel1.TabIndex = 0;
             // 
-            // cbDV
+            // tbLon
             // 
-            this.cbDV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbDV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cbDV.Enabled = false;
-            this.cbDV.FormattingEnabled = true;
-            this.cbDV.Items.AddRange(new object[] {
-            "Nhỏ ",
-            "Vừa",
-            "Lớn"});
-            this.cbDV.Location = new System.Drawing.Point(158, 336);
-            this.cbDV.Name = "cbDV";
-            this.cbDV.Size = new System.Drawing.Size(100, 26);
-            this.cbDV.TabIndex = 23;
+            this.tbLon.Enabled = false;
+            this.tbLon.Location = new System.Drawing.Point(158, 178);
+            this.tbLon.Name = "tbLon";
+            this.tbLon.ReadOnly = true;
+            this.tbLon.Size = new System.Drawing.Size(100, 26);
+            this.tbLon.TabIndex = 26;
             // 
-            // cbNuoc
+            // tbVua
             // 
-            this.cbNuoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbNuoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cbNuoc.Enabled = false;
-            this.cbNuoc.FormattingEnabled = true;
-            this.cbNuoc.Items.AddRange(new object[] {
-            "Nhỏ ",
-            "Vừa",
-            "Lớn"});
-            this.cbNuoc.Location = new System.Drawing.Point(158, 300);
-            this.cbNuoc.Name = "cbNuoc";
-            this.cbNuoc.Size = new System.Drawing.Size(100, 26);
-            this.cbNuoc.TabIndex = 22;
+            this.tbVua.Enabled = false;
+            this.tbVua.Location = new System.Drawing.Point(158, 144);
+            this.tbVua.Name = "tbVua";
+            this.tbVua.ReadOnly = true;
+            this.tbVua.Size = new System.Drawing.Size(100, 26);
+            this.tbVua.TabIndex = 25;
             // 
-            // cbDien
+            // tbNho
             // 
-            this.cbDien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbDien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cbDien.Enabled = false;
-            this.cbDien.FormattingEnabled = true;
-            this.cbDien.Items.AddRange(new object[] {
-            "Nhỏ ",
-            "Vừa",
-            "Lớn"});
-            this.cbDien.Location = new System.Drawing.Point(158, 265);
-            this.cbDien.Name = "cbDien";
-            this.cbDien.Size = new System.Drawing.Size(100, 26);
-            this.cbDien.TabIndex = 21;
+            this.tbNho.Enabled = false;
+            this.tbNho.Location = new System.Drawing.Point(158, 109);
+            this.tbNho.Name = "tbNho";
+            this.tbNho.ReadOnly = true;
+            this.tbNho.Size = new System.Drawing.Size(100, 26);
+            this.tbNho.TabIndex = 24;
             // 
             // label10
             // 
@@ -195,7 +177,7 @@ namespace QLNhaTro
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(274, 145);
+            this.label9.Location = new System.Drawing.Point(274, 147);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 20);
             this.label9.TabIndex = 11;
@@ -233,7 +215,7 @@ namespace QLNhaTro
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 145);
+            this.label5.Location = new System.Drawing.Point(28, 147);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 20);
             this.label5.TabIndex = 4;
@@ -339,32 +321,32 @@ namespace QLNhaTro
             this.imgIcon.TransparentColor = System.Drawing.Color.Transparent;
             this.imgIcon.Images.SetKeyName(0, "house.png");
             // 
-            // tbNho
+            // tbDV
             // 
-            this.tbNho.Enabled = false;
-            this.tbNho.Location = new System.Drawing.Point(158, 109);
-            this.tbNho.Name = "tbNho";
-            this.tbNho.ReadOnly = true;
-            this.tbNho.Size = new System.Drawing.Size(100, 26);
-            this.tbNho.TabIndex = 24;
+            this.tbDV.Enabled = false;
+            this.tbDV.Location = new System.Drawing.Point(158, 334);
+            this.tbDV.Name = "tbDV";
+            this.tbDV.ReadOnly = true;
+            this.tbDV.Size = new System.Drawing.Size(100, 26);
+            this.tbDV.TabIndex = 29;
             // 
-            // tbVua
+            // tbNuoc
             // 
-            this.tbVua.Enabled = false;
-            this.tbVua.Location = new System.Drawing.Point(158, 142);
-            this.tbVua.Name = "tbVua";
-            this.tbVua.ReadOnly = true;
-            this.tbVua.Size = new System.Drawing.Size(100, 26);
-            this.tbVua.TabIndex = 25;
+            this.tbNuoc.Enabled = false;
+            this.tbNuoc.Location = new System.Drawing.Point(158, 300);
+            this.tbNuoc.Name = "tbNuoc";
+            this.tbNuoc.ReadOnly = true;
+            this.tbNuoc.Size = new System.Drawing.Size(100, 26);
+            this.tbNuoc.TabIndex = 28;
             // 
-            // tbLon
+            // tbDien
             // 
-            this.tbLon.Enabled = false;
-            this.tbLon.Location = new System.Drawing.Point(158, 178);
-            this.tbLon.Name = "tbLon";
-            this.tbLon.ReadOnly = true;
-            this.tbLon.Size = new System.Drawing.Size(100, 26);
-            this.tbLon.TabIndex = 26;
+            this.tbDien.Enabled = false;
+            this.tbDien.Location = new System.Drawing.Point(158, 265);
+            this.tbDien.Name = "tbDien";
+            this.tbDien.ReadOnly = true;
+            this.tbDien.Size = new System.Drawing.Size(100, 26);
+            this.tbDien.TabIndex = 27;
             // 
             // frmTrangChu
             // 
@@ -412,13 +394,13 @@ namespace QLNhaTro
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cbLoai;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cbDien;
-        private System.Windows.Forms.ComboBox cbDV;
-        private System.Windows.Forms.ComboBox cbNuoc;
         private System.Windows.Forms.ListView lvPhong;
         private System.Windows.Forms.ImageList imgIcon;
         private System.Windows.Forms.TextBox tbLon;
         private System.Windows.Forms.TextBox tbVua;
         private System.Windows.Forms.TextBox tbNho;
+        private System.Windows.Forms.TextBox tbDV;
+        private System.Windows.Forms.TextBox tbNuoc;
+        private System.Windows.Forms.TextBox tbDien;
     }
 }

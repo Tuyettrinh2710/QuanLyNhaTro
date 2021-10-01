@@ -60,16 +60,30 @@ namespace QLNhaTro
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            busPhi.Sua(int.Parse(tbMa.Text), tbTen.Text, double.Parse(tbGia.Text));
-            frmLoad();
-            loadText();
+            if (tbMa.Text == "")
+            {
+                MessageBox.Show("Mã phí trống. Sửa thất bại");
+            }    
+            else
+            {
+                busPhi.Sua(int.Parse(tbMa.Text), tbTen.Text, double.Parse(tbGia.Text));
+                frmLoad();
+                loadText();
+            }  
         }
 
         private void btXoa_Click(object sender,EventArgs e)
         {
-            busPhi.Xoa(int.Parse(tbMa.Text));
-            frmLoad();
-            loadText();
+            if (tbMa.Text == "")
+            {
+                MessageBox.Show("Mã phí trống. Sửa thất bại");
+            }
+            else
+            {
+                busPhi.Xoa(int.Parse(tbMa.Text));
+                frmLoad();
+                loadText();
+            }
         }
     }
 }

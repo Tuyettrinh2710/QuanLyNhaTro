@@ -26,9 +26,9 @@ namespace QLNhaTro
 
         private void frmTrangChu_Load(object sender, EventArgs e)
         {
-            busPhi.LayGia(cbDien, 16);
-            busPhi.LayGia(cbNuoc, 2);
-            busPhi.LayGia(cbDV, 3);
+            tbDien.Text = busPhi.LayGia(16).ToString();
+            tbNuoc.Text = busPhi.LayGia(2).ToString();
+            tbDV.Text = busPhi.LayGia(3).ToString();
             busLoaiPhong.DSLoai(cbLoai);
             //busLoaiPhong.LayGiaPhong(cbNho, 1);
             //busLoaiPhong.LayGiaPhong(cbVua, 2);

@@ -68,11 +68,11 @@ namespace DAO
             }
         }
 
-        public dynamic LayGia(int id)
+        public List<Phi> LayGia(int id)
         {
             try
             {
-                dynamic gia = db.Phis.Where(s => s.ID == id);
+                List<Phi> gia = db.Phis.Where(s => s.ID == id).ToList();
                 return gia;
             }
             catch (Exception)
