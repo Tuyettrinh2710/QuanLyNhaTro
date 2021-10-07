@@ -18,7 +18,7 @@ namespace DAO
         {
             try
             {
-                dynamic ds = db.TimKH(ten);
+                dynamic ds = db.TimKhachThue(ten);
                 return ds;
             }
             catch (Exception)
@@ -62,34 +62,6 @@ namespace DAO
             {
                 var khach = db.SuaKH(k.ID, k.HoTen, k.GioiTinh, k.NgaySinh, k.Sdt, k.CMND, k.QueQuan);
                 return true;
-            }
-            catch (Exception)
-            {
-                throw new Exception("Không lấy được stored procedure");
-            }
-        }
-
-        public bool XoaKH(string id)
-        {
-            try
-            {
-                var khach = db.XoaKH(id);
-                return true;
-            }
-            catch (Exception)
-            {
-                throw new Exception("Không lấy được stored procedure");
-            }
-        }
-
-        //kiểm tra khách hàng có trong bảng thuê phòng
-        public bool KiemTraKH(string id)
-        {
-            try
-            {
-                bool? kq = false;
-                var khach = db.KTKHTonTai(id, ref kq);
-                return (bool)kq;
             }
             catch (Exception)
             {

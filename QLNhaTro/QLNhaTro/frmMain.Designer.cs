@@ -30,15 +30,17 @@ namespace QLNhaTro
         private void InitializeComponent()
         {
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ptbExit = new System.Windows.Forms.PictureBox();
+            this.ptbMinimize = new System.Windows.Forms.PictureBox();
+            this.ptbState = new System.Windows.Forms.PictureBox();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.pnlBot = new System.Windows.Forms.Panel();
             this.mnsMain = new System.Windows.Forms.MenuStrip();
             this.trangChủToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cậpNhậtKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.danhSáchKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loạiPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,16 +51,12 @@ namespace QLNhaTro
             this.tínhTiềnPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thuTiềnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ptbExit = new System.Windows.Forms.PictureBox();
-            this.ptbMinimize = new System.Windows.Forms.PictureBox();
-            this.ptbState = new System.Windows.Forms.PictureBox();
             this.pnlTop.SuspendLayout();
-            this.mnsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbState)).BeginInit();
+            this.mnsMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -76,6 +74,17 @@ namespace QLNhaTro
             this.pnlTop.TabIndex = 0;
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::QLNhaTro.Properties.Resources.nhatrolg;
+            this.pictureBox1.Location = new System.Drawing.Point(9, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -86,6 +95,45 @@ namespace QLNhaTro
             this.label1.Size = new System.Drawing.Size(223, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Phần mền quản lý nhà trọ";
+            // 
+            // ptbExit
+            // 
+            this.ptbExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbExit.Image = global::QLNhaTro.Properties.Resources._12;
+            this.ptbExit.Location = new System.Drawing.Point(881, 6);
+            this.ptbExit.Name = "ptbExit";
+            this.ptbExit.Size = new System.Drawing.Size(20, 20);
+            this.ptbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbExit.TabIndex = 3;
+            this.ptbExit.TabStop = false;
+            this.ptbExit.Click += new System.EventHandler(this.ptbExit_Click);
+            // 
+            // ptbMinimize
+            // 
+            this.ptbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbMinimize.Image = global::QLNhaTro.Properties.Resources.tải_xuống1;
+            this.ptbMinimize.Location = new System.Drawing.Point(810, 6);
+            this.ptbMinimize.Name = "ptbMinimize";
+            this.ptbMinimize.Size = new System.Drawing.Size(20, 20);
+            this.ptbMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbMinimize.TabIndex = 2;
+            this.ptbMinimize.TabStop = false;
+            this.ptbMinimize.Click += new System.EventHandler(this.ptbMinimize_Click);
+            // 
+            // ptbState
+            // 
+            this.ptbState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbState.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbState.Image = global::QLNhaTro.Properties.Resources.nut2;
+            this.ptbState.Location = new System.Drawing.Point(844, 6);
+            this.ptbState.Name = "ptbState";
+            this.ptbState.Size = new System.Drawing.Size(20, 20);
+            this.ptbState.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbState.TabIndex = 1;
+            this.ptbState.TabStop = false;
+            this.ptbState.Click += new System.EventHandler(this.ptbState_Click);
             // 
             // pnlLeft
             // 
@@ -141,27 +189,11 @@ namespace QLNhaTro
             // quảnLýKháchHàngToolStripMenuItem
             // 
             this.quảnLýKháchHàngToolStripMenuItem.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.quảnLýKháchHàngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cậpNhậtKháchHàngToolStripMenuItem,
-            this.danhSáchKháchHàngToolStripMenuItem});
             this.quảnLýKháchHàngToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.quảnLýKháchHàngToolStripMenuItem.Name = "quảnLýKháchHàngToolStripMenuItem";
             this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.quảnLýKháchHàngToolStripMenuItem.Text = "Quản lý khách hàng";
-            // 
-            // cậpNhậtKháchHàngToolStripMenuItem
-            // 
-            this.cậpNhậtKháchHàngToolStripMenuItem.Name = "cậpNhậtKháchHàngToolStripMenuItem";
-            this.cậpNhậtKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
-            this.cậpNhậtKháchHàngToolStripMenuItem.Text = "Cập nhật khách thuê";
-            this.cậpNhậtKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.cậpNhậtKháchHàngToolStripMenuItem_Click);
-            // 
-            // danhSáchKháchHàngToolStripMenuItem
-            // 
-            this.danhSáchKháchHàngToolStripMenuItem.Name = "danhSáchKháchHàngToolStripMenuItem";
-            this.danhSáchKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
-            this.danhSáchKháchHàngToolStripMenuItem.Text = "Danh sách khách thuê";
-            this.danhSáchKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.danhSáchKháchHàngToolStripMenuItem_Click);
+            this.quảnLýKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.quảnLýKháchHàngToolStripMenuItem_Click);
             // 
             // quảnLýPhòngToolStripMenuItem
             // 
@@ -224,14 +256,14 @@ namespace QLNhaTro
             // tínhTiềnPhòngToolStripMenuItem
             // 
             this.tínhTiềnPhòngToolStripMenuItem.Name = "tínhTiềnPhòngToolStripMenuItem";
-            this.tínhTiềnPhòngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tínhTiềnPhòngToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.tínhTiềnPhòngToolStripMenuItem.Text = "Tính tiền phòng";
             this.tínhTiềnPhòngToolStripMenuItem.Click += new System.EventHandler(this.tínhTiềnPhòngToolStripMenuItem_Click);
             // 
             // thuTiềnToolStripMenuItem
             // 
             this.thuTiềnToolStripMenuItem.Name = "thuTiềnToolStripMenuItem";
-            this.thuTiềnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.thuTiềnToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.thuTiềnToolStripMenuItem.Text = "Thu Tiền";
             this.thuTiềnToolStripMenuItem.Click += new System.EventHandler(this.thuTiềnToolStripMenuItem_Click);
             // 
@@ -243,56 +275,6 @@ namespace QLNhaTro
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(892, 428);
             this.pnlContent.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::QLNhaTro.Properties.Resources.nhatrolg;
-            this.pictureBox1.Location = new System.Drawing.Point(9, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // ptbExit
-            // 
-            this.ptbExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptbExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbExit.Image = global::QLNhaTro.Properties.Resources._12;
-            this.ptbExit.Location = new System.Drawing.Point(881, 6);
-            this.ptbExit.Name = "ptbExit";
-            this.ptbExit.Size = new System.Drawing.Size(20, 20);
-            this.ptbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbExit.TabIndex = 3;
-            this.ptbExit.TabStop = false;
-            this.ptbExit.Click += new System.EventHandler(this.ptbExit_Click);
-            // 
-            // ptbMinimize
-            // 
-            this.ptbMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptbMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbMinimize.Image = global::QLNhaTro.Properties.Resources.tải_xuống1;
-            this.ptbMinimize.Location = new System.Drawing.Point(810, 6);
-            this.ptbMinimize.Name = "ptbMinimize";
-            this.ptbMinimize.Size = new System.Drawing.Size(20, 20);
-            this.ptbMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbMinimize.TabIndex = 2;
-            this.ptbMinimize.TabStop = false;
-            this.ptbMinimize.Click += new System.EventHandler(this.ptbMinimize_Click);
-            // 
-            // ptbState
-            // 
-            this.ptbState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptbState.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbState.Image = global::QLNhaTro.Properties.Resources.nut2;
-            this.ptbState.Location = new System.Drawing.Point(844, 6);
-            this.ptbState.Name = "ptbState";
-            this.ptbState.Size = new System.Drawing.Size(20, 20);
-            this.ptbState.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbState.TabIndex = 1;
-            this.ptbState.TabStop = false;
-            this.ptbState.Click += new System.EventHandler(this.ptbState_Click);
             // 
             // frmMain
             // 
@@ -313,12 +295,12 @@ namespace QLNhaTro
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
-            this.mnsMain.ResumeLayout(false);
-            this.mnsMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbState)).EndInit();
+            this.mnsMain.ResumeLayout(false);
+            this.mnsMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,8 +324,6 @@ namespace QLNhaTro
         private System.Windows.Forms.ToolStripMenuItem quảnLýCácLoạiPhíToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tínhTiềnThuêToolStripMenuItem;
         private System.Windows.Forms.Panel pnlContent;
-        private System.Windows.Forms.ToolStripMenuItem cậpNhậtKháchHàngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem danhSáchKháchHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loạiPhòngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem phòngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thuêPhòngToolStripMenuItem;

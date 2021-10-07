@@ -31,6 +31,8 @@ namespace QLNhaTro
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgvKhach = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tbTim = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhach)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,12 +51,32 @@ namespace QLNhaTro
             // 
             this.dgvKhach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhach.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvKhach.Location = new System.Drawing.Point(0, 81);
+            this.dgvKhach.Location = new System.Drawing.Point(0, 129);
             this.dgvKhach.Name = "dgvKhach";
             this.dgvKhach.RowHeadersWidth = 51;
             this.dgvKhach.RowTemplate.Height = 24;
-            this.dgvKhach.Size = new System.Drawing.Size(892, 345);
+            this.dgvKhach.Size = new System.Drawing.Size(892, 297);
             this.dgvKhach.TabIndex = 1;
+            this.dgvKhach.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhach_CellValueChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(106, 80);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(167, 20);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Nhập tên khách thuê:";
+            // 
+            // tbTim
+            // 
+            this.tbTim.BackColor = System.Drawing.Color.White;
+            this.tbTim.Location = new System.Drawing.Point(319, 77);
+            this.tbTim.Name = "tbTim";
+            this.tbTim.Size = new System.Drawing.Size(393, 26);
+            this.tbTim.TabIndex = 27;
+            this.tbTim.TextChanged += new System.EventHandler(this.tbTim_TextChanged);
             // 
             // frmDanhSachKH
             // 
@@ -62,6 +84,8 @@ namespace QLNhaTro
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(892, 426);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.tbTim);
             this.Controls.Add(this.dgvKhach);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -80,5 +104,7 @@ namespace QLNhaTro
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvKhach;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox tbTim;
     }
 }

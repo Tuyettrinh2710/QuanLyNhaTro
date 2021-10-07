@@ -178,18 +178,6 @@
     <Parameter Name="kq" Type="System.Boolean" DbType="Bit" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.XemKH" Method="XemKH">
-    <ElementType Name="XemKHResult">
-      <Column Name="ID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
-      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Sdt" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="CMND" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
-      <Column Name="QueQuan" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.SuaSoNguoiHienTai" Method="SuaSoNguoiHienTai">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <Parameter Name="HienTai" Parameter="hienTai" Type="System.Int32" DbType="Int" />
@@ -205,19 +193,6 @@
     <Parameter Name="id" Type="System.String" DbType="NVarChar(10)" />
     <Parameter Name="kq" Type="System.Boolean" DbType="Bit" Direction="InOut" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.TimKH" Method="TimKH">
-    <Parameter Name="ten" Type="System.String" DbType="NVarChar(100)" />
-    <ElementType Name="TimKHResult">
-      <Column Name="ID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
-      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Sdt" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="CMND" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
-      <Column Name="QueQuan" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-    </ElementType>
   </Function>
   <Function Name="dbo.SuaKH" Method="SuaKH">
     <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="NVarChar(10)" />
@@ -237,15 +212,6 @@
   <Function Name="dbo.KTLoaiTonTai" Method="KTLoaiTonTai">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <Parameter Name="kq" Type="System.Boolean" DbType="Bit" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.KTKHTonTai" Method="KTKHTonTai">
-    <Parameter Name="id" Type="System.String" DbType="NVarChar(10)" />
-    <Parameter Name="kq" Type="System.Boolean" DbType="Bit" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.XoaKH" Method="XoaKH">
-    <Parameter Name="id" Type="System.String" DbType="NVarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.LayPhongTheoTen" Method="LayPhongTheoTen">
@@ -314,5 +280,22 @@
     <Parameter Name="TienDV" Parameter="tienDV" Type="System.Decimal" DbType="Decimal(18,0)" />
     <Parameter Name="TongTien" Parameter="tongTien" Type="System.Decimal" DbType="Decimal(18,0)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.fChuyenCoDauThanhKhongDau" Method="fChuyenCoDauThanhKhongDau" IsComposable="true">
+    <Parameter Name="inputVar" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.TimKhachThue" Method="TimKhachThue">
+    <Parameter Name="ten" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="TimKhachThueResult">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Sdt" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CMND" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="QueQuan" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
 </Database>

@@ -78,21 +78,9 @@ namespace QLNhaTro
             addForm(f);
         }
 
-        private void cậpNhậtKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var f = new frmCapNhatKH();
-            addForm(f);
-        }
-
         private void trangChủToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var f = new frmTrangChu();
-            addForm(f);
-        }
-
-        private void danhSáchKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var f = new frmDanhSachKH();
             addForm(f);
         }
 
@@ -135,6 +123,12 @@ namespace QLNhaTro
         private void thuTiềnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var f = new frmThuTien();
+            addForm(f);
+        }
+
+        private void quảnLýKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new frmDanhSachKH();
             addForm(f);
         }
     }
