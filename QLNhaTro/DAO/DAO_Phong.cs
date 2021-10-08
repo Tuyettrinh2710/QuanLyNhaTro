@@ -165,5 +165,20 @@ namespace DAO
                 throw new Exception("Không lấy được stored procedure");
             }
         }
+
+        // Lấy số người số người trong phòng
+        public int LaySNTrongPhong(int id)
+        {
+            try
+            {
+                int? toiDa = 0, hienTai = 0;
+                var soNguoi = db.LaySoNguoiHTVaTD(id, ref toiDa, ref hienTai);
+                return (int)hienTai;
+            }
+            catch
+            {
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
     }
 }

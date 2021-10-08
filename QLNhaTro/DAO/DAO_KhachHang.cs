@@ -111,5 +111,19 @@ namespace DAO
             List<KhachHang> khach = db.KhachHangs.Where(s => s.ID == id).ToList();
             return khach;
         }
+
+        //Cập nhật mã phòng null cho khách hàng
+        public bool CapNhatMaPhongNULL(string id)
+        {
+            try
+            {
+                db.CapNhatMaPhongNUll(id);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
     }
 }

@@ -75,5 +75,11 @@ namespace DAO
             }
             
         }
+
+        public List<ThuePhong> LayThongTinThuePhong(string maKH, int idPhong)
+        {
+            List<ThuePhong> ds = db.ThuePhongs.Where(s => s.ID_KH == maKH && s.ID_Phong == idPhong).ToList();
+            return ds;
+        }
     }
 }

@@ -365,6 +365,20 @@ namespace DAO
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ten);
 			return ((ISingleResult<TimKhachThueResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ThemTraPhong")]
+		public int ThemTraPhong([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(10)")] string idThue, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(10)")] string idKH, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idPhong, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> ngayThue, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> ngayTra)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idThue, idKH, idPhong, ngayThue, ngayTra);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CapNhatMaPhongNUll")]
+		public int CapNhatMaPhongNUll([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(10)")] string idKH)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idKH);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HoaDon")]

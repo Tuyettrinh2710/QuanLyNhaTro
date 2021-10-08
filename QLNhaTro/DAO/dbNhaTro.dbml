@@ -298,4 +298,16 @@
       <Column Name="TenPhong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.ThemTraPhong" Method="ThemTraPhong">
+    <Parameter Name="idThue" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="idKH" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="idPhong" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ngayThue" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ngayTra" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CapNhatMaPhongNUll" Method="CapNhatMaPhongNUll">
+    <Parameter Name="idKH" Type="System.String" DbType="NVarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

@@ -48,6 +48,7 @@
     <Compile Include="BUS_Phong.cs" />
     <Compile Include="BUS_ThanhToan.cs" />
     <Compile Include="BUS_ThuePhong.cs" />
+    <Compile Include="BUS_TraPhong.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

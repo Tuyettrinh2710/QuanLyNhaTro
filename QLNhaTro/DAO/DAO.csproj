@@ -51,6 +51,7 @@
     <Compile Include="DAO_Phong.cs" />
     <Compile Include="DAO_ThanhToan.cs" />
     <Compile Include="DAO_ThuePhong.cs" />
+    <Compile Include="DAO_TraPhong.cs" />
     <Compile Include="dbNhaTro.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -111,5 +111,21 @@ namespace BUS
                 que.Text = k.QueQuan;
             }
         }
+
+        //Cập nhật mã phòng null cho khách hàng
+        public void CapNhatMaPhongNULL(string id)
+        {
+            if (da.CapNhatMaPhongNULL(id) == true)
+            {
+                string s = string.Format("Khách hàng có id {0} đã được cập nhật mã phòng có giá trị null thành công", id);
+                MessageBox.Show(s);
+            }
+            else
+            {
+                string s = string.Format("Khách hàng có id {0} đã được cập nhật mã phòng có giá trị null thất bại", id);
+                MessageBox.Show(s);
+            }
+        }
+
     }
 }

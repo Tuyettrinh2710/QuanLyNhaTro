@@ -100,7 +100,7 @@ namespace BUS
             cb.ValueMember = "ID";
         }
 
-        //Lấy số người còn thiếu trong phòng
+        //Lấy số người còn trống trong phòng
         public int LaySoNguoiConTrong(int id)
         {
             int soNguoi = da.LaySoNguoiTrongPhong(id);
@@ -120,6 +120,13 @@ namespace BUS
                 string s = string.Format("Update phòng có id {0} thất bại", id);
                 MessageBox.Show(s);
             }
+        }
+
+        //Lấy số người hiện tại trong phòng
+        public int LaySoNguoiTrongPhong(int id)
+        {
+            int soNguoi = da.LaySNTrongPhong(id);
+            return soNguoi;
         }
     }
 }

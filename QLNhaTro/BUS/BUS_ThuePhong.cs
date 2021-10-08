@@ -57,5 +57,16 @@ namespace BUS
             string giaTri = tb.Text.Substring(2);
             da.CapNhatGTThamSo(id, giaTri);
         }
+
+        public void LayThongTinThue(string idKH, int idPhong,TextBox tbMaThue, TextBox tbTienCoc, DateTimePicker dtp)
+        {
+            List<ThuePhong> ds = da.LayThongTinThuePhong(idKH, idPhong);
+            foreach(ThuePhong t in ds)
+            {
+                tbMaThue.Text = t.ID;
+                tbTienCoc.Text = t.TienCoc.ToString();
+                dtp.Value = t.NgayThue.Value;
+            }    
+        }
     }
 }
