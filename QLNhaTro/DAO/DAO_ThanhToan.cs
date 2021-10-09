@@ -52,5 +52,19 @@ namespace DAO
                 throw new Exception("Không lấy được stored procedure");
             }
         }
+
+        public dynamic LayDSHDChuaThu()
+        {
+            try
+            {
+                dynamic hoaDon = db.LayHoaDonChuaThuTien();
+                return hoaDon;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
     }
 }

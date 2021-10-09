@@ -49,5 +49,10 @@ namespace BUS
                 MessageBox.Show(s);
             }    
         }
+
+        public void LayHoaDonChuaThu(DataGridView dgv)
+        {
+            dgv.DataSource = da.LayDSHDChuaThu();
+        }
     }
 }

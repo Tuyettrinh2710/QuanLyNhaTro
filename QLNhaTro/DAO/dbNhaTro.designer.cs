@@ -379,6 +379,13 @@ namespace DAO
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idKH);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayHoaDonChuaThuTien")]
+		public ISingleResult<LayHoaDonChuaThuTienResult> LayHoaDonChuaThuTien()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<LayHoaDonChuaThuTienResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HoaDon")]
@@ -2921,6 +2928,212 @@ namespace DAO
 				if ((this._TenPhong != value))
 				{
 					this._TenPhong = value;
+				}
+			}
+		}
+	}
+	
+	public partial class LayHoaDonChuaThuTienResult
+	{
+		
+		private int _ID;
+		
+		private string _TenPhong;
+		
+		private string _HoTen;
+		
+		private System.Nullable<System.DateTime> _NgayLap;
+		
+		private System.Nullable<decimal> _GiaPhong;
+		
+		private System.Nullable<int> _SkDien;
+		
+		private System.Nullable<decimal> _TienDien;
+		
+		private System.Nullable<int> _SkNuoc;
+		
+		private System.Nullable<decimal> _TienNuoc;
+		
+		private System.Nullable<decimal> _TienDV;
+		
+		private System.Nullable<decimal> _TongTien;
+		
+		public LayHoaDonChuaThuTienResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenPhong", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string TenPhong
+		{
+			get
+			{
+				return this._TenPhong;
+			}
+			set
+			{
+				if ((this._TenPhong != value))
+				{
+					this._TenPhong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string HoTen
+		{
+			get
+			{
+				return this._HoTen;
+			}
+			set
+			{
+				if ((this._HoTen != value))
+				{
+					this._HoTen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayLap", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayLap
+		{
+			get
+			{
+				return this._NgayLap;
+			}
+			set
+			{
+				if ((this._NgayLap != value))
+				{
+					this._NgayLap = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaPhong", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> GiaPhong
+		{
+			get
+			{
+				return this._GiaPhong;
+			}
+			set
+			{
+				if ((this._GiaPhong != value))
+				{
+					this._GiaPhong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SkDien", DbType="Int")]
+		public System.Nullable<int> SkDien
+		{
+			get
+			{
+				return this._SkDien;
+			}
+			set
+			{
+				if ((this._SkDien != value))
+				{
+					this._SkDien = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TienDien", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> TienDien
+		{
+			get
+			{
+				return this._TienDien;
+			}
+			set
+			{
+				if ((this._TienDien != value))
+				{
+					this._TienDien = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SkNuoc", DbType="Int")]
+		public System.Nullable<int> SkNuoc
+		{
+			get
+			{
+				return this._SkNuoc;
+			}
+			set
+			{
+				if ((this._SkNuoc != value))
+				{
+					this._SkNuoc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TienNuoc", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> TienNuoc
+		{
+			get
+			{
+				return this._TienNuoc;
+			}
+			set
+			{
+				if ((this._TienNuoc != value))
+				{
+					this._TienNuoc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TienDV", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> TienDV
+		{
+			get
+			{
+				return this._TienDV;
+			}
+			set
+			{
+				if ((this._TienDV != value))
+				{
+					this._TienDV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongTien", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> TongTien
+		{
+			get
+			{
+				return this._TongTien;
+			}
+			set
+			{
+				if ((this._TongTien != value))
+				{
+					this._TongTien = value;
 				}
 			}
 		}
