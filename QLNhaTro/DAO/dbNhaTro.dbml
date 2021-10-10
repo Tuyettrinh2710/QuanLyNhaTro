@@ -325,4 +325,8 @@
       <Column Name="TongTien" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.CapNhatThuTien" Method="CapNhatThuTien">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

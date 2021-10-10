@@ -270,6 +270,7 @@ namespace QLNhaTro
             this.button1.TabIndex = 26;
             this.button1.Text = "Thu tiền";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btIn
             // 
@@ -279,7 +280,6 @@ namespace QLNhaTro
             this.btIn.TabIndex = 27;
             this.btIn.Text = "In";
             this.btIn.UseVisualStyleBackColor = true;
-            this.btIn.Click += new System.EventHandler(this.btIn_Click);
             // 
             // dtpNgayLap
             // 

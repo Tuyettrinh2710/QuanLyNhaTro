@@ -66,5 +66,19 @@ namespace DAO
                 throw new Exception("Không lấy được stored procedure");
             }
         }
+
+        public bool CapNhatThuTien(int id)
+        {
+            try
+            {
+                db.CapNhatThuTien(id);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
     }
 }

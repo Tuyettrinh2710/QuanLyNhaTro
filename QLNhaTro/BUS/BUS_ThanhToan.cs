@@ -54,5 +54,12 @@ namespace BUS
         {
             dgv.DataSource = da.LayDSHDChuaThu();
         }
+
+        public bool CapNhatThuTien(int id)
+        {
+            if (da.CapNhatThuTien(id))
+                return true;
+            return false;
+        }
     }
 }
