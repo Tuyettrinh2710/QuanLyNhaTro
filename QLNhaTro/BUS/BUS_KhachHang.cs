@@ -66,13 +66,16 @@ namespace BUS
             }
         }
 
-        //Kiểm tra khách hàng có trong bảng trả phòng
-
-        public bool KiemTraKHTraPhong(string id)
+        //lấy mã phòng từ id khách thuê
+        public int? LayMaPhongBangIDKH(string id)
         {
-            if (da.KiemTraKHCoTraPhong(id))
-                return true;
-            return false;
+            int? maPhong = 0;
+            List<KhachHang> ds = da.LayThongTinKH(id);
+            foreach (KhachHang k in ds)
+            {
+                maPhong = (int?)k.MaPhong;
+            }
+            return maPhong;
         }
 
         //Cập nhập mã phòng cho khách hàng

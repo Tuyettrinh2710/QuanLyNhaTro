@@ -29,9 +29,16 @@ namespace QLNhaTro
 
         private void frmThuePhong_Load(object sender, EventArgs e)
         {
-            tbMaThue.Text = busThue.LayMa();
             busLoaiPhong.DSLoai(cbLoai);
             tbTienCoc.Text = "0";
+            string id = busThue.LayMa();
+            if (busThue.KiemTraIDThue(id))
+            {
+                busThue.CapNhatMa(id);
+                tbMaThue.Text = busThue.LayMa();
+            }
+            else
+                tbMaThue.Text = busThue.LayMa();
         }
 
         void loadKH()
@@ -128,10 +135,9 @@ namespace QLNhaTro
             {
                 //string s = string.Format("Không thể thêm khách hàng vì id {0} đã tồn tại", tbSdt.Text);
                 //MessageBox.Show(s);
-                if (busKH.KiemTraKHTraPhong(tbSdt.Text))
-                {
+                int? maPhongKH = busKH.LayMaPhongBangIDKH(tbSdt.Text);
+                if (maPhongKH == null)
                     ThuePhong(tbTen.Text);
-                }
                 else
                 {
                     string s = string.Format("Khách thuê {0} chưa trả phòng đang thuê. Không thể thuê phòng", tbTen.Text);
@@ -176,7 +182,7 @@ namespace QLNhaTro
                 else
                 {
                     MessageBox.Show("Phòng đã đủ người không thể thêm");
-                    busThue.CapNhatMa(tbMaThue);
+                    busThue.CapNhatMa(tbMaThue.Text);
                     loadText();
                 }
             }
@@ -278,7 +284,7 @@ namespace QLNhaTro
 
         private void btTaoMoi_Click(object sender, EventArgs e)
         {
-            busThue.CapNhatMa(tbMaThue);
+            busThue.CapNhatMa(tbMaThue.Text);
             loadText();
         }
     }

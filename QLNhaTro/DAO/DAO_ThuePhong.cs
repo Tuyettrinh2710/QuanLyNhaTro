@@ -81,5 +81,21 @@ namespace DAO
             List<ThuePhong> ds = db.ThuePhongs.Where(s => s.ID_KH == maKH && s.ID_Phong == idPhong).ToList();
             return ds;
         }
+
+        //Kiểm tra id có chưa
+        public bool KiemTraIDThue(string id)
+        {
+            try
+            {
+                bool? kq = false;
+                var ketQua = db.KiemTraIDThue(id, ref kq);
+                return (bool)kq;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procdure");
+            }
+        }
     }
 }

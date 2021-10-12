@@ -173,7 +173,8 @@ namespace QLNhaTro
             // 
             // dtpNgaySinh
             // 
-            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(391, 60);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(191, 26);
@@ -387,8 +388,9 @@ namespace QLNhaTro
             // 
             // dtpNgayThue
             // 
+            this.dtpNgayThue.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayThue.Enabled = false;
-            this.dtpNgayThue.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayThue.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayThue.Location = new System.Drawing.Point(418, 344);
             this.dtpNgayThue.Name = "dtpNgayThue";
             this.dtpNgayThue.Size = new System.Drawing.Size(163, 26);

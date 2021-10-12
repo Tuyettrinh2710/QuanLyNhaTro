@@ -303,14 +303,6 @@ namespace DAO
 			return ((ISingleResult<LayPhongTheoTenResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.KTKHCoTraPhong")]
-		public int KTKHCoTraPhong([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(10)")] string id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] ref System.Nullable<bool> kq)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, kq);
-			kq = ((System.Nullable<bool>)(result.GetParameterValue(1)));
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CapNhatMaPhongKH")]
 		public int CapNhatMaPhongKH([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(10)")] string idKH, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> maPhong)
 		{
@@ -391,6 +383,14 @@ namespace DAO
 		public int CapNhatThuTien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.KiemTraIDThue")]
+		public int KiemTraIDThue([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(10)")] string id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="KQ", DbType="Bit")] ref System.Nullable<bool> kQ)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, kQ);
+			kQ = ((System.Nullable<bool>)(result.GetParameterValue(1)));
 			return ((int)(result.ReturnValue));
 		}
 	}

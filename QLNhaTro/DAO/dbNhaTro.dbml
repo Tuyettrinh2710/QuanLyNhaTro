@@ -224,11 +224,6 @@
       <Column Name="SoNguoiHienTai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.KTKHCoTraPhong" Method="KTKHCoTraPhong">
-    <Parameter Name="id" Type="System.String" DbType="NVarChar(10)" />
-    <Parameter Name="kq" Type="System.Boolean" DbType="Bit" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.CapNhatMaPhongKH" Method="CapNhatMaPhongKH">
     <Parameter Name="idKH" Type="System.String" DbType="NVarChar(10)" />
     <Parameter Name="maPhong" Type="System.Int32" DbType="Int" />
@@ -327,6 +322,11 @@
   </Function>
   <Function Name="dbo.CapNhatThuTien" Method="CapNhatThuTien">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.KiemTraIDThue" Method="KiemTraIDThue">
+    <Parameter Name="id" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="KQ" Parameter="kQ" Type="System.Boolean" DbType="Bit" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

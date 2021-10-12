@@ -51,10 +51,10 @@ namespace BUS
             return false;
         }
 
-        public void CapNhatMa(TextBox tb)
+        public void CapNhatMa(string ma)
         {
-            string id = tb.Text.Substring(0,2);
-            string giaTri = tb.Text.Substring(2);
+            string id = ma.Substring(0,2);
+            string giaTri = ma.Substring(2);
             da.CapNhatGTThamSo(id, giaTri);
         }
 
@@ -67,6 +67,14 @@ namespace BUS
                 tbTienCoc.Text = t.TienCoc.ToString();
                 dtp.Value = t.NgayThue.Value;
             }    
+        }
+
+        //kiểm tra id thuê
+        public bool KiemTraIDThue(string id)
+        {
+            if (da.KiemTraIDThue(id))
+                return true;
+            return false;
         }
     }
 }

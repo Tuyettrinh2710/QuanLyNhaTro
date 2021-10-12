@@ -83,21 +83,6 @@ namespace DAO
             }
         }
 
-        //Kiểm tra khách hàng có trong bảng trả phòng
-        public bool KiemTraKHCoTraPhong(string id)
-        {
-            try
-            {
-                bool? kq = false;
-                var khach = db.KTKHCoTraPhong(id, ref kq);
-                return (bool)kq;
-            }
-            catch (Exception)
-            {
-                throw new Exception("Không lấy được stored procedure");
-            }
-        }
-
         //Lấy danh sách khách hàng trong phòng
         public List<KhachHang> LayDSKhachHangTrongPhong(int idPhong)
         {
