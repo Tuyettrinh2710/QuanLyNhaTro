@@ -150,25 +150,11 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ThemPhi")]
-		public int ThemPhi([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ten", DbType="NVarChar(10)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GiaTien", DbType="Decimal(18,0)")] System.Nullable<decimal> giaTien)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ten, giaTien);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XemCacLoaiPhi")]
 		public ISingleResult<XemCacLoaiPhiResult> XemCacLoaiPhi()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<XemCacLoaiPhiResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XoaPhi")]
-		public int XoaPhi([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
-			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SuaPhi")]
@@ -178,24 +164,10 @@ namespace DAO
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ThemLP")]
-		public int ThemLP([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ten", DbType="NVarChar(10)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Gia", DbType="Decimal(18,0)")] System.Nullable<decimal> gia)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ten, gia);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SuaLP")]
 		public int SuaLP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ten", DbType="NVarChar(10)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Gia", DbType="Decimal(18,0)")] System.Nullable<decimal> gia)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, ten, gia);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XoaLP")]
-		public int XoaLP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -285,14 +257,6 @@ namespace DAO
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, giaTri);
 			giaTri = ((string)(result.GetParameterValue(1)));
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.KTLoaiTonTai")]
-		public int KTLoaiTonTai([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] ref System.Nullable<bool> kq)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, kq);
-			kq = ((System.Nullable<bool>)(result.GetParameterValue(1)));
 			return ((int)(result.ReturnValue));
 		}
 		

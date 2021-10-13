@@ -21,29 +21,12 @@ namespace BUS
             dgv.DataSource = da.LayDSLoaiPhong();
         }
 
-        public void ThemLoaiPhong(string ten, double gia)
-        {
-            LoaiPhong lp = new LoaiPhong();
-            lp.TenLP = ten;
-            lp.GiaTien = (decimal?)gia;
-            if (da.ThemLoaiPhong(lp) == true)
-            {
-                string s = string.Format("Thêm loại phòng có tên {0} thành công", ten);
-                MessageBox.Show(s);
-            }  
-            else
-            {
-                string s = string.Format("Thêm loại phòng có tên {0} thất bại", ten);
-                MessageBox.Show(s);
-            }    
-        }
-
-        public void SuaLoaiPhong(int id, string ten, double gia)
+        public void SuaLoaiPhong(int id, string ten, decimal gia)
         {
             LoaiPhong lp = new LoaiPhong();
             lp.ID = id;
             lp.TenLP = ten;
-            lp.GiaTien = (decimal?)gia;
+            lp.GiaTien = gia;
             if (da.SuaLoaiPhong(lp) == true)
             {
                 string s = string.Format("Sửa loại phòng có id {0} thành công", id);
@@ -52,20 +35,6 @@ namespace BUS
             else
             {
                 string s = string.Format("Sửa loại phòng có id {0} thất bại", id);
-                MessageBox.Show(s);
-            }
-        }
-
-        public void XoaLoaiPhong(int id)
-        {
-            if (da.XoaLoaiPhong(id) == true)
-            {
-                string s = string.Format("Xóa loại phòng có id {0} thành công", id);
-                MessageBox.Show(s);
-            }
-            else
-            {
-                string s = string.Format("Xóa loại phòng có id {0} thất bại", id);
                 MessageBox.Show(s);
             }
         }
@@ -89,14 +58,6 @@ namespace BUS
             List<LoaiPhong> l = da.LayGia(id);
             foreach (LoaiPhong lp in l)
                 tb.Text = lp.GiaTien.ToString();
-        }
-
-        //kiểm tra loại có nằm trong bảng phòng
-        public bool KiemTraLoaiPhong(int id)
-        {
-            if (da.KiemTraLP(id))
-                return true;
-            return false;
         }
     }
 }

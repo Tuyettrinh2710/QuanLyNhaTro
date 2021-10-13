@@ -54,7 +54,6 @@ namespace QLNhaTro
             this.label13 = new System.Windows.Forms.Label();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.btIn = new System.Windows.Forms.Button();
             this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayThu = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
@@ -264,22 +263,13 @@ namespace QLNhaTro
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(682, 199);
+            this.button1.Location = new System.Drawing.Point(791, 205);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 37);
             this.button1.TabIndex = 26;
             this.button1.Text = "Thu tiền";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btIn
-            // 
-            this.btIn.Location = new System.Drawing.Point(794, 199);
-            this.btIn.Name = "btIn";
-            this.btIn.Size = new System.Drawing.Size(89, 37);
-            this.btIn.TabIndex = 27;
-            this.btIn.Text = "In";
-            this.btIn.UseVisualStyleBackColor = true;
             // 
             // dtpNgayLap
             // 
@@ -307,7 +297,6 @@ namespace QLNhaTro
             this.ClientSize = new System.Drawing.Size(892, 428);
             this.Controls.Add(this.dtpNgayThu);
             this.Controls.Add(this.dtpNgayLap);
-            this.Controls.Add(this.btIn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvHoaDon);
             this.Controls.Add(this.tbTongTien);
@@ -372,7 +361,6 @@ namespace QLNhaTro
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dgvHoaDon;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btIn;
         private System.Windows.Forms.DateTimePicker dtpNgayLap;
         private System.Windows.Forms.DateTimePicker dtpNgayThu;
     }

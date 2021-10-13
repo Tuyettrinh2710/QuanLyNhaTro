@@ -22,60 +22,37 @@ namespace QLNhaTro
 
         private void frmLoaiPhong_Load(object sender, EventArgs e)
         {
-            frmLoad();
-        }
-
-        void loadText()
-        {
-            tbMa.Text = "";
-            tbTen.Text = "";
-            tbGia.Text = "";
-        }
-
-        void frmLoad()
-        {
             busLoai.LayDSLoaiPhong(dgvLoai);
             dgvLoai.Columns[0].Width = (int)(0.2 * dgvLoai.Width);
             dgvLoai.Columns[1].Width = (int)(0.4 * dgvLoai.Width);
             dgvLoai.Columns[2].Width = (int)(0.35 * dgvLoai.Width);
         }
 
-        private void btThem_Click(object sender, EventArgs e)
+        private void dgvLoai_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            busLoai.ThemLoaiPhong(tbTen.Text, double.Parse(tbGia.Text));
-            frmLoad();
-            loadText();
-        }
-
-        private void btSua_Click(object sender, EventArgs e)
-        {
-            busLoai.SuaLoaiPhong(int.Parse(tbMa.Text), tbTen.Text, double.Parse(tbGia.Text));
-            frmLoad();
-            loadText();
-        }
-
-        private void btXoa_Click(object sender, EventArgs e)
-        {
-            if (busLoai.KiemTraLoaiPhong(int.Parse(tbMa.Text)))
+            if (e.ColumnIndex == 0)
             {
-                string s = string.Format("Loại phòng có id {0} nằm trong bảng Phòng. Xóa thất bại", tbMa.Text);
-                MessageBox.Show(s);
-            }
+                MessageBox.Show("Không thể sửa mã loại phòng");
+            }    
+            else if (e.ColumnIndex == 1)
+            {
+                MessageBox.Show("không thẻ sửa tên loại");
+            }  
             else
             {
-                busLoai.XoaLoaiPhong(int.Parse(tbMa.Text));
-                frmLoad();
-                loadText();
-            }    
+                int ma = (int)dgvLoai.Rows[e.RowIndex].Cells[0].Value;
+                string ten = dgvLoai.Rows[e.RowIndex].Cells[1].Value.ToString();
+                decimal gia = (decimal)dgvLoai.Rows[e.RowIndex].Cells[2].Value;
+                busLoai.SuaLoaiPhong(ma, ten, gia);
+            }
+            busLoai.LayDSLoaiPhong(dgvLoai);
         }
 
         private void dgvLoai_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dgvLoai.Rows.Count - 1)
+            if (!(e.RowIndex >= 0 && e.RowIndex < dgvLoai.Rows.Count - 1))
             {
-                tbMa.Text = dgvLoai.Rows[e.RowIndex].Cells[0].Value.ToString();
-                tbTen.Text = dgvLoai.Rows[e.RowIndex].Cells[1].Value.ToString();
-                tbGia.Text = dgvLoai.Rows[e.RowIndex].Cells[2].Value.ToString();
+                MessageBox.Show("Không thể sửa ngoài bảng dữ liệu");
             }
         }
     }

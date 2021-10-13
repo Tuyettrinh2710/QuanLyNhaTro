@@ -91,11 +91,6 @@
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Function Name="dbo.ThemPhi" Method="ThemPhi">
-    <Parameter Name="Ten" Parameter="ten" Type="System.String" DbType="NVarChar(10)" />
-    <Parameter Name="GiaTien" Parameter="giaTien" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.XemCacLoaiPhi" Method="XemCacLoaiPhi">
     <ElementType Name="XemCacLoaiPhiResult">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -103,29 +98,16 @@
       <Column Name="GiaTien" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.XoaPhi" Method="XoaPhi">
-    <Parameter Name="id" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.SuaPhi" Method="SuaPhi">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <Parameter Name="Ten" Parameter="ten" Type="System.String" DbType="NVarChar(10)" />
     <Parameter Name="GiaTien" Parameter="giaTien" Type="System.Decimal" DbType="Decimal(18,0)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.ThemLP" Method="ThemLP">
-    <Parameter Name="Ten" Parameter="ten" Type="System.String" DbType="NVarChar(10)" />
-    <Parameter Name="Gia" Parameter="gia" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.SuaLP" Method="SuaLP">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <Parameter Name="Ten" Parameter="ten" Type="System.String" DbType="NVarChar(10)" />
     <Parameter Name="Gia" Parameter="gia" Type="System.Decimal" DbType="Decimal(18,0)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.XoaLP" Method="XoaLP">
-    <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.LayDSLoaiPhong" Method="LayDSLoaiPhong">
@@ -207,11 +189,6 @@
   <Function Name="dbo.LayMa" Method="LayMa">
     <Parameter Name="id" Type="System.String" DbType="NVarChar(2)" />
     <Parameter Name="giaTri" Type="System.String" DbType="NVarChar(8)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.KTLoaiTonTai" Method="KTLoaiTonTai">
-    <Parameter Name="id" Type="System.Int32" DbType="Int" />
-    <Parameter Name="kq" Type="System.Boolean" DbType="Bit" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.LayPhongTheoTen" Method="LayPhongTheoTen">
