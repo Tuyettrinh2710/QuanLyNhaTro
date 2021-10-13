@@ -63,8 +63,15 @@ namespace QLNhaTro
                 string queQuan = dgvKhach.Rows[e.RowIndex].Cells[6].Value.ToString();
                 busKH.SuaKh(ma, ten, gioiTinh, ngay, sdt, cmnd, queQuan);
             }
-            dgvKhach.Refresh();
             loadDGV();
+        }
+
+        private void dgvKhach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!(e.RowIndex >= 0 && e.RowIndex < dgvKhach.Rows.Count - 1))
+            {
+                MessageBox.Show("Không thể sửa dữ liệu ngoài bảng");
+            }    
         }
     }
 }

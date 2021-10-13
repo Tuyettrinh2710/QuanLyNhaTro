@@ -57,6 +57,7 @@ namespace QLNhaTro
             this.dgvKhach.RowTemplate.Height = 24;
             this.dgvKhach.Size = new System.Drawing.Size(892, 297);
             this.dgvKhach.TabIndex = 1;
+            this.dgvKhach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhach_CellClick);
             this.dgvKhach.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhach_CellValueChanged);
             // 
             // label10

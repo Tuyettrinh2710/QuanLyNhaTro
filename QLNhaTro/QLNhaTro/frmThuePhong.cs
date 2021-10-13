@@ -148,7 +148,7 @@ namespace QLNhaTro
             {
                 string hoTen = tbTen.Text;
                 string gioiTinh = cbGioiTinh.Text;
-                DateTime ngaySinh = dtpNgaySinh.Value;
+                DateTime ngaySinh = dtpNgaySinh.Value.Date;
                 string sdt = tbSdt.Text;
                 string cmnd = tbCMND.Text;
                 string queQuan = tbQueQuan.Text;

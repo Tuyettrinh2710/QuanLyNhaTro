@@ -22,68 +22,30 @@ namespace QLNhaTro
 
         private void frmPhi_Load(object sender, EventArgs e)
         {
-            frmLoad();
-        }
-
-        void loadText()
-        {
-            tbMa.Text = "";
-            tbTen.Text = "";
-            tbGia.Text = "";
-        }
-
-        void frmLoad()
-        {
             busPhi.DSPhi(dgvPhi);
             dgvPhi.Columns[0].Width = (int)(0.2 * dgvPhi.Width);
             dgvPhi.Columns[1].Width = (int)(0.4 * dgvPhi.Width);
             dgvPhi.Columns[2].Width = (int)(0.35 * dgvPhi.Width);
         }
 
-        private void btThem_Click(object sender, EventArgs e)
+        private void dgvPhi_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            busPhi.Them(tbTen.Text, double.Parse(tbGia.Text));
-            frmLoad();
-            loadText();
-        }
-
-        private void dgvPhi_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.RowIndex < dgvPhi.Rows.Count)
+            if (e.ColumnIndex == 0)
             {
-                tbMa.Text = dgvPhi.Rows[e.RowIndex].Cells[0].Value.ToString();
-                tbTen.Text = dgvPhi.Rows[e.RowIndex].Cells[1].Value.ToString();
-                tbGia.Text = dgvPhi.Rows[e.RowIndex].Cells[2].Value.ToString(); 
+                MessageBox.Show("Không thể sửa mã phí");
             }
-
-        }
-
-        private void btSua_Click(object sender, EventArgs e)
-        {
-            if (tbMa.Text == "")
+            else if (e.ColumnIndex == 1)
             {
-                MessageBox.Show("Mã phí trống. Sửa thất bại");
-            }    
-            else
-            {
-                busPhi.Sua(int.Parse(tbMa.Text), tbTen.Text, double.Parse(tbGia.Text));
-                frmLoad();
-                loadText();
-            }  
-        }
-
-        private void btXoa_Click(object sender,EventArgs e)
-        {
-            if (tbMa.Text == "")
-            {
-                MessageBox.Show("Mã phí trống. Sửa thất bại");
+                MessageBox.Show("Không thể sửa tên phí");
             }
             else
             {
-                busPhi.Xoa(int.Parse(tbMa.Text));
-                frmLoad();
-                loadText();
+                int ma = (int) dgvPhi.Rows[e.RowIndex].Cells[0].Value;
+                string ten = dgvPhi.Rows[e.RowIndex].Cells[1].Value.ToString();
+                decimal gia = (decimal) dgvPhi.Rows[e.RowIndex].Cells[2].Value;
+                busPhi.Sua(ma, ten, gia);
             }
+            busPhi.DSPhi(dgvPhi);
         }
     }
 }

@@ -20,43 +20,14 @@ namespace BUS
             dgv.DataSource = da.LayDSPhi();
         }
 
-        public void Them(string ten, double gia)
-        {
-            try
-            {
-                Phi p = new Phi();
-                p.TenPhi = ten;
-                p.GiaTien = (decimal?)gia;
-                da.Them(p);
-                MessageBox.Show("Thêm thành công");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Thêm thất bại");
-            }
-        }
-
-        public void Xoa(int id)
-        {
-            try
-            {
-                da.Xoa(id);
-                MessageBox.Show("Xóa thành công");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Xóa thất bại");
-            }
-        }
-
-        public void Sua(int id, string ten, double gia)
+        public void Sua(int id, string ten, decimal gia)
         {
             try
             {
                 Phi p = new Phi();
                 p.ID = id;
                 p.TenPhi = ten;
-                p.GiaTien = (decimal?)gia;
+                p.GiaTien = gia;
                 if (da.Sua(p))
                 {
                     string info = string.Format("Sửa phí có mã {0} thành công", p.ID);
