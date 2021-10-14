@@ -50,6 +50,8 @@ namespace QLNhaTro
             this.tínhTiềnThuêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tínhTiềnPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thuTiềnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.danhSáchKháchTrongPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -171,7 +173,8 @@ namespace QLNhaTro
             this.quảnLýKháchHàngToolStripMenuItem,
             this.quảnLýPhòngToolStripMenuItem,
             this.quảnLýCácLoạiPhíToolStripMenuItem,
-            this.tínhTiềnThuêToolStripMenuItem});
+            this.tínhTiềnThuêToolStripMenuItem,
+            this.thốngKêToolStripMenuItem});
             this.mnsMain.Location = new System.Drawing.Point(10, 30);
             this.mnsMain.Name = "mnsMain";
             this.mnsMain.Size = new System.Drawing.Size(892, 28);
@@ -267,6 +270,22 @@ namespace QLNhaTro
             this.thuTiềnToolStripMenuItem.Text = "Thu Tiền";
             this.thuTiềnToolStripMenuItem.Click += new System.EventHandler(this.thuTiềnToolStripMenuItem_Click);
             // 
+            // thốngKêToolStripMenuItem
+            // 
+            this.thốngKêToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.danhSáchKháchTrongPhòngToolStripMenuItem});
+            this.thốngKêToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
+            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.thốngKêToolStripMenuItem.Text = "Thống kê";
+            // 
+            // danhSáchKháchTrongPhòngToolStripMenuItem
+            // 
+            this.danhSáchKháchTrongPhòngToolStripMenuItem.Name = "danhSáchKháchTrongPhòngToolStripMenuItem";
+            this.danhSáchKháchTrongPhòngToolStripMenuItem.Size = new System.Drawing.Size(289, 26);
+            this.danhSáchKháchTrongPhòngToolStripMenuItem.Text = "Danh sách khách trong phòng";
+            this.danhSáchKháchTrongPhòngToolStripMenuItem.Click += new System.EventHandler(this.danhSáchKháchTrongPhòngToolStripMenuItem_Click);
+            // 
             // pnlContent
             // 
             this.pnlContent.BackColor = System.Drawing.Color.PowderBlue;
@@ -330,6 +349,8 @@ namespace QLNhaTro
         private System.Windows.Forms.ToolStripMenuItem trảPhòngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tínhTiềnPhòngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thuTiềnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thốngKêToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem danhSáchKháchTrongPhòngToolStripMenuItem;
     }
 }
 

@@ -96,7 +96,7 @@ namespace BUS
         //Lấy danh sách khách hàng theo mã phòng
         public void LayKhachHangTheoPhong(ComboBox cb, int idPhong)
         {
-            cb.DataSource = da.LayDSKhachHangTrongPhong(idPhong);
+            cb.DataSource = da.LayDSKhachTheoIDPhong(idPhong);
             cb.DisplayMember = "ID";
             cb.ValueMember = "ID";
         }
@@ -130,5 +130,10 @@ namespace BUS
             }
         }
 
+        // lấy ds khách trong phòng hiện lên DatagridView
+        public void LayDSKHTrongPhong(DataGridView dgv, int idPhong)
+        {
+            dgv.DataSource = da.LayDSKhachTheoIDPhong(idPhong);
+        }
     }
 }

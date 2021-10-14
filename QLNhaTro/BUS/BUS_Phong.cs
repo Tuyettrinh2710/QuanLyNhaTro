@@ -93,12 +93,12 @@ namespace BUS
         }
 
         //lấy tên phòng hiển thị ra combobox
-        public void LayTenPhong(ComboBox cb)
-        {
-            cb.DataSource = da.LayDSPhong();
-            cb.DisplayMember = "TenPhong";
-            cb.ValueMember = "ID";
-        }
+        //public void LayTenPhong(ComboBox cb)
+        //{
+        //    cb.DataSource = da.LayDSPhong();
+        //    cb.DisplayMember = "TenPhong";
+        //    cb.ValueMember = "ID";
+        //}
 
         //Lấy số người còn trống trong phòng
         public int LaySoNguoiConTrong(int id)
@@ -121,6 +121,18 @@ namespace BUS
                 MessageBox.Show(s);
             }
         }
+
+        //Lấy id phòng theo tên
+        public int LayIDPhong(string ten)
+        {
+            List<Phong> ds = da.LayPhongTheoTen(ten);
+            int id = 0;
+            foreach(Phong p in ds)
+            {
+                id = p.ID;
+            }
+            return id;
+        }    
 
         //Lấy số người hiện tại trong phòng
         public int LaySoNguoiTrongPhong(int id)

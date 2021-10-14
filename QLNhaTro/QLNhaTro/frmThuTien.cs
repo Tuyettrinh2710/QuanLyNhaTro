@@ -71,7 +71,6 @@ namespace QLNhaTro
             COMExcel.Range exRange;
             try
             {
-                //int hang = 0, cot = 0;
                 exBook = exApp.Workbooks.Add(COMExcel.XlWBATemplate.xlWBATWorksheet);
                 exSheet = exBook.Worksheets[1];
                 // Định dạng chung

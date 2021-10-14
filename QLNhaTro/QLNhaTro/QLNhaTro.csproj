@@ -52,6 +52,12 @@
     <Compile Include="frmDanhSachKH.Designer.cs">
       <DependentUpon>frmDanhSachKH.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDSKhachThueTrongPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSKhachThueTrongPhong.Designer.cs">
+      <DependentUpon>frmDSKhachThueTrongPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLoaiPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmDanhSachKH.resx">
       <DependentUpon>frmDanhSachKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDSKhachThueTrongPhong.resx">
+      <DependentUpon>frmDSKhachThueTrongPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoaiPhong.resx">
       <DependentUpon>frmLoaiPhong.cs</DependentUpon>
@@ -209,6 +218,7 @@
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>False</Private>
     </COMReference>
     <COMReference Include="VBIDE">
       <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
