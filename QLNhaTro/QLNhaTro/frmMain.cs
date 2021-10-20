@@ -137,5 +137,11 @@ namespace QLNhaTro
             var f = new frmDSKhachThueTrongPhong();
             addForm(f);
         }
+
+        private void danhSáchKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new frmDSKhachThue();
+            addForm(f);
+        }
     }
 }

@@ -135,5 +135,11 @@ namespace BUS
         {
             dgv.DataSource = da.LayDSKhachTheoIDPhong(idPhong);
         }
+
+        // Lây khách thuê không còn thuê phòng
+        public void LayDSKhachKhongConThue(DataGridView dgv)
+        {
+            dgv.DataSource = da.LayDSKhachKhongConThue();
+        }
     }
 }

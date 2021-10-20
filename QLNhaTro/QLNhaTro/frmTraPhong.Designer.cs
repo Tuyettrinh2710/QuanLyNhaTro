@@ -60,7 +60,6 @@ namespace QLNhaTro
             this.dtpNgayTra = new System.Windows.Forms.DateTimePicker();
             this.btTra = new System.Windows.Forms.Button();
             this.pnlTraPhong = new System.Windows.Forms.Panel();
-            this.btThanhToan = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhach)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -366,7 +365,7 @@ namespace QLNhaTro
             // 
             // btTra
             // 
-            this.btTra.Location = new System.Drawing.Point(621, 365);
+            this.btTra.Location = new System.Drawing.Point(713, 369);
             this.btTra.Name = "btTra";
             this.btTra.Size = new System.Drawing.Size(105, 37);
             this.btTra.TabIndex = 22;
@@ -376,7 +375,6 @@ namespace QLNhaTro
             // 
             // pnlTraPhong
             // 
-            this.pnlTraPhong.Controls.Add(this.btThanhToan);
             this.pnlTraPhong.Controls.Add(this.label1);
             this.pnlTraPhong.Controls.Add(this.btTra);
             this.pnlTraPhong.Controls.Add(this.groupBox3);
@@ -389,16 +387,6 @@ namespace QLNhaTro
             this.pnlTraPhong.Name = "pnlTraPhong";
             this.pnlTraPhong.Size = new System.Drawing.Size(892, 428);
             this.pnlTraPhong.TabIndex = 23;
-            // 
-            // btThanhToan
-            // 
-            this.btThanhToan.Location = new System.Drawing.Point(765, 366);
-            this.btThanhToan.Name = "btThanhToan";
-            this.btThanhToan.Size = new System.Drawing.Size(105, 37);
-            this.btThanhToan.TabIndex = 14;
-            this.btThanhToan.Text = "Thanh toán";
-            this.btThanhToan.UseVisualStyleBackColor = true;
-            this.btThanhToan.Click += new System.EventHandler(this.btThanhToan_Click);
             // 
             // frmTraPhong
             // 
@@ -455,7 +443,6 @@ namespace QLNhaTro
         private System.Windows.Forms.DateTimePicker dtpNgayTra;
         private System.Windows.Forms.Button btTra;
         private System.Windows.Forms.Panel pnlTraPhong;
-        private System.Windows.Forms.Button btThanhToan;
         private System.Windows.Forms.DateTimePicker dtpNgayThue;
         private System.Windows.Forms.TextBox tbTim;
         private System.Windows.Forms.Label label13;

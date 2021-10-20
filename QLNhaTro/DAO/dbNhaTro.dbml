@@ -319,4 +319,15 @@
       <Column Name="TenPhong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.LayDSKhachKhongConThue" Method="LayDSKhachKhongConThue">
+    <ElementType Name="LayDSKhachKhongConThueResult">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Sdt" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CMND" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="QueQuan" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

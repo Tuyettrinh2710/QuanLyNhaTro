@@ -53,6 +53,7 @@ namespace QLNhaTro
             this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.danhSáchKháchTrongPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.danhSáchKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
@@ -273,7 +274,8 @@ namespace QLNhaTro
             // thốngKêToolStripMenuItem
             // 
             this.thốngKêToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.danhSáchKháchTrongPhòngToolStripMenuItem});
+            this.danhSáchKháchTrongPhòngToolStripMenuItem,
+            this.danhSáchKháchHàngToolStripMenuItem});
             this.thốngKêToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
             this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
@@ -294,6 +296,13 @@ namespace QLNhaTro
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(892, 428);
             this.pnlContent.TabIndex = 4;
+            // 
+            // danhSáchKháchHàngToolStripMenuItem
+            // 
+            this.danhSáchKháchHàngToolStripMenuItem.Name = "danhSáchKháchHàngToolStripMenuItem";
+            this.danhSáchKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(289, 26);
+            this.danhSáchKháchHàngToolStripMenuItem.Text = "Danh sách khách hàng";
+            this.danhSáchKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.danhSáchKháchHàngToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -351,6 +360,7 @@ namespace QLNhaTro
         private System.Windows.Forms.ToolStripMenuItem thuTiềnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thốngKêToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem danhSáchKháchTrongPhòngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem danhSáchKháchHàngToolStripMenuItem;
     }
 }
 

@@ -124,5 +124,19 @@ namespace DAO
                 throw new Exception("Không lấy được stored produre");
             }
         }
+
+        public dynamic LayDSKhachKhongConThue()
+        {
+            try
+            {
+                dynamic ds = db.LayDSKhachKhongConThue();
+                return ds;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored produre");
+            }
+        }
     }
 }

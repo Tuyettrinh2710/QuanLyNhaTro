@@ -43,9 +43,9 @@ namespace QLNhaTro
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(305, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(351, 29);
+            this.label1.Size = new System.Drawing.Size(310, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "DANH SÁCH KHÁCH THUÊ";
+            this.label1.Text = "QUẢN LÝ KHÁCH THUÊ";
             // 
             // dgvKhach
             // 
