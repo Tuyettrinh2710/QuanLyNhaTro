@@ -180,5 +180,35 @@ namespace DAO
                 throw new Exception("Không lấy được stored procedure");
             }
         }
+
+        //Lấy danh sách phòng trống
+        public dynamic LayDSPhongTrong()
+        {
+            try
+            {
+                dynamic ds = db.LayDSPhongTrong();
+                return ds;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
+
+        //lấy danh sách phòng đã cho thuê
+        public dynamic LayDSPhongDaChoThue()
+        {
+            try
+            {
+                dynamic ds = db.LayDSPhongDaChoThue();
+                return ds;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
     }
 }

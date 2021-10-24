@@ -64,6 +64,24 @@
     <Compile Include="frmDSKhachThueTrongPhong.Designer.cs">
       <DependentUpon>frmDSKhachThueTrongPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDSPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSPhong.Designer.cs">
+      <DependentUpon>frmDSPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDSThuePhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSThuePhong.Designer.cs">
+      <DependentUpon>frmDSThuePhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDSTraPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSTraPhong.Designer.cs">
+      <DependentUpon>frmDSTraPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLoaiPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +152,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDSKhachThueTrongPhong.resx">
       <DependentUpon>frmDSKhachThueTrongPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDSPhong.resx">
+      <DependentUpon>frmDSPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDSThuePhong.resx">
+      <DependentUpon>frmDSThuePhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDSTraPhong.resx">
+      <DependentUpon>frmDSTraPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoaiPhong.resx">
       <DependentUpon>frmLoaiPhong.cs</DependentUpon>

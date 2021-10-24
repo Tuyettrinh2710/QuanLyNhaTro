@@ -140,5 +140,17 @@ namespace BUS
             int soNguoi = da.LaySNTrongPhong(id);
             return soNguoi;
         }
+
+        //lấy danh sách phòng trống
+        public void LayDSPhongTrong(DataGridView dgv)
+        {
+            dgv.DataSource = da.LayDSPhongTrong();
+        }
+
+        //lấy danh sách phòng đã thuê
+        public void LayDSPhongDaChoThue(DataGridView dgv)
+        {
+            dgv.DataSource = da.LayDSPhongDaChoThue();
+        }
     }
 }

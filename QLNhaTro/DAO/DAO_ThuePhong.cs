@@ -97,5 +97,20 @@ namespace DAO
                 throw new Exception("Không lấy được stored procdure");
             }
         }
+
+        //lấy dánh sách thuê phòng theo năm tháng
+        public dynamic LayDSThuePhong(int thang, int nam)
+        {
+            try
+            {
+                dynamic ds = db.LayDSThuePhong(thang, nam);
+                return ds;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procdure");
+            }
+        }
     }
 }

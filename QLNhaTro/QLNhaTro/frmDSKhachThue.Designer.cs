@@ -57,7 +57,7 @@ namespace QLNhaTro
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(295, 23);
+            this.label1.Location = new System.Drawing.Point(297, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(351, 29);
             this.label1.TabIndex = 0;

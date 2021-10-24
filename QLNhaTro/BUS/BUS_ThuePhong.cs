@@ -76,5 +76,11 @@ namespace BUS
                 return true;
             return false;
         }
+
+        //lấy danh sách thuê phòng theo tháng năm
+        public void LayDSThuePhong(DataGridView dgv, int thang, int nam)
+        {
+            dgv.DataSource = da.LayDSThuePhong(thang, nam);
+        }
     }
 }
