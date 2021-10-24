@@ -23,8 +23,7 @@ namespace QLNhaTro
         private void frmDSThuePhong_Load(object sender, EventArgs e)
         {
             cbThang.SelectedIndex = 0;
-            int nam = dtpNam.Value.Year;
-            busThue.LayDSThuePhong(dgvThue, 0, nam);
+            busThue.LayDSThuePhong(dgvThue, 0, dtpNam.Value.Year);
             dgvThue.Columns[0].Width = (int)(0.15 * dgvThue.Width);
             dgvThue.Columns[1].Width = (int)(0.3 * dgvThue.Width);
             dgvThue.Columns[2].Width = (int)(0.15 * dgvThue.Width);

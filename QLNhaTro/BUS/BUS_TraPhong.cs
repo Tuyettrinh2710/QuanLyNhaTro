@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DAO;
 
 namespace BUS
@@ -39,6 +40,11 @@ namespace BUS
             if (da.ThemTraPhong(t))
                 return true;
             return false;
+        }
+
+        public void LayDSTraPhong(DataGridView dgv, int thang, int nam)
+        {
+            dgv.DataSource = da.LayDSTraPhong(thang, nam);
         }
     }
 }

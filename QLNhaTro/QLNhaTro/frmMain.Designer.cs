@@ -54,8 +54,9 @@ namespace QLNhaTro
             this.danhSáchKháchTrongPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.danhSáchKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.danhSáchPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlContent = new System.Windows.Forms.Panel();
             this.danhSáchThuêPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlContent = new System.Windows.Forms.Panel();
+            this.danhSáchTrảPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
@@ -279,7 +280,8 @@ namespace QLNhaTro
             this.danhSáchKháchTrongPhòngToolStripMenuItem,
             this.danhSáchKháchHàngToolStripMenuItem,
             this.danhSáchPhòngToolStripMenuItem,
-            this.danhSáchThuêPhòngToolStripMenuItem});
+            this.danhSáchThuêPhòngToolStripMenuItem,
+            this.danhSáchTrảPhòngToolStripMenuItem});
             this.thốngKêToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
             this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
@@ -306,6 +308,13 @@ namespace QLNhaTro
             this.danhSáchPhòngToolStripMenuItem.Text = "Danh sách phòng";
             this.danhSáchPhòngToolStripMenuItem.Click += new System.EventHandler(this.danhSáchPhòngToolStripMenuItem_Click);
             // 
+            // danhSáchThuêPhòngToolStripMenuItem
+            // 
+            this.danhSáchThuêPhòngToolStripMenuItem.Name = "danhSáchThuêPhòngToolStripMenuItem";
+            this.danhSáchThuêPhòngToolStripMenuItem.Size = new System.Drawing.Size(289, 26);
+            this.danhSáchThuêPhòngToolStripMenuItem.Text = "Danh sách thuê phòng";
+            this.danhSáchThuêPhòngToolStripMenuItem.Click += new System.EventHandler(this.danhSáchThuêPhòngToolStripMenuItem_Click);
+            // 
             // pnlContent
             // 
             this.pnlContent.BackColor = System.Drawing.Color.PowderBlue;
@@ -315,12 +324,12 @@ namespace QLNhaTro
             this.pnlContent.Size = new System.Drawing.Size(892, 428);
             this.pnlContent.TabIndex = 4;
             // 
-            // danhSáchThuêPhòngToolStripMenuItem
+            // danhSáchTrảPhòngToolStripMenuItem
             // 
-            this.danhSáchThuêPhòngToolStripMenuItem.Name = "danhSáchThuêPhòngToolStripMenuItem";
-            this.danhSáchThuêPhòngToolStripMenuItem.Size = new System.Drawing.Size(289, 26);
-            this.danhSáchThuêPhòngToolStripMenuItem.Text = "Danh sách thuê phòng";
-            this.danhSáchThuêPhòngToolStripMenuItem.Click += new System.EventHandler(this.danhSáchThuêPhòngToolStripMenuItem_Click);
+            this.danhSáchTrảPhòngToolStripMenuItem.Name = "danhSáchTrảPhòngToolStripMenuItem";
+            this.danhSáchTrảPhòngToolStripMenuItem.Size = new System.Drawing.Size(289, 26);
+            this.danhSáchTrảPhòngToolStripMenuItem.Text = "Danh sách trả phòng";
+            this.danhSáchTrảPhòngToolStripMenuItem.Click += new System.EventHandler(this.danhSáchTrảPhòngToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -381,6 +390,7 @@ namespace QLNhaTro
         private System.Windows.Forms.ToolStripMenuItem danhSáchKháchHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem danhSáchPhòngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem danhSáchThuêPhòngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem danhSáchTrảPhòngToolStripMenuItem;
     }
 }
 

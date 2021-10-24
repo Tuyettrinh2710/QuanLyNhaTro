@@ -392,6 +392,13 @@ namespace DAO
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<LayDSPhongDaChoThueResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayDSTraPhong")]
+		public ISingleResult<LayDSTraPhongResult> LayDSTraPhong([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> nam)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), thang, nam);
+			return ((ISingleResult<LayDSTraPhongResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HoaDon")]
@@ -3720,6 +3727,104 @@ namespace DAO
 				if ((this._SoNguoiHienTai != value))
 				{
 					this._SoNguoiHienTai = value;
+				}
+			}
+		}
+	}
+	
+	public partial class LayDSTraPhongResult
+	{
+		
+		private string _ID_Thue;
+		
+		private string _HoTen;
+		
+		private string _TenPhong;
+		
+		private System.Nullable<System.DateTime> _NgayThue;
+		
+		private System.Nullable<System.DateTime> _NgayTra;
+		
+		public LayDSTraPhongResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Thue", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string ID_Thue
+		{
+			get
+			{
+				return this._ID_Thue;
+			}
+			set
+			{
+				if ((this._ID_Thue != value))
+				{
+					this._ID_Thue = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string HoTen
+		{
+			get
+			{
+				return this._HoTen;
+			}
+			set
+			{
+				if ((this._HoTen != value))
+				{
+					this._HoTen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenPhong", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string TenPhong
+		{
+			get
+			{
+				return this._TenPhong;
+			}
+			set
+			{
+				if ((this._TenPhong != value))
+				{
+					this._TenPhong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayThue", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayThue
+		{
+			get
+			{
+				return this._NgayThue;
+			}
+			set
+			{
+				if ((this._NgayThue != value))
+				{
+					this._NgayThue = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayTra", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayTra
+		{
+			get
+			{
+				return this._NgayTra;
+			}
+			set
+			{
+				if ((this._NgayTra != value))
+				{
+					this._NgayTra = value;
 				}
 			}
 		}

@@ -30,13 +30,13 @@ namespace QLNhaTro
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvThue = new System.Windows.Forms.DataGridView();
+            this.dgvTra = new System.Windows.Forms.DataGridView();
             this.btXem = new System.Windows.Forms.Button();
             this.cbThang = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpNam = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTra)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -51,16 +51,16 @@ namespace QLNhaTro
             this.label1.TabIndex = 11;
             this.label1.Text = "DANH SÁCH TRẢ PHÒNG";
             // 
-            // dgvThue
+            // dgvTra
             // 
-            this.dgvThue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThue.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvThue.Location = new System.Drawing.Point(0, 146);
-            this.dgvThue.Name = "dgvThue";
-            this.dgvThue.RowHeadersWidth = 51;
-            this.dgvThue.RowTemplate.Height = 24;
-            this.dgvThue.Size = new System.Drawing.Size(892, 280);
-            this.dgvThue.TabIndex = 17;
+            this.dgvTra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTra.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvTra.Location = new System.Drawing.Point(0, 146);
+            this.dgvTra.Name = "dgvTra";
+            this.dgvTra.RowHeadersWidth = 51;
+            this.dgvTra.RowTemplate.Height = 24;
+            this.dgvTra.Size = new System.Drawing.Size(892, 280);
+            this.dgvTra.TabIndex = 17;
             // 
             // btXem
             // 
@@ -70,6 +70,7 @@ namespace QLNhaTro
             this.btXem.TabIndex = 16;
             this.btXem.Text = "Xem";
             this.btXem.UseVisualStyleBackColor = true;
+            this.btXem.Click += new System.EventHandler(this.btXem_Click);
             // 
             // cbThang
             // 
@@ -128,7 +129,7 @@ namespace QLNhaTro
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(892, 426);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvThue);
+            this.Controls.Add(this.dgvTra);
             this.Controls.Add(this.btXem);
             this.Controls.Add(this.cbThang);
             this.Controls.Add(this.label3);
@@ -136,10 +137,11 @@ namespace QLNhaTro
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDSTraPhong";
             this.Text = "frmDSTraPhong";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThue)).EndInit();
+            this.Load += new System.EventHandler(this.frmDSTraPhong_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,7 +150,7 @@ namespace QLNhaTro
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvThue;
+        private System.Windows.Forms.DataGridView dgvTra;
         private System.Windows.Forms.Button btXem;
         private System.Windows.Forms.ComboBox cbThang;
         private System.Windows.Forms.Label label3;

@@ -27,5 +27,19 @@ namespace DAO
                 throw new Exception("Không lấy được stored prceodure");
             }
         }
+
+        public dynamic LayDSTraPhong(int thang, int nam)
+        {
+            try
+            {
+                dynamic ds = db.LayDSTraPhong(thang, nam);
+                return ds;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored prceodure");
+            }
+        }
     }
 }
