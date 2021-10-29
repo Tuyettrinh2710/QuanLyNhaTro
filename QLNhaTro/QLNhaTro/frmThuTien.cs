@@ -26,6 +26,8 @@ namespace QLNhaTro
         private void frmThuTien_Load(object sender, EventArgs e)
         {
             busThanhToan.LayHoaDonChuaThu(dgvHoaDon);
+            dgvHoaDon.Columns[2].Width = (int)(0.2 * dgvHoaDon.Width);
+            dgvHoaDon.Columns[3].Width = (int)(0.2 * dgvHoaDon.Width);
         }
 
         private void dgvHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -172,7 +174,9 @@ namespace QLNhaTro
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (busThanhToan.CapNhatThuTien(int.Parse(tbMaHD.Text)))
+            if (tbMaHD.Text == "")
+                MessageBox.Show("Không mã hóa đơn rỗng. Thu tiền thất bại");
+            else if (busThanhToan.CapNhatThuTien(int.Parse(tbMaHD.Text)))
             {
                 InHoaDon();
             }

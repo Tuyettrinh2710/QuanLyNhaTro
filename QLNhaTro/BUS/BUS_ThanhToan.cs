@@ -61,5 +61,10 @@ namespace BUS
                 return true;
             return false;
         }
+
+        public void LayDSHoaDon(DataGridView dgv, int thang, int nam)
+        {
+            dgv.DataSource = da.LayDSHoaDon(thang, nam);
+        }
     }
 }

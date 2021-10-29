@@ -66,6 +66,7 @@ namespace QLNhaTro
             this.dtpNam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNam.Location = new System.Drawing.Point(125, 89);
             this.dtpNam.Name = "dtpNam";
+            this.dtpNam.ShowUpDown = true;
             this.dtpNam.Size = new System.Drawing.Size(82, 26);
             this.dtpNam.TabIndex = 6;
             // 
