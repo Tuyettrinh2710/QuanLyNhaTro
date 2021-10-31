@@ -52,6 +52,10 @@ namespace QLNhaTro
             {
                 MessageBox.Show("Không thể sửa mã phòng");
             }
+            else if (dgvKhach.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
+            {
+                MessageBox.Show("Dữ liệu trống. Sửa thất bại");
+            }    
             else
             {
                 string ma = dgvKhach.Rows[e.RowIndex].Cells[0].Value.ToString();
