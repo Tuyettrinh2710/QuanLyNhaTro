@@ -52,7 +52,7 @@ namespace DAO
         {
             try
             {
-                var thue = db.ThemThuePhong(t.ID, t.ID_KH, t.ID_Phong, t.NgayThue, t.TienCoc);
+                db.ThemThuePhong(t.ID, t.ID_KH, t.ID_Phong, t.NgayThue, t.TienCoc);
                 return true;
             }
             catch (Exception)
@@ -66,7 +66,7 @@ namespace DAO
         {
             try
             {
-                var gia = db.CapNhatThamSo(id, giaTri);
+                db.CapNhatThamSo(id, giaTri);
             }
             catch (Exception)
             {
@@ -105,6 +105,22 @@ namespace DAO
             {
                 dynamic ds = db.LayDSThuePhong(thang, nam);
                 return ds;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procdure");
+            }
+        }
+
+        //Kiểm tra id thuê phòng có tồn tại
+        public bool KiemTraIDThuePhong(string idThue, string idKH)
+        {
+            try
+            {
+                bool? kq = false;
+                var kt = db.KTIDThue(idThue, idKH, ref kq);
+                return (bool)kq;
             }
             catch (Exception)
             {

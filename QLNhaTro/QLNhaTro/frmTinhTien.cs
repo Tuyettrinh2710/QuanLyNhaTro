@@ -90,7 +90,7 @@ namespace QLNhaTro
             tbDiaChi.Text = "";
             tbCMND.Text = "";
             tbDichVu.Text = busPhi.LayGia(3).ToString();
-            tbGioiTinh.Text = "";
+            cbGioiTinh.SelectedIndex = -1;
             tbSKDien.Text = "";
             tbSKNuoc.Text = "";
             tbTen.Text = "";
@@ -128,7 +128,7 @@ namespace QLNhaTro
             if (cbSDT.SelectedIndex == -1)
                 cbSDT.SelectedIndex = -1;
             else
-                busKhach.LayThongTinKH(cbSDT.SelectedValue.ToString(), tbTen, tbCMND, tbGioiTinh, dtpNgaySinh, tbDiaChi);
+                busKhach.LayThongTinKH(cbSDT.SelectedValue.ToString(), tbTen, tbCMND, cbGioiTinh, dtpNgaySinh, tbDiaChi);
         }
 
         private void tongTienPhong()

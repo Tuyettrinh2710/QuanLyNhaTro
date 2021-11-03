@@ -45,7 +45,6 @@ namespace QLNhaTro
             this.tbCMND = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbGioiTinh = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbMaPhong = new System.Windows.Forms.TextBox();
@@ -71,6 +70,7 @@ namespace QLNhaTro
             this.label18 = new System.Windows.Forms.Label();
             this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbGioiTinh = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -120,6 +120,7 @@ namespace QLNhaTro
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.DarkCyan;
+            this.groupBox2.Controls.Add(this.cbGioiTinh);
             this.groupBox2.Controls.Add(this.cbSDT);
             this.groupBox2.Controls.Add(this.dtpNgaySinh);
             this.groupBox2.Controls.Add(this.tbDiaChi);
@@ -129,7 +130,6 @@ namespace QLNhaTro
             this.groupBox2.Controls.Add(this.tbCMND);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.tbGioiTinh);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
@@ -154,14 +154,14 @@ namespace QLNhaTro
             // 
             this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(139, 141);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(139, 144);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(191, 26);
             this.dtpNgaySinh.TabIndex = 26;
             // 
             // tbDiaChi
             // 
-            this.tbDiaChi.Location = new System.Drawing.Point(139, 170);
+            this.tbDiaChi.Location = new System.Drawing.Point(139, 173);
             this.tbDiaChi.Name = "tbDiaChi";
             this.tbDiaChi.Size = new System.Drawing.Size(191, 26);
             this.tbDiaChi.TabIndex = 11;
@@ -170,7 +170,7 @@ namespace QLNhaTro
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(40, 173);
+            this.label7.Location = new System.Drawing.Point(40, 176);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 20);
             this.label7.TabIndex = 10;
@@ -214,18 +214,11 @@ namespace QLNhaTro
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(40, 146);
+            this.label4.Location = new System.Drawing.Point(40, 149);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Ngày sinh:";
-            // 
-            // tbGioiTinh
-            // 
-            this.tbGioiTinh.Location = new System.Drawing.Point(139, 112);
-            this.tbGioiTinh.Name = "tbGioiTinh";
-            this.tbGioiTinh.Size = new System.Drawing.Size(191, 26);
-            this.tbGioiTinh.TabIndex = 3;
             // 
             // label3
             // 
@@ -491,6 +484,18 @@ namespace QLNhaTro
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // cbGioiTinh
+            // 
+            this.cbGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGioiTinh.FormattingEnabled = true;
+            this.cbGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbGioiTinh.Location = new System.Drawing.Point(139, 112);
+            this.cbGioiTinh.Name = "cbGioiTinh";
+            this.cbGioiTinh.Size = new System.Drawing.Size(191, 28);
+            this.cbGioiTinh.TabIndex = 28;
+            // 
             // frmTinhTien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -539,7 +544,6 @@ namespace QLNhaTro
         private System.Windows.Forms.TextBox tbCMND;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbGioiTinh;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -567,5 +571,6 @@ namespace QLNhaTro
         private System.Windows.Forms.DateTimePicker dtpNgayLap;
         private System.Windows.Forms.ComboBox cbSDT;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox cbGioiTinh;
     }
 }

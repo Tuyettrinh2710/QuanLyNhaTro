@@ -102,7 +102,7 @@ namespace BUS
         }
 
         //Lấy thông tin khách hàng hiện lên textbox
-        public void LayThongTinKH(string id, TextBox tbTen, TextBox tbCmnd, TextBox gt, DateTimePicker ngay, TextBox que)
+        public void LayThongTinKH(string id, TextBox tbTen, TextBox tbCmnd, ComboBox gt, DateTimePicker ngay, TextBox que)
         {
             List<KhachHang> ds = da.LayThongTinKH(id);
             foreach (KhachHang k in ds)

@@ -192,7 +192,7 @@ namespace QLNhaTro
             // 
             // tbQueQuan
             // 
-            this.tbQueQuan.Location = new System.Drawing.Point(91, 92);
+            this.tbQueQuan.Location = new System.Drawing.Point(391, 92);
             this.tbQueQuan.Name = "tbQueQuan";
             this.tbQueQuan.Size = new System.Drawing.Size(191, 26);
             this.tbQueQuan.TabIndex = 11;
@@ -202,7 +202,7 @@ namespace QLNhaTro
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(6, 95);
+            this.label7.Location = new System.Drawing.Point(302, 95);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 20);
             this.label7.TabIndex = 10;
@@ -210,7 +210,7 @@ namespace QLNhaTro
             // 
             // tbCMND
             // 
-            this.tbCMND.Location = new System.Drawing.Point(91, 60);
+            this.tbCMND.Location = new System.Drawing.Point(89, 92);
             this.tbCMND.MaxLength = 12;
             this.tbCMND.Name = "tbCMND";
             this.tbCMND.Size = new System.Drawing.Size(191, 26);
@@ -222,7 +222,7 @@ namespace QLNhaTro
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(6, 63);
+            this.label6.Location = new System.Drawing.Point(4, 95);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 20);
             this.label6.TabIndex = 8;
@@ -230,11 +230,12 @@ namespace QLNhaTro
             // 
             // tbSdt
             // 
-            this.tbSdt.Location = new System.Drawing.Point(391, 92);
+            this.tbSdt.Location = new System.Drawing.Point(89, 28);
             this.tbSdt.MaxLength = 10;
             this.tbSdt.Name = "tbSdt";
             this.tbSdt.Size = new System.Drawing.Size(191, 26);
             this.tbSdt.TabIndex = 7;
+            this.tbSdt.TextChanged += new System.EventHandler(this.tbSdt_TextChanged);
             this.tbSdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSdt_KeyPress);
             this.tbSdt.Validating += new System.ComponentModel.CancelEventHandler(this.tbSdt_Validating);
             // 
@@ -242,7 +243,7 @@ namespace QLNhaTro
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(297, 92);
+            this.label5.Location = new System.Drawing.Point(6, 32);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 20);
             this.label5.TabIndex = 6;
@@ -270,7 +271,7 @@ namespace QLNhaTro
             // 
             // tbTen
             // 
-            this.tbTen.Location = new System.Drawing.Point(91, 28);
+            this.tbTen.Location = new System.Drawing.Point(89, 60);
             this.tbTen.Name = "tbTen";
             this.tbTen.Size = new System.Drawing.Size(191, 26);
             this.tbTen.TabIndex = 1;
@@ -280,7 +281,7 @@ namespace QLNhaTro
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(6, 31);
+            this.label2.Location = new System.Drawing.Point(4, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 20);
             this.label2.TabIndex = 0;

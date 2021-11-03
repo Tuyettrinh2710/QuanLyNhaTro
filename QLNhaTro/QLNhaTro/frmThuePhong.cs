@@ -113,7 +113,9 @@ namespace QLNhaTro
             Decimal tienCoc = Decimal.Parse(tbTienCoc.Text);
             int maPhong = int.Parse(tbMaPhong.Text);
             int soNguoi = busPhong.LaySoNguoiConTrong(maPhong);
-            if (busThue.ThemThuePhong(id, idKH, maPhong, ngayThue, tienCoc))
+            if (busThue.KiemTraIDThuePhong(id, idKH))
+                MessageBox.Show("Id thuê phòng đã tồn tại. Thuê phòng thất bại");
+            else if (busThue.ThemThuePhong(id, idKH, maPhong, ngayThue, tienCoc))
             {
                 string s = string.Format("Khách hàng {0} thuê phòng {1} thành công", hoTen, maPhong);
                 MessageBox.Show(s);
@@ -286,6 +288,14 @@ namespace QLNhaTro
         {
             busThue.CapNhatMa(tbMaThue.Text);
             loadText();
+        }
+
+        private void tbSdt_TextChanged(object sender, EventArgs e)
+        {
+            if (tbSdt.Text == "")
+                loadKH();
+            else
+                busKH.LayThongTinKH(tbSdt.Text, tbTen, tbCMND, cbGioiTinh, dtpNgaySinh, tbQueQuan);
         }
     }
 }

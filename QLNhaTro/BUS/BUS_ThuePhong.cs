@@ -82,5 +82,13 @@ namespace BUS
         {
             dgv.DataSource = da.LayDSThuePhong(thang, nam);
         }
+
+        //kiểm tra id thuê phòng có tồn tại
+        public bool KiemTraIDThuePhong(string idThue, string idKH)
+        {
+            if (da.KiemTraIDThuePhong(idThue, idKH))
+                return true;
+            return false;
+        }
     }
 }

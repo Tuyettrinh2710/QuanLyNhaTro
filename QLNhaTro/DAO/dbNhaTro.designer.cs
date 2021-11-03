@@ -406,6 +406,14 @@ namespace DAO
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), thang, nam);
 			return ((ISingleResult<LayDSHoaDonResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.KTIDThue")]
+		public int KTIDThue([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(10)")] string idThue, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(10)")] string idKH, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] ref System.Nullable<bool> kq)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idThue, idKH, kq);
+			kq = ((System.Nullable<bool>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HoaDon")]

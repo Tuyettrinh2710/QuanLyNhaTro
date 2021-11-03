@@ -389,4 +389,10 @@
       <Column Name="TrangThai" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.KTIDThue" Method="KTIDThue">
+    <Parameter Name="idThue" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="idKH" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="kq" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
