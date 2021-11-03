@@ -90,5 +90,13 @@ namespace BUS
                 return true;
             return false;
         }
+
+        //kiểm tra id phòng có trong bảng thue phong
+        public bool KiemTraIDPhongTrongThue(int id)
+        {
+            if (da.KiemTraIDPhongTrongThue(id))
+                return true;
+            return false;
+        }
     }
 }

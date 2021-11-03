@@ -84,13 +84,13 @@ namespace BUS
         }
 
         //Kiểm tra phòng có nằm trong bảng dữ liệu khách hàng 
-        public bool KiemTraPhong(int id)
-        {
-            if (da.KiemTraPhong(id) == true)
-                return true;
-            else
-                return false;
-        }
+        //public bool KiemTraPhong(int id)
+        //{
+        //    if (da.KiemTraPhong(id) == true)
+        //        return true;
+        //    else
+        //        return false;
+        //}
 
         //lấy tên phòng hiển thị ra combobox
         //public void LayTenPhong(ComboBox cb)

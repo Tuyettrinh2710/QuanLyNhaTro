@@ -128,5 +128,21 @@ namespace DAO
                 throw new Exception("Không lấy được stored procdure");
             }
         }
+
+        //Kiểm tra phòng có trong bảng thuê phòng
+        public bool KiemTraIDPhongTrongThue(int id)
+        {
+            try
+            {
+                bool? kq = false;
+                var kt = db.KTIDPhongTrongThue(id, ref kq);
+                return (bool)kq;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procdure");
+            }
+        }
     }
 }

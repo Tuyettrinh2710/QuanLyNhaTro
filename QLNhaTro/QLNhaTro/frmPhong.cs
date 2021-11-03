@@ -16,11 +16,13 @@ namespace QLNhaTro
 
         BUS_Phong busPhong;
         BUS_LoaiPhong busLoaiPhong;
+        BUS_ThuePhong busThue;
         public frmPhong()
         {
             InitializeComponent();
             busPhong = new BUS_Phong();
             busLoaiPhong = new BUS_LoaiPhong();
+            busThue = new BUS_ThuePhong();
         }
 
         private void frmPhong_Load(object sender, EventArgs e)
@@ -99,7 +101,7 @@ namespace QLNhaTro
             else
             {
                 int id = int.Parse(tbMa.Text);
-                if (busPhong.KiemTraPhong(id))
+                if (busThue.KiemTraIDPhongTrongThue(id))
                 {
                     string s = string.Format("Phòng {0} nằm trong dữ liệu khách hàng không thể xóa", tbPhong.Text);
                     MessageBox.Show(s);

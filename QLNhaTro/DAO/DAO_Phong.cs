@@ -92,20 +92,20 @@ namespace DAO
             }
         }
 
-        public bool KiemTraPhong(int id)
-        {
-            try
-            {
-                bool? kq = false;
-                var kt = db.KTPhongTonTai(id, ref kq);
-                return (bool)kq;
-            }
-            catch (Exception)
-            {
+        //public bool KiemTraPhong(int id)
+        //{
+        //    try
+        //    {
+        //        bool? kq = false;
+        //        var kt = db.KTPhongTonTai(id, ref kq);
+        //        return (bool)kq;
+        //    }
+        //    catch (Exception)
+        //    {
 
-                throw new Exception("Không lấy được stored procedure");
-            }
-        }
+        //        throw new Exception("Không lấy được stored procedure");
+        //    }
+        //}
 
         public int LaySoNguoiTrongPhong(int id)
         {
