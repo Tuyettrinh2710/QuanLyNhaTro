@@ -62,6 +62,7 @@ namespace QLNhaTro
             tbTongTien.Text = "";
             dtpNgayLap.Value = DateTime.Now;
             dtpNgayThu.Value = DateTime.Now;
+            busThanhToan.LayHoaDonChuaThu(dgvHoaDon);
         }
 
         private void InHoaDon()

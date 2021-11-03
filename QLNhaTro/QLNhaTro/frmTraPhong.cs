@@ -99,6 +99,22 @@ namespace QLNhaTro
             }
             else
                 MessageBox.Show("Trả phòng thất bại");
+            loadfrm();
+        }
+
+        void loadfrm()
+        {
+            tbCMND.Text = "";
+            tbGioiTinh.Text = "";
+            tbMaPhong.Text = "";
+            tbMaThue.Text = "";
+            tbQueQuan.Text = "";
+            tbSDT.Text = "";
+            tbten.Text = "";
+            tbTienCoc.Text = "";
+            dtpNgaySinh.Value = DateTime.Now;
+            dtpNgayThue.Value = DateTime.Now;
+            busKhach.LayDSKhachHang(dgvKhach, "");
         }
     }
 }
