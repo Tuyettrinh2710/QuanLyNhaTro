@@ -432,7 +432,7 @@ namespace QLNhaTro
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(78, 20);
             this.label15.TabIndex = 29;
-            this.label15.Text = "Tiền coc:";
+            this.label15.Text = "Tiền cọc:";
             // 
             // errorProvider1
             // 

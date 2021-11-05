@@ -39,12 +39,6 @@ namespace QLNhaTro
             f.Show();
         }
 
-        private void btThanhToan_Click(object sender, EventArgs e)
-        {
-            var f = new frmThanhToanTP();
-            addForm(f);
-        }
-
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.RowIndex < dgvKhach.Rows.Count - 1)

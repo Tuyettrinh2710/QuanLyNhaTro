@@ -38,6 +38,10 @@ namespace QLNhaTro
             {
                 MessageBox.Show("Không thể sửa tên phí");
             }
+            else if (dgvPhi.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
+            {
+                MessageBox.Show("Dữ liệu trống. Sửa thất bại");
+            }
             else
             {
                 int ma = (int) dgvPhi.Rows[e.RowIndex].Cells[0].Value;

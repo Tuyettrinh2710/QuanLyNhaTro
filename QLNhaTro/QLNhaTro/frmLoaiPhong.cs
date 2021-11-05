@@ -37,7 +37,11 @@ namespace QLNhaTro
             else if (e.ColumnIndex == 1)
             {
                 MessageBox.Show("không thẻ sửa tên loại");
-            }  
+            }
+            else if (dgvLoai.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
+            {
+                MessageBox.Show("Dữ liệu trống. Sửa thất bại");
+            }
             else
             {
                 int ma = (int)dgvLoai.Rows[e.RowIndex].Cells[0].Value;

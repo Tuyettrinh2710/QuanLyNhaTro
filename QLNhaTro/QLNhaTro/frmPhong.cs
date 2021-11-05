@@ -72,8 +72,6 @@ namespace QLNhaTro
                 cbLoai.Text = dgvPhong.Rows[e.RowIndex].Cells[2].Value.ToString();
                 tbToiDa.Text = dgvPhong.Rows[e.RowIndex].Cells[3].Value.ToString();
                 tbHienTai.Text = dgvPhong.Rows[e.RowIndex].Cells[4].Value.ToString();
-                tbHienTai.Enabled = true;
-                tbHienTai.ReadOnly = false;
             }
         }
 
