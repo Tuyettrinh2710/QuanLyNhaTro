@@ -101,12 +101,12 @@ namespace QLNhaTro
             dtpNgaySinh.Value = DateTime.Now;
             busThanhToan.LayDSPhongChuaLapHoadon(lvPhong);
             errorProvider1.Clear();
+            cbSDT.DataSource = null;
         }
 
         private void frmTinhTien_Load(object sender, EventArgs e)
         {
             busThanhToan.LayDSPhongChuaLapHoadon(lvPhong);
-            tbDichVu.Text = string.Format( culture, "{0:#,##0}", busPhi.LayGia(3));
         }
 
         private void lvPhong_Click(object sender, EventArgs e)
