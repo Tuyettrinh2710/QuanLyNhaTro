@@ -210,5 +210,21 @@ namespace DAO
                 throw new Exception("Không lấy được stored procedure");
             }
         }
+
+        //Kiểm tra tên phòng tồn tại
+        public bool KiemTraTenPhong(string ten)
+        {
+            try
+            {
+                bool? kq = false;
+                var kt = db.KTTenPhongTonTai(ten, ref kq);
+                return (bool)kq;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Không lấy được stored procedure");
+            }
+        }
     }
 }

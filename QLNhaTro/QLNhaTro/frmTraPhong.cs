@@ -77,22 +77,27 @@ namespace QLNhaTro
 
         private void btTra_Click(object sender, EventArgs e)
         {
-            string idThue = tbMaThue.Text;
-            int idPhong = int.Parse(tbMaPhong.Text);
-            DateTime ngayThue = dtpNgayThue.Value.Date;
-            DateTime ngayTra = dtpNgayTra.Value.Date;
-            if (idThue == null || idKH == null || idPhong == 0)
+            if (KiemTraThongTin() == false)
             {
-                MessageBox.Show("Thông tin không hợp lệ. Trả phòng thất bại");
-            }    
-            else if (busTra.ThemTraPhong(idThue, idKH, idPhong, ngayThue, ngayTra))
-            {
-                int soNguoi = busPhong.LaySoNguoiTrongPhong(idPhong);
-                busPhong.UpdateSoNguoi(idPhong, soNguoi - 1);
-                busKhach.CapNhatMaPhongNULL(idKH);
+                string idThue = tbMaThue.Text;
+                int idPhong = int.Parse(tbMaPhong.Text);
+                DateTime ngayThue = dtpNgayThue.Value.Date;
+                DateTime ngayTra = dtpNgayTra.Value.Date;
+                if (idThue == null || idKH == null || idPhong == 0)
+                {
+                    MessageBox.Show("Thông tin không hợp lệ. Trả phòng thất bại");
+                }
+                else if (busTra.ThemTraPhong(idThue, idKH, idPhong, ngayThue, ngayTra))
+                {
+                    int soNguoi = busPhong.LaySoNguoiTrongPhong(idPhong);
+                    busPhong.UpdateSoNguoi(idPhong, soNguoi - 1);
+                    busKhach.CapNhatMaPhongNULL(idKH);
+                }
+                else
+                    MessageBox.Show("Trả phòng thất bại");
             }
             else
-                MessageBox.Show("Trả phòng thất bại");
+                MessageBox.Show("Nhập thiếu thông tin. Trả phòng thất bại!!!");
             loadfrm();
         }
 
@@ -109,6 +114,25 @@ namespace QLNhaTro
             dtpNgaySinh.Value = DateTime.Now;
             dtpNgayThue.Value = DateTime.Now;
             busKhach.LayDSKhachHang(dgvKhach, "");
+        }
+
+        private bool KiemTraThongTin()
+        {
+            int countErr = 0;
+            if (tbMaThue.Text == "")
+            {
+                errorProvider1.SetError(tbMaThue, "Không để mã thuê trống");
+                countErr++;
+            }
+            if (tbMaPhong.Text == "")
+            {
+                errorProvider1.SetError(tbMaPhong, "Không để mã phòng trống");
+                countErr++;
+            }
+
+            if (countErr > 0)
+                return true;
+            return false;
         }
     }
 }

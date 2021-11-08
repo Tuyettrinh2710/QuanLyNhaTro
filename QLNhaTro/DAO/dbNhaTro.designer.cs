@@ -422,6 +422,14 @@ namespace DAO
 			kq = ((System.Nullable<bool>)(result.GetParameterValue(1)));
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.KTTenPhongTonTai")]
+		public int KTTenPhongTonTai([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(10)")] string tenPhong, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] ref System.Nullable<bool> kq)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenPhong, kq);
+			kq = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HoaDon")]

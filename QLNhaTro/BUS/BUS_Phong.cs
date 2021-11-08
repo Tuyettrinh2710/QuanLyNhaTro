@@ -152,5 +152,13 @@ namespace BUS
         {
             dgv.DataSource = da.LayDSPhongDaChoThue();
         }
+
+        //kiểm tra tên phòng
+        public bool KiemTraTenPhong(string ten)
+        {
+            if (da.KiemTraTenPhong(ten))
+                return true;
+            return false;
+        }
     }
 }

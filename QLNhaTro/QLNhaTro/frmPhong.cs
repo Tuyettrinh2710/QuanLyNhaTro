@@ -57,7 +57,10 @@ namespace QLNhaTro
             string idLoai = cbLoai.SelectedValue.ToString();
             int toiDa = int.Parse(tbToiDa.Text);
             int hienTai = int.Parse(tbHienTai.Text);
-            busPhong.ThemPhong(ten, int.Parse(idLoai), toiDa, hienTai);
+            if (busPhong.KiemTraTenPhong(ten))
+                MessageBox.Show("Tên phòng đã tồn tại. Thêm thất bại!!!");
+            else
+                busPhong.ThemPhong(ten, int.Parse(idLoai), toiDa, hienTai);
             frmLoad();
             loadText();
         }
@@ -84,7 +87,10 @@ namespace QLNhaTro
                 string idLoai = cbLoai.SelectedValue.ToString();
                 int toiDa = int.Parse(tbToiDa.Text);
                 int hienTai = int.Parse(tbHienTai.Text);
-                busPhong.SuaPhong(id, ten, int.Parse(idLoai), toiDa, hienTai);
+                if (busPhong.KiemTraTenPhong(ten))
+                    MessageBox.Show("Tên phòng đã tồn tại. Sửa thất bại!!!");
+                else
+                    busPhong.SuaPhong(id, ten, int.Parse(idLoai), toiDa, hienTai);
                 frmLoad();
                 loadText();
             }

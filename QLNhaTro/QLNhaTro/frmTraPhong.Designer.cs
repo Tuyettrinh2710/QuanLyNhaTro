@@ -29,6 +29,7 @@ namespace QLNhaTro
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbTim = new System.Windows.Forms.TextBox();
@@ -60,11 +61,13 @@ namespace QLNhaTro
             this.dtpNgayTra = new System.Windows.Forms.DateTimePicker();
             this.btTra = new System.Windows.Forms.Button();
             this.pnlTraPhong = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhach)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.pnlTraPhong.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -147,6 +150,7 @@ namespace QLNhaTro
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaySinh.Enabled = false;
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(396, 27);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
@@ -157,6 +161,7 @@ namespace QLNhaTro
             // 
             this.tbCMND.Location = new System.Drawing.Point(101, 102);
             this.tbCMND.Name = "tbCMND";
+            this.tbCMND.ReadOnly = true;
             this.tbCMND.Size = new System.Drawing.Size(178, 26);
             this.tbCMND.TabIndex = 11;
             this.tbCMND.Tag = "";
@@ -175,6 +180,7 @@ namespace QLNhaTro
             // 
             this.tbSDT.Location = new System.Drawing.Point(395, 65);
             this.tbSDT.Name = "tbSDT";
+            this.tbSDT.ReadOnly = true;
             this.tbSDT.Size = new System.Drawing.Size(178, 26);
             this.tbSDT.TabIndex = 9;
             this.tbSDT.Tag = "";
@@ -193,6 +199,7 @@ namespace QLNhaTro
             // 
             this.tbQueQuan.Location = new System.Drawing.Point(395, 102);
             this.tbQueQuan.Name = "tbQueQuan";
+            this.tbQueQuan.ReadOnly = true;
             this.tbQueQuan.Size = new System.Drawing.Size(178, 26);
             this.tbQueQuan.TabIndex = 7;
             this.tbQueQuan.Tag = "";
@@ -221,6 +228,7 @@ namespace QLNhaTro
             // 
             this.tbGioiTinh.Location = new System.Drawing.Point(101, 65);
             this.tbGioiTinh.Name = "tbGioiTinh";
+            this.tbGioiTinh.ReadOnly = true;
             this.tbGioiTinh.Size = new System.Drawing.Size(178, 26);
             this.tbGioiTinh.TabIndex = 3;
             this.tbGioiTinh.Tag = "";
@@ -239,6 +247,7 @@ namespace QLNhaTro
             // 
             this.tbten.Location = new System.Drawing.Point(101, 29);
             this.tbten.Name = "tbten";
+            this.tbten.ReadOnly = true;
             this.tbten.Size = new System.Drawing.Size(178, 26);
             this.tbten.TabIndex = 1;
             // 
@@ -256,6 +265,7 @@ namespace QLNhaTro
             // 
             this.tbMaPhong.Location = new System.Drawing.Point(103, 160);
             this.tbMaPhong.Name = "tbMaPhong";
+            this.tbMaPhong.ReadOnly = true;
             this.tbMaPhong.Size = new System.Drawing.Size(178, 26);
             this.tbMaPhong.TabIndex = 13;
             this.tbMaPhong.Tag = "";
@@ -292,6 +302,7 @@ namespace QLNhaTro
             // dtpNgayThue
             // 
             this.dtpNgayThue.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayThue.Enabled = false;
             this.dtpNgayThue.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayThue.Location = new System.Drawing.Point(103, 70);
             this.dtpNgayThue.Name = "dtpNgayThue";
@@ -302,6 +313,7 @@ namespace QLNhaTro
             // 
             this.tbTienCoc.Location = new System.Drawing.Point(103, 116);
             this.tbTienCoc.Name = "tbTienCoc";
+            this.tbTienCoc.ReadOnly = true;
             this.tbTienCoc.Size = new System.Drawing.Size(178, 26);
             this.tbTienCoc.TabIndex = 19;
             this.tbTienCoc.Tag = "";
@@ -340,6 +352,7 @@ namespace QLNhaTro
             // 
             this.tbMaThue.Location = new System.Drawing.Point(103, 28);
             this.tbMaThue.Name = "tbMaThue";
+            this.tbMaThue.ReadOnly = true;
             this.tbMaThue.Size = new System.Drawing.Size(178, 26);
             this.tbMaThue.TabIndex = 17;
             this.tbMaThue.Tag = "";
@@ -357,6 +370,7 @@ namespace QLNhaTro
             // dtpNgayTra
             // 
             this.dtpNgayTra.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayTra.Enabled = false;
             this.dtpNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayTra.Location = new System.Drawing.Point(692, 306);
             this.dtpNgayTra.Name = "dtpNgayTra";
@@ -388,6 +402,10 @@ namespace QLNhaTro
             this.pnlTraPhong.Size = new System.Drawing.Size(892, 428);
             this.pnlTraPhong.TabIndex = 23;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmTraPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -410,6 +428,7 @@ namespace QLNhaTro
             this.groupBox2.PerformLayout();
             this.pnlTraPhong.ResumeLayout(false);
             this.pnlTraPhong.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -447,5 +466,6 @@ namespace QLNhaTro
         private System.Windows.Forms.TextBox tbTim;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
